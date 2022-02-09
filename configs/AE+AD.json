@@ -1,0 +1,26 @@
+{
+    "data_config": {
+        "name": "GB1",
+        "encoding": "one-hot",
+        "attributes": [
+            "Triad-FixedBb-dG",
+            "EvMutation",
+            "esm_msa1_t12_100M_UR50S-Naive-ColumnUnmasked"
+        ]
+    },
+    "model_config": {
+        "name": "ProtTP",
+        "h_dim1": 64,
+        "h_dim2": 40,
+        "z_dim": 32,
+        "reconstruction_loss_weight": 1,
+        "kl_div_weight": 0,
+        "attr_decoding_loss_weight": 100000
+    },
+    "train_config": {
+        "seed": 42,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "num_epochs": 20
+    }
+}
