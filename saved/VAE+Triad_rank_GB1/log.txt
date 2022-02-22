@@ -1,3 +1,0 @@
-Config file:	 /home/jyang4/ProtTP/configs/VAE+Triad_rank_GB1.json
-Save directory:	 /home/jyang4/ProtTP/saved/VAE+Triad_rank_GB1
-Device:	 cuda:0

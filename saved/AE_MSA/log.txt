@@ -1,0 +1,59 @@
+Config file:	 /home/jyang4/ProtTP/configs/AE_MSA.json
+Save directory:	 /home/jyang4/ProtTP/saved/AE_MSA
+Device:	 cuda:0
+########## Experiment AE_MSA: ##########
+Epoch[1/40], Reconst Loss: 17.3140, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[2/40], Reconst Loss: 13.0434, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[3/40], Reconst Loss: 16.8577, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[4/40], Reconst Loss: 13.2998, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[5/40], Reconst Loss: 12.6643, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[6/40], Reconst Loss: 12.6258, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[7/40], Reconst Loss: 11.9381, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[8/40], Reconst Loss: 9.9707, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[9/40], Reconst Loss: 11.3978, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[10/40], Reconst Loss: 10.1967, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[11/40], Reconst Loss: 11.1139, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[12/40], Reconst Loss: 11.6310, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[13/40], Reconst Loss: 10.5711, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[14/40], Reconst Loss: 11.6082, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[15/40], Reconst Loss: 11.5019, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[16/40], Reconst Loss: 9.0832, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[17/40], Reconst Loss: 11.3864, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[18/40], Reconst Loss: 10.9239, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[19/40], Reconst Loss: 9.9862, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[20/40], Reconst Loss: 9.7302, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[21/40], Reconst Loss: 10.8011, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[22/40], Reconst Loss: 9.0649, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[23/40], Reconst Loss: 11.3533, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[24/40], Reconst Loss: 10.3937, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[25/40], Reconst Loss: 11.4353, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[26/40], Reconst Loss: 8.5557, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[27/40], Reconst Loss: 8.5220, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[28/40], Reconst Loss: 8.2181, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[29/40], Reconst Loss: 10.4019, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[30/40], Reconst Loss: 10.2332, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[31/40], Reconst Loss: 9.6008, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[32/40], Reconst Loss: 9.4823, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[33/40], Reconst Loss: 9.0980, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[34/40], Reconst Loss: 9.5556, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[35/40], Reconst Loss: 9.8940, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[36/40], Reconst Loss: 9.3127, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[37/40], Reconst Loss: 8.0990, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[38/40], Reconst Loss: 8.9645, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[39/40], Reconst Loss: 9.5117, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[40/40], Reconst Loss: 9.5956, KL Div: 0.0000, Attribute Loss: 0.0000
+#################### Feature Extraction ####################
+Saved Features: /home/jyang4/ProtTP/saved/AE_MSA/embeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/AE_MSA/reconstructions.npy

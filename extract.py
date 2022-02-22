@@ -4,42 +4,73 @@ import json
 import os
 import torch
 import numpy as np
+import pandas as pd
 
 from torch.utils.data import DataLoader
 from util.load_dataset import load_dataset
 from util.model import *
+from util.encoding_utils import *
+
+def index2AA(index):
+    return ALL_AAS[index]
+
+index2AA = np.vectorize(index2AA)
+
+def reconst2seq(reconstructions):
+    reconstructions = unflatten(torch.tensor(reconstructions))
+    reconstructions = torch.argmax(reconstructions, axis = 2)
+    letters = index2AA(reconstructions)
+    seqs = []
+    for row in letters:
+        seqs.append(''.join(row))
+    return pd.DataFrame(seqs)
+
+def run_forward(model, dataset, device):
+    with torch.no_grad():
+        X = dataset.X.to(device)
+        if model.variational:
+            mu, log_var = model.encode(X)
+            embeddings = mu
+            #embeddings = model.reparameterize(mu, log_var)
+        else:
+            embeddings = model.encode(X)
+        reconstructions = model.decode(embeddings).cpu()
+        reconst_seqs =  reconst2seq(reconstructions)
+    return embeddings, reconst_seqs
 
 def extract_features(save_path, data_config, model_config, train_config, device):
     '''Saves features after training. '''
     print('#################### Feature Extraction ####################')
 
-    # Initialize dataset
-    dataset = load_dataset(data_config)
-    # Get model class
+    # Get model class and load data
     model_class = get_model_class(model_config['name'])
-        
-    # Initialize model
-    model = model_class(model_config, dataset).to(device)
+    if model_config['name'] == 'ProtTP':
+        dataset = load_dataset(data_config, model_config)
+        model = model_class(model_config, dataset).to(device)
+    elif model_config['name'] == 'MSATP':
+        dataset, MSAdataset = load_dataset(data_config, model_config)
+        model = model_class(model_config, dataset, MSAdataset).to(device)
 
     #Get embeddings
     model.load_state_dict(torch.load(save_path + '/best.pth'))
 
-    variational = model_config['kl_div_weight'] != 0
-    attributes = model_config['attr_decoding_loss_weight'] != 0
+    embeddings, reconst_seqs = run_forward(model, dataset, device)
 
-    with torch.no_grad():
-        X = dataset.X.to(device)
-        if variational:
-            mu, log_var = model.encode(X)
-            embeddings = model.reparameterize(mu, log_var)
-        else:
-            embeddings = model.encode(X)
-        reconstructions = model.decode(embeddings)
+    np.save(os.path.join(save_path, 'embeddings.npy'), embeddings.cpu())
+    print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))
+    #np.save(os.path.join(save_path, 'reconstructions.npy'), reconstructions.cpu())
+    reconst_seqs.to_csv(os.path.join(save_path, 'reconstructions.csv'))
+    print("Saved Reconstructions: " + os.path.join(save_path, 'reconstructions.csv'))
 
-        np.save(os.path.join(save_path, 'embeddings.npy'), embeddings.cpu())
-        print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))
-        np.save(os.path.join(save_path, 'reconstructions.npy'), reconstructions.cpu())
-        print("Saved Reconstructions: " + os.path.join(save_path, 'reconstructions.npy'))
+    #perform extraction on the MSAs
+    if model_config['name'] == 'MSATP':
+        MSAembeddings, MSAreconst_seqs = run_forward(model, MSAdataset, device)    
+
+        np.save(os.path.join(save_path, 'MSAembeddings.npy'), MSAembeddings.cpu())
+        print("Saved Features: " + os.path.join(save_path, 'MSAembeddings.npy'))
+        #np.save(os.path.join(save_path, 'MSAreconstructions.npy'), reconstructions.cpu())
+        MSAreconst_seqs.to_csv(os.path.join(save_path, 'MSAreconstructions.csv'))
+        print("Saved Reconstructions: " + os.path.join(save_path, 'MSAreconstructions.csv'))
 
 
 if __name__ == "__main__":
@@ -55,15 +86,15 @@ if __name__ == "__main__":
                     help='device to run the experiment on')
     args = parser.parse_args()    
 
+    # Get experiment name
+    exp_name = args.exp_name if len(args.exp_name) > 0 else args.config_file[:-5]
+
     # Get JSON config file
-    config_file = os.path.join(os.getcwd(), 'configs', args.config_file)
+    config_file = os.path.join(os.getcwd(), 'saved', exp_name, args.config_file)
     
     # Load JSON config file
     with open(config_file, 'r') as f:
         config = json.load(f)
-    
-    # Get experiment name
-    exp_name = args.exp_name if len(args.exp_name) > 0 else args.config_file[:-5]
 
     # Get save directory
     save_dir = os.path.join(os.getcwd(), 'saved', exp_name)

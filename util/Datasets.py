@@ -4,18 +4,22 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
-from util.georgiev_utils import *
+from util.encoding_utils import *
 
-ALL_AAS = ("A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y")
+encoding_dict = {
+    'one-hot' : generate_onehot,
+    'georgiev' : generate_georgiev,                
+}
 
 class BaseDataset(Dataset):
-    """Base class for Datasets."""
+    """Base class for ZS Datasets."""
 
     def __init__(self, dataframe, encoding, attribute_names, rank_attributes=True):
 
         self.data = dataframe
         self.encoding = encoding
         self.attribute_names = attribute_names
+        self.N = len(self.data)
 
         if self.attribute_names:
             if rank_attributes:
@@ -25,6 +29,8 @@ class BaseDataset(Dataset):
             scaler = StandardScaler()
             self.attributes = scaler.fit_transform(self.attributes)
             self.attributes = torch.tensor(self.attributes).float()
+        else:
+            self.attributes = None
 
     def __len__(self):
         return len(self.data)
@@ -32,38 +38,10 @@ class BaseDataset(Dataset):
     def __getitem__(self, index):            
         return self.X[index], self.attributes[index]
 
-    def generate_onehot(self):
-        """
-        Builds a onehot encoding for a given combinatorial space.
-        """
-        # Make a dictionary that links amino acid to index
-        one_hot_dict = {aa: i for i, aa in enumerate(ALL_AAS)}
-    
-        # Build an array of zeros
-        onehot_array = np.zeros([len(self.all_combos), self.n_positions_combined, 20])
-        
-        # Loop over all combos. This should all be vectorized at some point.
-        for i, combo in enumerate(self.all_combos):
-            
-            # Loop over the combo and add ones as appropriate
-            for j, character in enumerate(combo):
-                
-                # Add a 1 to the appropriate position
-                onehot_ind = one_hot_dict[character]
-                onehot_array[i, j, onehot_ind] = 1
-                
-        # Return the flattened array
-        self.X = torch.tensor(onehot_array.reshape(onehot_array.shape[0],-1)).float()
-        self.input_dim = self.n_positions_combined*20 
-        return 
-    
-    def generate_georgiev(self):
-        """
-        Builds a georgiev encoding for a given combinatorial space.
-        """
-        self.X = torch.tensor(seqs_to_georgiev(self.all_combos)).float()
-        self.input_dim = self.n_positions_combined*19 
-        return 
+    def encode_X(self):
+        self.X = torch.tensor(encoding_dict[self.encoding](self.all_combos.values)).float()
+        self.input_dim = self.X.shape[1]
+        self.n_residues = self.input_dim/len(ALL_AAS)
 
 class GB1Dataset(BaseDataset):
     """Class for GB1-specific datasets."""
@@ -84,7 +62,7 @@ class GB1Dataset(BaseDataset):
         self.n_positions_combined = len(self.all_combos[0])
         
 
-        self.y = self.data["Fitness"].values
+        #self.y = self.data["Fitness"].values
     
     @staticmethod
     def diff_letters(a, b = 'VDGV'):
@@ -102,10 +80,44 @@ class PABPDataset(BaseDataset):
         
         super().__init__(**kwargs)
         
-        self.all_combos = self.data["seq"]#.apply(self.cut)
+        self.all_combos = self.data["seq"].apply(self.trim)
         self.n_positions_combined = len(self.all_combos[0])
         self.y = self.data["log_fitness"].values
 
     @staticmethod
+    def trim(sequence):
+        return sequence[8:-6]
+
+    @staticmethod
     def cut(sequence):
         return sequence[122:204]
+
+class MSADataset(Dataset):
+    """Class for processing MSAs."""
+    def __init__(self, dataframe, MSAdataframe, encoding):
+        
+        self.data = MSAdataframe
+        self.encoding = encoding
+        self.all_combos = self.data["seq"].apply(self.trim)
+        self.n_positions_combined = len(self.all_combos[0])
+
+        #fix this later
+        self.attributes = torch.zeros(len(self.all_combos))
+
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):            
+        return self.X[index], self.attributes[index]
+
+    def encode_X(self):
+        self.X = torch.tensor(encoding_dict[self.encoding](self.all_combos.values)).float()
+        self.input_dim = self.X.shape[1]
+
+    @staticmethod
+    def trim(sequence):
+        return sequence[8:-6]
+
+    @staticmethod
+    def pad(sequence):
+        return '........' + sequence[8:-6] + '......'

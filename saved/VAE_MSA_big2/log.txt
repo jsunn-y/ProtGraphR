@@ -1,0 +1,8 @@
+Config file:	 /home/jyang4/ProtTP/configs/VAE_MSA_big2.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE_MSA_big2
+Device:	 cuda:0
+########## Experiment VAE_MSA_big2: ##########
+Epoch[1/80], Reconst Loss: 1.2563, KL Div: 1053.7217, Attribute Loss: 0.0000
+Best model saved
+Epoch[2/80], Reconst Loss: 1.0657, KL Div: 1082.2090, Attribute Loss: 0.0000
+Best model saved

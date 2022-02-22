@@ -1,2 +1,10 @@
-data/GB1_AllPreds.csv
-data/PABP_AllPreds.csv
+./.git/objects/00/6e1ce91698eb216abf3f1d54313463f6da13e3
+./.git/objects/ad/62daaed71d867f26ae6565041b84022a2680fa
+./.git/objects/74/8d3ab643a6fac716c43a5f62675c83b088d65e
+./.git/objects/71/2d6e9badd29d0b5afa2bda7540a052d0256531
+./.git/objects/78/1842b69ae32f763677055f7174903b37f6113b
+./.git/objects/f1/f03933bfbd7c3c3c5579c3a449eeb176562f70
+./.git/objects/c3/2ae672ebd5a8d3766bf18416d9249b056572db
+./.git/objects/fb/b4eadf2e597a6a74ae5a3f2a4e79a221cc13c3
+*.npy
+*.csv

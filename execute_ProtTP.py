@@ -11,6 +11,21 @@ from time import gmtime, strftime
 from util.train import start_training
 from extract import extract_features
 
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open(os.path.join(save_dir, 'log.txt'), 'a')
+   
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        # this flush method is needed for python 3 compatibility.
+        # this handles the flush command by doing nothing.
+        # you might want to specify some extra behavior here.
+        pass    
+
 # Script starts here.
 parser = argparse.ArgumentParser()
 parser.add_argument('--config_file', type=str,
@@ -41,7 +56,8 @@ if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
 #Redirect output to log file
-sys.stdout = open(os.path.join(save_dir, 'log.txt'), 'w')
+sys.stdout = Logger()
+#sys.stdout = open(os.path.join(save_dir, 'log.txt'), 'w')
 
 print('Config file:\t {}'.format(config_file))
 print('Save directory:\t {}'.format(save_dir))

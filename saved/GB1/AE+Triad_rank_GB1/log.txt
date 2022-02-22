@@ -1,0 +1,32 @@
+Config file:	 /home/jyang4/ProtTP/configs/AE+Triad_rank_GB1.json
+Save directory:	 /home/jyang4/ProtTP/saved/AE+Triad_rank_GB1
+Device:	 cuda:0
+########## Experiment AE+Triad_rank_GB1: ##########
+Epoch[1/20], Reconst Loss: 81.3558, KL Div: 0.0000, Attribute Loss: 0.0170
+Best model saved
+Epoch[2/20], Reconst Loss: 71.1393, KL Div: 0.0000, Attribute Loss: 0.0331
+Epoch[3/20], Reconst Loss: 66.1156, KL Div: 0.0000, Attribute Loss: 0.0214
+Epoch[4/20], Reconst Loss: 61.7638, KL Div: 0.0000, Attribute Loss: 0.0142
+Best model saved
+Epoch[5/20], Reconst Loss: 55.8621, KL Div: 0.0000, Attribute Loss: 0.0200
+Epoch[6/20], Reconst Loss: 52.3209, KL Div: 0.0000, Attribute Loss: 0.0166
+Epoch[7/20], Reconst Loss: 48.8658, KL Div: 0.0000, Attribute Loss: 0.0171
+Epoch[8/20], Reconst Loss: 47.8385, KL Div: 0.0000, Attribute Loss: 0.0130
+Best model saved
+Epoch[9/20], Reconst Loss: 45.4906, KL Div: 0.0000, Attribute Loss: 0.0126
+Best model saved
+Epoch[10/20], Reconst Loss: 44.3146, KL Div: 0.0000, Attribute Loss: 0.0204
+Epoch[11/20], Reconst Loss: 43.0967, KL Div: 0.0000, Attribute Loss: 0.0079
+Best model saved
+Epoch[12/20], Reconst Loss: 42.4372, KL Div: 0.0000, Attribute Loss: 0.0266
+Epoch[13/20], Reconst Loss: 40.1776, KL Div: 0.0000, Attribute Loss: 0.0196
+Epoch[14/20], Reconst Loss: 36.6466, KL Div: 0.0000, Attribute Loss: 0.0112
+Epoch[15/20], Reconst Loss: 37.2801, KL Div: 0.0000, Attribute Loss: 0.0165
+Epoch[16/20], Reconst Loss: 33.1158, KL Div: 0.0000, Attribute Loss: 0.0189
+Epoch[17/20], Reconst Loss: 34.7961, KL Div: 0.0000, Attribute Loss: 0.0155
+Epoch[18/20], Reconst Loss: 33.0791, KL Div: 0.0000, Attribute Loss: 0.0213
+Epoch[19/20], Reconst Loss: 30.2711, KL Div: 0.0000, Attribute Loss: 0.0119
+Epoch[20/20], Reconst Loss: 29.4285, KL Div: 0.0000, Attribute Loss: 0.0282
+#################### Feature Extraction ####################
+Saved Features: /home/jyang4/ProtTP/saved/AE+Triad_rank_GB1/embeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/AE+Triad_rank_GB1/reconstructions.npy
