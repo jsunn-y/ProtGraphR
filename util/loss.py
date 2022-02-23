@@ -25,7 +25,8 @@ def compute_reconst_loss(encoding, x, x_reconst):
     return reconst_loss
 
 def compute_attr_loss(a, a_reconst):
-    return F.mse_loss(a_reconst, a)
+    loss_function = nn.MSELoss(reduction='none')
+    return loss_function(a_reconst, a).sum()
 
 def compute_kl_div(mu, log_var):
     return - 0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp()) 

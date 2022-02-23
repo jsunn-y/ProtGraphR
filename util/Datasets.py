@@ -12,7 +12,7 @@ encoding_dict = {
 }
 
 class BaseDataset(Dataset):
-    """Base class for ZS Datasets."""
+    """Base class for labeled datasets."""
 
     def __init__(self, dataframe, encoding, attribute_names, rank_attributes=True):
 
@@ -30,12 +30,13 @@ class BaseDataset(Dataset):
             self.attributes = scaler.fit_transform(self.attributes)
             self.attributes = torch.tensor(self.attributes).float()
         else:
-            self.attributes = None
+            #placeholder
+            self.attributes = torch.zeros((self.N, 1))
 
     def __len__(self):
         return len(self.data)
     
-    def __getitem__(self, index):            
+    def __getitem__(self, index):          
         return self.X[index], self.attributes[index]
 
     def encode_X(self):
@@ -93,7 +94,7 @@ class PABPDataset(BaseDataset):
         return sequence[122:204]
 
 class MSADataset(Dataset):
-    """Class for processing MSAs."""
+    """Separate Class for processing MSAs."""
     def __init__(self, dataframe, MSAdataframe, encoding):
         
         self.data = MSAdataframe
@@ -108,7 +109,7 @@ class MSADataset(Dataset):
         return len(self.data)
     
     def __getitem__(self, index):            
-        return self.X[index], self.attributes[index]
+        return self.X[index]
 
     def encode_X(self):
         self.X = torch.tensor(encoding_dict[self.encoding](self.all_combos.values)).float()

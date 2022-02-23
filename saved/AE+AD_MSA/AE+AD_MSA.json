@@ -1,0 +1,27 @@
+{
+    "data_config": {
+        "name": "PABP",
+        "encoding": "one-hot",
+        "attributes": [
+            "EVMutation",
+            "ESM_ensemble"
+        ]
+    },
+    "model_config": {
+        "name": "MSATP",
+        "enc_dim1": 256,
+        "enc_dim2": 256,
+        "z_dim": 128,
+        "dec_dim1": 256,
+        "dec_dim2": 256,
+        "reconstruction_loss_weight": 10,
+        "kl_div_weight": 0,
+        "attr_decoding_loss_weight": 1
+    },
+    "train_config": {
+        "seed": 42,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "num_epochs": 120
+    }
+}

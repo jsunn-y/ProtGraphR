@@ -1,0 +1,120 @@
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 1.9575, KL Div: 0.0000, Attribute Loss: 3.2691
+Best model saved
+Epoch[2/120], Reconst Loss: 1.2526, KL Div: 0.0000, Attribute Loss: 3.6239
+Best model saved
+Epoch[3/120], Reconst Loss: 1.3241, KL Div: 0.0000, Attribute Loss: 1.6900
+Best model saved
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 0.3100, KL Div: 0.0000, Attribute Loss: 1.7892
+Best model saved
+Epoch[2/120], Reconst Loss: 0.2963, KL Div: 0.0000, Attribute Loss: 1.3949
+Best model saved
+Epoch[3/120], Reconst Loss: 0.2885, KL Div: 0.0000, Attribute Loss: 0.8683
+Best model saved
+Epoch[4/120], Reconst Loss: 0.2913, KL Div: 0.0000, Attribute Loss: 0.8478
+Epoch[5/120], Reconst Loss: 0.3002, KL Div: 0.0000, Attribute Loss: 1.3307
+Epoch[6/120], Reconst Loss: 0.2955, KL Div: 0.0000, Attribute Loss: 1.0242
+Epoch[7/120], Reconst Loss: 0.2887, KL Div: 0.0000, Attribute Loss: 1.1366
+Epoch[8/120], Reconst Loss: 0.2951, KL Div: 0.0000, Attribute Loss: 0.5872
+Best model saved
+Epoch[9/120], Reconst Loss: 0.2942, KL Div: 0.0000, Attribute Loss: 0.9002
+Epoch[10/120], Reconst Loss: 0.2866, KL Div: 0.0000, Attribute Loss: 1.1647
+Epoch[11/120], Reconst Loss: 0.2855, KL Div: 0.0000, Attribute Loss: 0.7338
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 0.3249, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[2/120], Reconst Loss: 0.3237, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[3/120], Reconst Loss: 0.3312, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[4/120], Reconst Loss: 0.3255, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[5/120], Reconst Loss: 0.3382, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[6/120], Reconst Loss: 0.3293, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[7/120], Reconst Loss: 0.3234, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Epoch[8/120], Reconst Loss: 0.3355, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[9/120], Reconst Loss: 0.3293, KL Div: 0.0000, Attribute Loss: 0.0000
+Epoch[10/120], Reconst Loss: 0.3221, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 1.4006, KL Div: 0.0000, Attribute Loss: 0.0002
+Best model saved
+Epoch[2/120], Reconst Loss: 1.1784, KL Div: 0.0000, Attribute Loss: 0.0001
+Best model saved
+Epoch[3/120], Reconst Loss: 1.1306, KL Div: 0.0000, Attribute Loss: 0.0001
+Best model saved
+Epoch[4/120], Reconst Loss: 0.9785, KL Div: 0.0000, Attribute Loss: 0.0000
+Best model saved
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 1.4273, KL Div: 59.8944, Attribute Loss: 162.6933
+Best model saved
+Epoch[2/120], Reconst Loss: 1.1941, KL Div: 55.4141, Attribute Loss: 212.5630
+Epoch[3/120], Reconst Loss: 1.1580, KL Div: 58.0827, Attribute Loss: 190.0478
+Epoch[4/120], Reconst Loss: 1.0133, KL Div: 54.3554, Attribute Loss: 160.4852
+Best model saved
+Config file:	 /home/jyang4/ProtTP/configs/test.json
+Save directory:	 /home/jyang4/ProtTP/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Epoch[1/120], Reconst Loss: 0.3284, KL Div: 20.7045, Attribute Loss: 62.7938
+Best model saved
+Epoch[2/120], Reconst Loss: 0.3293, KL Div: 18.8565, Attribute Loss: 72.2320
+Epoch[3/120], Reconst Loss: 0.3266, KL Div: 16.3497, Attribute Loss: 51.7938
+Best model saved
+Epoch[4/120], Reconst Loss: 0.3233, KL Div: 10.3975, Attribute Loss: 44.1961
+Best model saved
+Epoch[5/120], Reconst Loss: 0.3409, KL Div: 17.5044, Attribute Loss: 63.1339
+Epoch[6/120], Reconst Loss: 0.3278, KL Div: 15.7636, Attribute Loss: 54.3868
+Epoch[7/120], Reconst Loss: 0.3225, KL Div: 14.0878, Attribute Loss: 56.1890
+Epoch[8/120], Reconst Loss: 0.3394, KL Div: 13.8130, Attribute Loss: 77.5335
+Epoch[9/120], Reconst Loss: 0.3269, KL Div: 19.7131, Attribute Loss: 70.7542
+Epoch[10/120], Reconst Loss: 0.3204, KL Div: 15.4311, Attribute Loss: 58.0179
+Epoch[11/120], Reconst Loss: 0.3247, KL Div: 16.5494, Attribute Loss: 63.7217
+Epoch[12/120], Reconst Loss: 0.3157, KL Div: 21.9736, Attribute Loss: 44.6472
+Epoch[13/120], Reconst Loss: 0.3239, KL Div: 19.2825, Attribute Loss: 36.6645
+Epoch[14/120], Reconst Loss: 0.3123, KL Div: 28.2265, Attribute Loss: 47.7063
+Epoch[15/120], Reconst Loss: 0.3221, KL Div: 24.4657, Attribute Loss: 44.3139
+Epoch[16/120], Reconst Loss: 0.3209, KL Div: 26.1112, Attribute Loss: 39.9543

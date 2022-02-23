@@ -19,6 +19,6 @@
         "seed": 42,
         "batch_size": 128,
         "learning_rate": 0.001,
-        "num_epochs": 80
+        "num_epochs": 120
     }
 }

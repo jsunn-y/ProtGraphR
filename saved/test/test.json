@@ -7,18 +7,20 @@
         ]
     },
     "model_config": {
-        "name": "MSATP",
-        "h_dim1": 256,
-        "h_dim2": 256,
-        "z_dim": 32,
+        "name": "ProtTP",
+        "enc_dim1": 256,
+        "enc_dim2": 256,
+        "z_dim": 128,
+        "dec_dim1": 256,
+        "dec_dim2": 256,
         "reconstruction_loss_weight": 1,
-        "kl_div_weight": 0,
-        "attr_decoding_loss_weight": 0
+        "kl_div_weight": 1,
+        "attr_decoding_loss_weight": 1
     },
     "train_config": {
         "seed": 42,
         "batch_size": 128,
         "learning_rate": 0.001,
-        "num_epochs": 40
+        "num_epochs": 120
     }
 }

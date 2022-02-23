@@ -17,6 +17,7 @@ def index2AA(index):
 index2AA = np.vectorize(index2AA)
 
 def reconst2seq(reconstructions):
+    """Converts a one-hot encoding of a reconstruction to its corresponding amino-acid sequence."""
     reconstructions = unflatten(torch.tensor(reconstructions))
     reconstructions = torch.argmax(reconstructions, axis = 2)
     letters = index2AA(reconstructions)
@@ -46,10 +47,10 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     model_class = get_model_class(model_config['name'])
     if model_config['name'] == 'ProtTP':
         dataset = load_dataset(data_config, model_config)
-        model = model_class(model_config, dataset).to(device)
+        model = model_class(model_config=model_config, dataset=dataset).to(device)
     elif model_config['name'] == 'MSATP':
         dataset, MSAdataset = load_dataset(data_config, model_config)
-        model = model_class(model_config, dataset, MSAdataset).to(device)
+        model = model_class(model_config=model_config, dataset=dataset, MSAdataset=MSAdataset).to(device)
 
     #Get embeddings
     model.load_state_dict(torch.load(save_path + '/best.pth'))
