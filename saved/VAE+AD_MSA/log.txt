@@ -1,0 +1,134 @@
+Config file:	 /home/jyang4/ProtTP/configs/VAE+AD_MSA.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE+AD_MSA
+Device:	 cuda:0
+########## Experiment VAE+AD_MSA: ##########
+Epoch[1/120], Reconst Loss: 1.4082, KL Div: 153.8145, Attribute Loss: 220.2705
+Best model saved
+Epoch[2/120], Reconst Loss: 0.8578, KL Div: 163.6447, Attribute Loss: 186.5105
+Best model saved
+Epoch[3/120], Reconst Loss: 0.9606, KL Div: 165.9808, Attribute Loss: 146.1407
+Best model saved
+Epoch[4/120], Reconst Loss: 0.8752, KL Div: 174.0149, Attribute Loss: 193.4002
+Epoch[5/120], Reconst Loss: 0.6581, KL Div: 161.9785, Attribute Loss: 176.6717
+Epoch[6/120], Reconst Loss: 0.6813, KL Div: 173.9254, Attribute Loss: 169.8085
+Epoch[7/120], Reconst Loss: 0.6858, KL Div: 164.9689, Attribute Loss: 127.8695
+Best model saved
+Epoch[8/120], Reconst Loss: 0.5226, KL Div: 160.8796, Attribute Loss: 172.3703
+Epoch[9/120], Reconst Loss: 0.5213, KL Div: 168.2815, Attribute Loss: 169.3171
+Epoch[10/120], Reconst Loss: 0.5885, KL Div: 158.8049, Attribute Loss: 179.4642
+Epoch[11/120], Reconst Loss: 0.3874, KL Div: 179.4293, Attribute Loss: 147.4213
+Epoch[12/120], Reconst Loss: 0.5231, KL Div: 155.8508, Attribute Loss: 149.7845
+Epoch[13/120], Reconst Loss: 0.4390, KL Div: 147.0785, Attribute Loss: 187.5392
+Epoch[14/120], Reconst Loss: 0.4236, KL Div: 167.1300, Attribute Loss: 162.8858
+Epoch[15/120], Reconst Loss: 0.4532, KL Div: 170.2824, Attribute Loss: 137.5179
+Epoch[16/120], Reconst Loss: 0.3151, KL Div: 153.7642, Attribute Loss: 177.7390
+Epoch[17/120], Reconst Loss: 0.4623, KL Div: 169.7245, Attribute Loss: 150.1834
+Epoch[18/120], Reconst Loss: 0.4492, KL Div: 171.6433, Attribute Loss: 210.7759
+Epoch[19/120], Reconst Loss: 0.4467, KL Div: 175.7459, Attribute Loss: 144.8788
+Epoch[20/120], Reconst Loss: 0.5033, KL Div: 188.6246, Attribute Loss: 158.7784
+Epoch[21/120], Reconst Loss: 0.4105, KL Div: 168.2401, Attribute Loss: 171.5361
+Epoch[22/120], Reconst Loss: 0.5098, KL Div: 173.3457, Attribute Loss: 169.5120
+Epoch[23/120], Reconst Loss: 0.4639, KL Div: 177.6254, Attribute Loss: 190.3214
+Epoch[24/120], Reconst Loss: 0.3297, KL Div: 179.6328, Attribute Loss: 175.5784
+Epoch[25/120], Reconst Loss: 0.4457, KL Div: 174.7092, Attribute Loss: 148.9398
+Epoch[26/120], Reconst Loss: 0.4195, KL Div: 166.1277, Attribute Loss: 146.8199
+Epoch[27/120], Reconst Loss: 0.4165, KL Div: 161.0293, Attribute Loss: 158.8729
+Epoch[28/120], Reconst Loss: 0.4137, KL Div: 181.9944, Attribute Loss: 160.5117
+Epoch[29/120], Reconst Loss: 0.4513, KL Div: 168.4457, Attribute Loss: 152.9722
+Epoch[30/120], Reconst Loss: 0.3900, KL Div: 166.3245, Attribute Loss: 158.8895
+Epoch[31/120], Reconst Loss: 0.4181, KL Div: 171.0252, Attribute Loss: 177.9466
+Epoch[32/120], Reconst Loss: 0.4031, KL Div: 167.2328, Attribute Loss: 167.9553
+Epoch[33/120], Reconst Loss: 0.4474, KL Div: 168.4001, Attribute Loss: 177.9255
+Epoch[34/120], Reconst Loss: 0.4613, KL Div: 170.2690, Attribute Loss: 179.8205
+Epoch[35/120], Reconst Loss: 0.3985, KL Div: 180.1337, Attribute Loss: 162.1121
+Epoch[36/120], Reconst Loss: 0.3194, KL Div: 195.4073, Attribute Loss: 165.0403
+Epoch[37/120], Reconst Loss: 0.3742, KL Div: 156.9066, Attribute Loss: 140.6637
+Epoch[38/120], Reconst Loss: 0.4463, KL Div: 169.7886, Attribute Loss: 180.3037
+Epoch[39/120], Reconst Loss: 0.3809, KL Div: 164.7224, Attribute Loss: 137.0750
+Epoch[40/120], Reconst Loss: 0.3106, KL Div: 158.7029, Attribute Loss: 167.2069
+Epoch[41/120], Reconst Loss: 0.4010, KL Div: 170.3692, Attribute Loss: 127.8509
+Epoch[42/120], Reconst Loss: 0.4195, KL Div: 174.3396, Attribute Loss: 157.9941
+Epoch[43/120], Reconst Loss: 0.2984, KL Div: 160.2252, Attribute Loss: 116.7720
+Best model saved
+Epoch[44/120], Reconst Loss: 0.3802, KL Div: 159.8140, Attribute Loss: 184.3968
+Epoch[45/120], Reconst Loss: 0.3797, KL Div: 183.4546, Attribute Loss: 179.5378
+Epoch[46/120], Reconst Loss: 0.4312, KL Div: 161.2702, Attribute Loss: 185.6753
+Epoch[47/120], Reconst Loss: 0.3330, KL Div: 166.8792, Attribute Loss: 159.9497
+Epoch[48/120], Reconst Loss: 0.3805, KL Div: 165.7056, Attribute Loss: 159.9559
+Epoch[49/120], Reconst Loss: 0.3096, KL Div: 177.1768, Attribute Loss: 161.2737
+Epoch[50/120], Reconst Loss: 0.4671, KL Div: 161.3091, Attribute Loss: 179.8426
+Epoch[51/120], Reconst Loss: 0.4014, KL Div: 172.7279, Attribute Loss: 212.9589
+Epoch[52/120], Reconst Loss: 0.3621, KL Div: 172.1531, Attribute Loss: 163.4549
+Epoch[53/120], Reconst Loss: 0.4559, KL Div: 160.8555, Attribute Loss: 192.4781
+Epoch[54/120], Reconst Loss: 0.3687, KL Div: 158.6966, Attribute Loss: 138.2173
+Epoch[55/120], Reconst Loss: 0.3348, KL Div: 155.0175, Attribute Loss: 177.8835
+Epoch[56/120], Reconst Loss: 0.3245, KL Div: 154.9593, Attribute Loss: 174.9850
+Epoch[57/120], Reconst Loss: 0.3604, KL Div: 166.2499, Attribute Loss: 153.3349
+Epoch[58/120], Reconst Loss: 0.3290, KL Div: 157.0199, Attribute Loss: 161.1295
+Epoch[59/120], Reconst Loss: 0.3363, KL Div: 154.2658, Attribute Loss: 135.1522
+Epoch[60/120], Reconst Loss: 0.3866, KL Div: 174.7018, Attribute Loss: 153.9527
+Epoch[61/120], Reconst Loss: 0.3720, KL Div: 164.7154, Attribute Loss: 146.7176
+Epoch[62/120], Reconst Loss: 0.2891, KL Div: 161.9551, Attribute Loss: 183.2755
+Epoch[63/120], Reconst Loss: 0.4113, KL Div: 171.4812, Attribute Loss: 174.0651
+Epoch[64/120], Reconst Loss: 0.3572, KL Div: 170.9875, Attribute Loss: 142.2746
+Epoch[65/120], Reconst Loss: 0.3020, KL Div: 150.3508, Attribute Loss: 178.1762
+Epoch[66/120], Reconst Loss: 0.3304, KL Div: 175.1542, Attribute Loss: 141.1356
+Epoch[67/120], Reconst Loss: 0.3757, KL Div: 175.7543, Attribute Loss: 163.7329
+Epoch[68/120], Reconst Loss: 0.2619, KL Div: 160.6796, Attribute Loss: 158.2163
+Epoch[69/120], Reconst Loss: 0.4224, KL Div: 168.2462, Attribute Loss: 209.3433
+Epoch[70/120], Reconst Loss: 0.3006, KL Div: 150.8840, Attribute Loss: 151.2947
+Epoch[71/120], Reconst Loss: 0.3762, KL Div: 174.3820, Attribute Loss: 161.2543
+Epoch[72/120], Reconst Loss: 0.2863, KL Div: 178.6723, Attribute Loss: 142.1019
+Epoch[73/120], Reconst Loss: 0.4526, KL Div: 159.3730, Attribute Loss: 134.6544
+Epoch[74/120], Reconst Loss: 0.3156, KL Div: 157.3819, Attribute Loss: 164.3005
+Epoch[75/120], Reconst Loss: 0.3248, KL Div: 177.8452, Attribute Loss: 129.4430
+Epoch[76/120], Reconst Loss: 0.3134, KL Div: 151.6276, Attribute Loss: 162.6733
+Epoch[77/120], Reconst Loss: 0.2064, KL Div: 155.5606, Attribute Loss: 184.8860
+Epoch[78/120], Reconst Loss: 0.3485, KL Div: 162.7637, Attribute Loss: 139.6812
+Epoch[79/120], Reconst Loss: 0.3114, KL Div: 173.9024, Attribute Loss: 156.0988
+Epoch[80/120], Reconst Loss: 0.3687, KL Div: 157.3699, Attribute Loss: 158.3211
+Epoch[81/120], Reconst Loss: 0.3303, KL Div: 176.3307, Attribute Loss: 164.0709
+Epoch[82/120], Reconst Loss: 0.3776, KL Div: 188.8849, Attribute Loss: 184.7779
+Epoch[83/120], Reconst Loss: 0.2884, KL Div: 166.4426, Attribute Loss: 127.3572
+Epoch[84/120], Reconst Loss: 0.3670, KL Div: 154.2254, Attribute Loss: 162.0501
+Epoch[85/120], Reconst Loss: 0.2955, KL Div: 155.3709, Attribute Loss: 158.7272
+Epoch[86/120], Reconst Loss: 0.3311, KL Div: 171.5566, Attribute Loss: 164.1543
+Epoch[87/120], Reconst Loss: 0.3677, KL Div: 168.3539, Attribute Loss: 172.1973
+Epoch[88/120], Reconst Loss: 0.2711, KL Div: 165.4452, Attribute Loss: 171.7651
+Epoch[89/120], Reconst Loss: 0.3532, KL Div: 164.2270, Attribute Loss: 188.3268
+Epoch[90/120], Reconst Loss: 0.3991, KL Div: 164.6908, Attribute Loss: 166.9316
+Epoch[91/120], Reconst Loss: 0.2601, KL Div: 166.6167, Attribute Loss: 145.9194
+Epoch[92/120], Reconst Loss: 0.3469, KL Div: 169.7560, Attribute Loss: 155.1366
+Epoch[93/120], Reconst Loss: 0.3182, KL Div: 173.9072, Attribute Loss: 148.4672
+Epoch[94/120], Reconst Loss: 0.2501, KL Div: 158.1118, Attribute Loss: 170.0323
+Epoch[95/120], Reconst Loss: 0.3503, KL Div: 171.9247, Attribute Loss: 127.3083
+Epoch[96/120], Reconst Loss: 0.3182, KL Div: 168.5176, Attribute Loss: 168.4966
+Epoch[97/120], Reconst Loss: 0.4242, KL Div: 180.9604, Attribute Loss: 164.1921
+Epoch[98/120], Reconst Loss: 0.2759, KL Div: 172.7269, Attribute Loss: 150.3655
+Epoch[99/120], Reconst Loss: 0.3553, KL Div: 175.7433, Attribute Loss: 161.1510
+Epoch[100/120], Reconst Loss: 0.3157, KL Div: 171.2184, Attribute Loss: 182.2979
+Epoch[101/120], Reconst Loss: 0.3635, KL Div: 178.9610, Attribute Loss: 136.9303
+Epoch[102/120], Reconst Loss: 0.3330, KL Div: 160.6546, Attribute Loss: 144.1986
+Epoch[103/120], Reconst Loss: 0.2585, KL Div: 162.3978, Attribute Loss: 186.7949
+Epoch[104/120], Reconst Loss: 0.3770, KL Div: 176.6836, Attribute Loss: 172.8891
+Epoch[105/120], Reconst Loss: 0.2590, KL Div: 185.8665, Attribute Loss: 132.8721
+Epoch[106/120], Reconst Loss: 0.3867, KL Div: 167.5639, Attribute Loss: 172.7995
+Epoch[107/120], Reconst Loss: 0.3359, KL Div: 176.0578, Attribute Loss: 138.6507
+Epoch[108/120], Reconst Loss: 0.2869, KL Div: 167.9997, Attribute Loss: 144.4426
+Epoch[109/120], Reconst Loss: 0.2838, KL Div: 182.9680, Attribute Loss: 153.6037
+Epoch[110/120], Reconst Loss: 0.3419, KL Div: 186.6116, Attribute Loss: 150.6597
+Epoch[111/120], Reconst Loss: 0.3350, KL Div: 159.9628, Attribute Loss: 171.1693
+Epoch[112/120], Reconst Loss: 0.4219, KL Div: 166.6741, Attribute Loss: 181.2014
+Epoch[113/120], Reconst Loss: 0.3533, KL Div: 159.3184, Attribute Loss: 167.4226
+Epoch[114/120], Reconst Loss: 0.3674, KL Div: 169.8466, Attribute Loss: 147.1590
+Epoch[115/120], Reconst Loss: 0.3755, KL Div: 161.2711, Attribute Loss: 158.6572
+Epoch[116/120], Reconst Loss: 0.2942, KL Div: 184.7756, Attribute Loss: 143.2581
+Epoch[117/120], Reconst Loss: 0.3543, KL Div: 174.0598, Attribute Loss: 135.5977
+Epoch[118/120], Reconst Loss: 0.3996, KL Div: 167.0997, Attribute Loss: 183.6782
+Epoch[119/120], Reconst Loss: 0.3886, KL Div: 180.7811, Attribute Loss: 157.9181
+Epoch[120/120], Reconst Loss: 0.2797, KL Div: 163.4374, Attribute Loss: 150.4313
+#################### Feature Extraction ####################
+Saved Features: /home/jyang4/ProtTP/saved/VAE+AD_MSA/embeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/VAE+AD_MSA/reconstructions.csv
+Saved Features: /home/jyang4/ProtTP/saved/VAE+AD_MSA/MSAembeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/VAE+AD_MSA/MSAreconstructions.csv

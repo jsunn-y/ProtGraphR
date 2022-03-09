@@ -61,8 +61,6 @@ class GB1Dataset(BaseDataset):
         if full_sequence:
             self.all_combos = self.all_combos.apply(self.generate_full)
         self.n_positions_combined = len(self.all_combos[0])
-        
-
         #self.y = self.data["Fitness"].values
     
     @staticmethod
@@ -102,7 +100,7 @@ class MSADataset(Dataset):
         self.all_combos = self.data["seq"].apply(self.trim)
         self.n_positions_combined = len(self.all_combos[0])
 
-        #fix this later
+        #make this better later
         self.attributes = torch.zeros(len(self.all_combos))
 
     def __len__(self):

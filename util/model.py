@@ -15,6 +15,7 @@ class BaseModel(nn.Module):
         #not sure what this line does tbh
         super(BaseModel, self).__init__()
         
+        dropout = model_config['dropout']
         enc_dim1 = model_config['enc_dim1']
         enc_dim2 = model_config['enc_dim2']
         z_dim = model_config['z_dim']
@@ -40,9 +41,11 @@ class BaseModel(nn.Module):
         self.attr_loss_weight = model_config["attr_decoding_loss_weight"]
         self.kl_div_weight = model_config["kl_div_weight"]
 
+        self.dropout = nn.Dropout(dropout)
         #encoder layers
         self.fce1 = nn.Linear(input_dim, enc_dim1)
         self.fce2 = nn.Linear(enc_dim1, enc_dim2)
+        self.bne = nn.BatchNorm1d(enc_dim2)
         self.fce3 = nn.Linear(enc_dim2, z_dim)
         self.fcvar = nn.Linear(enc_dim2, z_dim)
         
@@ -57,7 +60,10 @@ class BaseModel(nn.Module):
         
     def encode(self, x):
         h1 = F.relu(self.fce1(x))
+        h1 = self.dropout(h1)
         h2 = F.relu(self.fce2(h1))
+        h2 = self.bne(h2)
+        
         if self.variational:
             return self.fce3(h2), self.fcvar(h2)
         else:
@@ -71,6 +77,7 @@ class BaseModel(nn.Module):
 
     def decode(self, z):
         h1 = F.relu(self.fcd1(z))
+        h1 = self.dropout(h1)
         h2 = F.relu(self.fcd2(h1))
         return self.fcd3(h2)
     
@@ -85,8 +92,8 @@ class BaseModel(nn.Module):
         return losses['reconst_loss']*self.reconst_loss_weight + losses['kl_div']*self.kl_div_weight + losses['attr_loss']*self.attr_loss_weight
 
     def optimize(self):
-        self.total_loss = self.get_total_loss(self.losses)
         self.optimizer.zero_grad()
+        self.total_loss = self.get_total_loss(self.losses)
         self.total_loss.backward()
         self.optimizer.step()
 
@@ -119,12 +126,24 @@ class MSATP(BaseModel):
     def __init__(self, MSAdataset, **kwargs):
         super().__init__(**kwargs)
 
+        #separate kl_divergences for each set
+        self.losses['kl_div1'] = 0
+        self.losses['kl_div2'] = 0
+
     def forward(self, x, a, track):
         #both tracks initially encode the sequence to the latent space
         if self.variational:
             mu, log_var = self.encode(x)
             z = self.reparameterize(mu, log_var)
-            self.losses['kl_div'] = compute_kl_div(mu, log_var)
+            #might not need to calculate kl_dov on second pass
+            if track == 1:
+                self.losses['kl_div'] = 0
+                self.losses['kl_div1'] = compute_kl_div(mu, log_var)
+                self.losses['kl_div'] += self.losses['kl_div1']
+            if track == 2:
+                pass
+                #self.losses['kl_div2'] = compute_kl_div(mu, log_var)
+                #self.losses['kl_div'] += self.losses['kl_div2'] 
         else:
             z = self.encode(x)
         

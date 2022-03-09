@@ -1,3 +1,19 @@
 Config file:	 /home/jyang4/ProtTP/configs/VAE_MSA.json
 Save directory:	 /home/jyang4/ProtTP/saved/VAE_MSA
 Device:	 cuda:0
+########## Experiment VAE_MSA: ##########
+Epoch[1/120], Reconst Loss: 3.9967, KL Div (MSA): 6.8366, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.302 seconds
+Best model saved
+Epoch[2/120], Reconst Loss: 3.9903, KL Div (MSA): 5.2297, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.173 seconds
+Best model saved
+Epoch[3/120], Reconst Loss: 3.9782, KL Div (MSA): 5.3259, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.157 seconds
+Epoch[4/120], Reconst Loss: 3.9635, KL Div (MSA): 3.2281, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.167 seconds
+Best model saved
+Epoch[5/120], Reconst Loss: 3.9557, KL Div (MSA): 3.2352, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.154 seconds
+Epoch[6/120], Reconst Loss: 3.9303, KL Div (MSA): 2.6873, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.149 seconds
+Best model saved
+Epoch[7/120], Reconst Loss: 3.9051, KL Div (MSA): 2.4044, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.157 seconds
+Best model saved
+Epoch[8/120], Reconst Loss: 3.9043, KL Div (MSA): 1.8529, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.152 seconds
+Best model saved
+Epoch[9/120], Reconst Loss: 3.9449, KL Div (MSA): 1.8734, KL Div 2: 0.0000, Attribute Loss: 0.0000 --- 1.150 seconds

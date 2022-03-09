@@ -2,9 +2,7 @@
     "data_config": {
         "name": "PABP",
         "encoding": "one-hot",
-        "attributes": [
-            "EVMutation"
-        ]
+        "attributes": []
     },
     "model_config": {
         "name": "MSATP",

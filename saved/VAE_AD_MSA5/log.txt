@@ -1,0 +1,3 @@
+Config file:	 /home/jyang4/ProtTP/configs/VAE_AD_MSA5.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE_AD_MSA5
+Device:	 cuda:0

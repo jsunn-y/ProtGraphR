@@ -1,0 +1,187 @@
+Config file:	 /home/jyang4/ProtTP/configs/VAE+AD_MSA4.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE+AD_MSA4
+Device:	 cuda:0
+########## Experiment VAE+AD_MSA4: ##########
+Epoch[1/120], Reconst Loss: 1.4858, KL Div (MSA): 0.0000, KL Div 2: 160.4566, Attribute Loss: 218.8613 --- 5.764 seconds
+Best model saved
+Epoch[2/120], Reconst Loss: 0.9333, KL Div (MSA): 0.0000, KL Div 2: 168.5307, Attribute Loss: 192.7209 --- 5.596 seconds
+Best model saved
+Epoch[3/120], Reconst Loss: 1.0161, KL Div (MSA): 0.0000, KL Div 2: 156.5018, Attribute Loss: 167.9978 --- 5.586 seconds
+Best model saved
+Epoch[4/120], Reconst Loss: 0.9230, KL Div (MSA): 0.0000, KL Div 2: 159.7361, Attribute Loss: 222.1754 --- 5.561 seconds
+Epoch[5/120], Reconst Loss: 0.7283, KL Div (MSA): 0.0000, KL Div 2: 169.3747, Attribute Loss: 178.4963 --- 5.533 seconds
+Epoch[6/120], Reconst Loss: 0.7831, KL Div (MSA): 0.0000, KL Div 2: 161.1189, Attribute Loss: 192.7117 --- 5.482 seconds
+Epoch[7/120], Reconst Loss: 0.7576, KL Div (MSA): 0.0000, KL Div 2: 160.8411, Attribute Loss: 136.8013 --- 5.482 seconds
+Best model saved
+Epoch[8/120], Reconst Loss: 0.6216, KL Div (MSA): 0.0000, KL Div 2: 159.4872, Attribute Loss: 166.5084 --- 5.493 seconds
+Epoch[9/120], Reconst Loss: 0.6379, KL Div (MSA): 0.0000, KL Div 2: 162.2458, Attribute Loss: 176.9195 --- 5.488 seconds
+Epoch[10/120], Reconst Loss: 0.6483, KL Div (MSA): 0.0000, KL Div 2: 164.7410, Attribute Loss: 168.7398 --- 5.540 seconds
+Epoch[11/120], Reconst Loss: 0.4897, KL Div (MSA): 0.0000, KL Div 2: 161.9619, Attribute Loss: 167.6691 --- 5.522 seconds
+Epoch[12/120], Reconst Loss: 0.6040, KL Div (MSA): 0.0000, KL Div 2: 166.7012, Attribute Loss: 144.6945 --- 5.536 seconds
+Epoch[13/120], Reconst Loss: 0.5281, KL Div (MSA): 0.0000, KL Div 2: 157.4088, Attribute Loss: 191.5940 --- 5.473 seconds
+Epoch[14/120], Reconst Loss: 0.5094, KL Div (MSA): 0.0000, KL Div 2: 174.1249, Attribute Loss: 168.4886 --- 5.534 seconds
+Epoch[15/120], Reconst Loss: 0.5431, KL Div (MSA): 0.0000, KL Div 2: 166.4965, Attribute Loss: 156.6956 --- 5.481 seconds
+Epoch[16/120], Reconst Loss: 0.4039, KL Div (MSA): 0.0000, KL Div 2: 155.7473, Attribute Loss: 183.1209 --- 5.469 seconds
+Epoch[17/120], Reconst Loss: 0.5678, KL Div (MSA): 0.0000, KL Div 2: 171.1112, Attribute Loss: 155.6126 --- 5.527 seconds
+Config file:	 /home/jyang4/ProtTP/configs/VAE+AD_MSA4.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE+AD_MSA4
+Device:	 cuda:0
+########## Experiment VAE+AD_MSA4: ##########
+Epoch[1/120], Reconst Loss: 1.6390, KL Div (MSA): 0.0000, KL Div 2: 163.8035, Attribute Loss: 212.1646 --- 5.687 seconds
+Best model saved
+Epoch[2/120], Reconst Loss: 1.1010, KL Div (MSA): 0.0000, KL Div 2: 166.1286, Attribute Loss: 195.5860 --- 5.530 seconds
+Best model saved
+Epoch[3/120], Reconst Loss: 1.1618, KL Div (MSA): 0.0000, KL Div 2: 149.1946, Attribute Loss: 178.1246 --- 5.484 seconds
+Best model saved
+Epoch[4/120], Reconst Loss: 1.0238, KL Div (MSA): 0.0000, KL Div 2: 164.1170, Attribute Loss: 216.9872 --- 5.611 seconds
+Epoch[5/120], Reconst Loss: 0.7898, KL Div (MSA): 0.0000, KL Div 2: 166.7463, Attribute Loss: 181.8831 --- 5.151 seconds
+Epoch[6/120], Reconst Loss: 0.8403, KL Div (MSA): 0.0000, KL Div 2: 157.9619, Attribute Loss: 199.2362 --- 5.162 seconds
+Epoch[7/120], Reconst Loss: 0.8369, KL Div (MSA): 0.0000, KL Div 2: 160.1378, Attribute Loss: 143.8499 --- 5.217 seconds
+Best model saved
+Epoch[8/120], Reconst Loss: 0.6756, KL Div (MSA): 0.0000, KL Div 2: 156.1040, Attribute Loss: 172.0172 --- 5.201 seconds
+Epoch[9/120], Reconst Loss: 0.7189, KL Div (MSA): 0.0000, KL Div 2: 161.8386, Attribute Loss: 182.4695 --- 5.208 seconds
+Epoch[10/120], Reconst Loss: 0.7128, KL Div (MSA): 0.0000, KL Div 2: 163.9511, Attribute Loss: 169.2513 --- 5.198 seconds
+Epoch[11/120], Reconst Loss: 0.5426, KL Div (MSA): 0.0000, KL Div 2: 167.1650, Attribute Loss: 157.6689 --- 5.206 seconds
+Epoch[12/120], Reconst Loss: 0.6560, KL Div (MSA): 0.0000, KL Div 2: 167.5160, Attribute Loss: 141.4312 --- 5.195 seconds
+Epoch[13/120], Reconst Loss: 0.5753, KL Div (MSA): 0.0000, KL Div 2: 156.3273, Attribute Loss: 188.0052 --- 5.192 seconds
+Epoch[14/120], Reconst Loss: 0.5613, KL Div (MSA): 0.0000, KL Div 2: 170.9381, Attribute Loss: 164.4004 --- 5.256 seconds
+Epoch[15/120], Reconst Loss: 0.5977, KL Div (MSA): 0.0000, KL Div 2: 166.5472, Attribute Loss: 145.4540 --- 5.185 seconds
+Epoch[16/120], Reconst Loss: 0.4406, KL Div (MSA): 0.0000, KL Div 2: 157.7286, Attribute Loss: 178.3958 --- 5.066 seconds
+Epoch[17/120], Reconst Loss: 0.6096, KL Div (MSA): 0.0000, KL Div 2: 169.6515, Attribute Loss: 158.7375 --- 5.064 seconds
+Epoch[18/120], Reconst Loss: 0.5878, KL Div (MSA): 0.0000, KL Div 2: 168.1012, Attribute Loss: 221.6183 --- 5.067 seconds
+Config file:	 /home/jyang4/ProtTP/configs/VAE+AD_MSA4.json
+Save directory:	 /home/jyang4/ProtTP/saved/VAE+AD_MSA4
+Device:	 cuda:0
+########## Experiment VAE+AD_MSA4: ##########
+Epoch[1/120], Reconst Loss: 1.7028, KL Div (MSA): 0.0000, KL Div 2: 160.1340, Attribute Loss: 216.9312 --- 5.361 seconds
+Best model saved
+Epoch[2/120], Reconst Loss: 1.2908, KL Div (MSA): 0.0000, KL Div 2: 171.2257, Attribute Loss: 189.6727 --- 5.232 seconds
+Best model saved
+Epoch[3/120], Reconst Loss: 1.4048, KL Div (MSA): 0.0000, KL Div 2: 154.5022, Attribute Loss: 170.2332 --- 5.175 seconds
+Best model saved
+Epoch[4/120], Reconst Loss: 1.2500, KL Div (MSA): 0.0000, KL Div 2: 161.7849, Attribute Loss: 221.4203 --- 5.165 seconds
+Epoch[5/120], Reconst Loss: 0.9934, KL Div (MSA): 0.0000, KL Div 2: 172.1782, Attribute Loss: 176.5936 --- 5.194 seconds
+Epoch[6/120], Reconst Loss: 1.0465, KL Div (MSA): 0.0000, KL Div 2: 157.5841, Attribute Loss: 198.8167 --- 5.203 seconds
+Epoch[7/120], Reconst Loss: 0.9979, KL Div (MSA): 0.0000, KL Div 2: 159.6558, Attribute Loss: 137.2272 --- 5.154 seconds
+Best model saved
+Epoch[8/120], Reconst Loss: 0.8600, KL Div (MSA): 0.0000, KL Div 2: 160.0277, Attribute Loss: 165.2065 --- 5.129 seconds
+Epoch[9/120], Reconst Loss: 0.8849, KL Div (MSA): 0.0000, KL Div 2: 162.3620, Attribute Loss: 180.2428 --- 5.275 seconds
+Epoch[10/120], Reconst Loss: 0.8594, KL Div (MSA): 0.0000, KL Div 2: 166.2391, Attribute Loss: 161.6993 --- 5.377 seconds
+Epoch[11/120], Reconst Loss: 0.6783, KL Div (MSA): 0.0000, KL Div 2: 166.7196, Attribute Loss: 159.2228 --- 5.125 seconds
+Epoch[12/120], Reconst Loss: 0.7894, KL Div (MSA): 0.0000, KL Div 2: 170.4250, Attribute Loss: 144.9250 --- 5.121 seconds
+Epoch[13/120], Reconst Loss: 0.6672, KL Div (MSA): 0.0000, KL Div 2: 160.1350, Attribute Loss: 184.4966 --- 5.127 seconds
+Epoch[14/120], Reconst Loss: 0.6602, KL Div (MSA): 0.0000, KL Div 2: 171.2369, Attribute Loss: 162.2625 --- 5.145 seconds
+Epoch[15/120], Reconst Loss: 0.6860, KL Div (MSA): 0.0000, KL Div 2: 169.9250, Attribute Loss: 140.6134 --- 5.132 seconds
+Epoch[16/120], Reconst Loss: 0.5273, KL Div (MSA): 0.0000, KL Div 2: 159.4686, Attribute Loss: 169.3160 --- 5.096 seconds
+Epoch[17/120], Reconst Loss: 0.6924, KL Div (MSA): 0.0000, KL Div 2: 172.2923, Attribute Loss: 149.3887 --- 5.101 seconds
+Epoch[18/120], Reconst Loss: 0.6857, KL Div (MSA): 0.0000, KL Div 2: 195.0257, Attribute Loss: 240.7255 --- 5.110 seconds
+Epoch[19/120], Reconst Loss: 0.6563, KL Div (MSA): 0.0000, KL Div 2: 175.7740, Attribute Loss: 151.8083 --- 5.103 seconds
+Epoch[20/120], Reconst Loss: 0.7416, KL Div (MSA): 0.0000, KL Div 2: 173.7052, Attribute Loss: 195.3845 --- 5.125 seconds
+Epoch[21/120], Reconst Loss: 0.6809, KL Div (MSA): 0.0000, KL Div 2: 173.8242, Attribute Loss: 168.0583 --- 5.135 seconds
+Epoch[22/120], Reconst Loss: 0.7147, KL Div (MSA): 0.0000, KL Div 2: 163.8016, Attribute Loss: 187.4336 --- 5.144 seconds
+Epoch[23/120], Reconst Loss: 0.6798, KL Div (MSA): 0.0000, KL Div 2: 179.4799, Attribute Loss: 199.9491 --- 5.165 seconds
+Epoch[24/120], Reconst Loss: 0.5200, KL Div (MSA): 0.0000, KL Div 2: 174.4177, Attribute Loss: 190.7774 --- 5.111 seconds
+Epoch[25/120], Reconst Loss: 0.6625, KL Div (MSA): 0.0000, KL Div 2: 170.7297, Attribute Loss: 162.4387 --- 5.118 seconds
+Epoch[26/120], Reconst Loss: 0.7461, KL Div (MSA): 0.0000, KL Div 2: 173.2682, Attribute Loss: 156.6738 --- 5.136 seconds
+Epoch[27/120], Reconst Loss: 0.6932, KL Div (MSA): 0.0000, KL Div 2: 153.4895, Attribute Loss: 172.0133 --- 5.109 seconds
+Epoch[28/120], Reconst Loss: 0.6310, KL Div (MSA): 0.0000, KL Div 2: 171.0914, Attribute Loss: 179.4442 --- 5.124 seconds
+Epoch[29/120], Reconst Loss: 0.6622, KL Div (MSA): 0.0000, KL Div 2: 173.5715, Attribute Loss: 149.6806 --- 5.134 seconds
+Epoch[30/120], Reconst Loss: 0.5809, KL Div (MSA): 0.0000, KL Div 2: 180.3145, Attribute Loss: 140.9378 --- 5.129 seconds
+Epoch[31/120], Reconst Loss: 0.7121, KL Div (MSA): 0.0000, KL Div 2: 168.8922, Attribute Loss: 186.5196 --- 5.117 seconds
+Epoch[32/120], Reconst Loss: 0.6324, KL Div (MSA): 0.0000, KL Div 2: 167.3441, Attribute Loss: 170.5546 --- 5.127 seconds
+Epoch[33/120], Reconst Loss: 0.6844, KL Div (MSA): 0.0000, KL Div 2: 162.1690, Attribute Loss: 191.2509 --- 5.127 seconds
+Epoch[34/120], Reconst Loss: 0.7391, KL Div (MSA): 0.0000, KL Div 2: 156.1121, Attribute Loss: 204.7694 --- 5.160 seconds
+Epoch[35/120], Reconst Loss: 0.6055, KL Div (MSA): 0.0000, KL Div 2: 178.0468, Attribute Loss: 167.2461 --- 5.362 seconds
+Epoch[36/120], Reconst Loss: 0.4973, KL Div (MSA): 0.0000, KL Div 2: 182.2862, Attribute Loss: 185.2563 --- 5.516 seconds
+Epoch[37/120], Reconst Loss: 0.5450, KL Div (MSA): 0.0000, KL Div 2: 162.3483, Attribute Loss: 143.5351 --- 5.380 seconds
+Epoch[38/120], Reconst Loss: 0.6601, KL Div (MSA): 0.0000, KL Div 2: 174.0571, Attribute Loss: 190.5692 --- 5.430 seconds
+Epoch[39/120], Reconst Loss: 0.6021, KL Div (MSA): 0.0000, KL Div 2: 179.1875, Attribute Loss: 130.0578 --- 5.476 seconds
+Epoch[40/120], Reconst Loss: 0.4833, KL Div (MSA): 0.0000, KL Div 2: 171.6390, Attribute Loss: 158.1484 --- 5.533 seconds
+Epoch[41/120], Reconst Loss: 0.5812, KL Div (MSA): 0.0000, KL Div 2: 175.7777, Attribute Loss: 127.0480 --- 5.459 seconds
+Epoch[42/120], Reconst Loss: 0.6303, KL Div (MSA): 0.0000, KL Div 2: 182.7737, Attribute Loss: 157.2408 --- 5.534 seconds
+Epoch[43/120], Reconst Loss: 0.4734, KL Div (MSA): 0.0000, KL Div 2: 163.7760, Attribute Loss: 117.1009 --- 5.839 seconds
+Best model saved
+Epoch[44/120], Reconst Loss: 0.5415, KL Div (MSA): 0.0000, KL Div 2: 160.6815, Attribute Loss: 183.8201 --- 5.476 seconds
+Epoch[45/120], Reconst Loss: 0.5948, KL Div (MSA): 0.0000, KL Div 2: 175.8671, Attribute Loss: 193.3828 --- 5.555 seconds
+Epoch[46/120], Reconst Loss: 0.5991, KL Div (MSA): 0.0000, KL Div 2: 159.9541, Attribute Loss: 198.9731 --- 5.454 seconds
+Epoch[47/120], Reconst Loss: 0.4658, KL Div (MSA): 0.0000, KL Div 2: 161.3183, Attribute Loss: 162.1333 --- 5.483 seconds
+Epoch[48/120], Reconst Loss: 0.6758, KL Div (MSA): 0.0000, KL Div 2: 176.3053, Attribute Loss: 160.4310 --- 5.430 seconds
+Epoch[49/120], Reconst Loss: 0.5321, KL Div (MSA): 0.0000, KL Div 2: 164.8548, Attribute Loss: 187.9387 --- 5.482 seconds
+Epoch[50/120], Reconst Loss: 0.7003, KL Div (MSA): 0.0000, KL Div 2: 161.4046, Attribute Loss: 191.8160 --- 5.545 seconds
+Epoch[51/120], Reconst Loss: 0.5975, KL Div (MSA): 0.0000, KL Div 2: 160.3174, Attribute Loss: 231.6064 --- 5.469 seconds
+Epoch[52/120], Reconst Loss: 0.5659, KL Div (MSA): 0.0000, KL Div 2: 176.2543, Attribute Loss: 167.6682 --- 5.437 seconds
+Epoch[53/120], Reconst Loss: 0.6684, KL Div (MSA): 0.0000, KL Div 2: 161.5617, Attribute Loss: 200.7687 --- 5.445 seconds
+Epoch[54/120], Reconst Loss: 0.5422, KL Div (MSA): 0.0000, KL Div 2: 162.0609, Attribute Loss: 149.8888 --- 5.564 seconds
+Epoch[55/120], Reconst Loss: 0.5173, KL Div (MSA): 0.0000, KL Div 2: 159.7976, Attribute Loss: 178.3581 --- 5.514 seconds
+Epoch[56/120], Reconst Loss: 0.9625, KL Div (MSA): 0.0000, KL Div 2: 356.1259, Attribute Loss: 195.7555 --- 5.526 seconds
+Epoch[57/120], Reconst Loss: 0.6150, KL Div (MSA): 0.0000, KL Div 2: 206.4387, Attribute Loss: 145.9102 --- 5.415 seconds
+Epoch[58/120], Reconst Loss: 0.5440, KL Div (MSA): 0.0000, KL Div 2: 177.3686, Attribute Loss: 153.0078 --- 5.504 seconds
+Epoch[59/120], Reconst Loss: 0.5637, KL Div (MSA): 0.0000, KL Div 2: 166.4233, Attribute Loss: 135.5319 --- 5.450 seconds
+Epoch[60/120], Reconst Loss: 0.5725, KL Div (MSA): 0.0000, KL Div 2: 162.4153, Attribute Loss: 179.4149 --- 5.455 seconds
+Epoch[61/120], Reconst Loss: 1.1352, KL Div (MSA): 0.0000, KL Div 2: 372.9772, Attribute Loss: 102.9210 --- 5.510 seconds
+Epoch[62/120], Reconst Loss: 0.5195, KL Div (MSA): 0.0000, KL Div 2: 188.4266, Attribute Loss: 181.7950 --- 5.423 seconds
+Epoch[63/120], Reconst Loss: 0.6901, KL Div (MSA): 0.0000, KL Div 2: 171.8024, Attribute Loss: 182.5409 --- 5.462 seconds
+Epoch[64/120], Reconst Loss: 0.5382, KL Div (MSA): 0.0000, KL Div 2: 166.5257, Attribute Loss: 160.5457 --- 5.461 seconds
+Epoch[65/120], Reconst Loss: 0.5018, KL Div (MSA): 0.0000, KL Div 2: 170.1629, Attribute Loss: 172.5757 --- 5.515 seconds
+Epoch[66/120], Reconst Loss: 0.5147, KL Div (MSA): 0.0000, KL Div 2: 153.1507, Attribute Loss: 173.7462 --- 5.499 seconds
+Epoch[67/120], Reconst Loss: 0.6170, KL Div (MSA): 0.0000, KL Div 2: 3041.3655, Attribute Loss: 1432.9548 --- 5.477 seconds
+Epoch[68/120], Reconst Loss: 0.4889, KL Div (MSA): 0.0000, KL Div 2: 1072.9260, Attribute Loss: 86.8556 --- 5.424 seconds
+Epoch[69/120], Reconst Loss: 0.6645, KL Div (MSA): 0.0000, KL Div 2: 906.6071, Attribute Loss: 98.3081 --- 5.420 seconds
+Epoch[70/120], Reconst Loss: 0.5069, KL Div (MSA): 0.0000, KL Div 2: 687.0981, Attribute Loss: 76.7872 --- 5.457 seconds
+Epoch[71/120], Reconst Loss: 0.5593, KL Div (MSA): 0.0000, KL Div 2: 195.4337, Attribute Loss: 165.8372 --- 5.467 seconds
+Epoch[72/120], Reconst Loss: 0.4878, KL Div (MSA): 0.0000, KL Div 2: 179.7396, Attribute Loss: 153.2889 --- 5.513 seconds
+Epoch[73/120], Reconst Loss: 0.6413, KL Div (MSA): 0.0000, KL Div 2: 149.1100, Attribute Loss: 160.9898 --- 5.496 seconds
+Epoch[74/120], Reconst Loss: 0.5247, KL Div (MSA): 0.0000, KL Div 2: 152.2328, Attribute Loss: 183.8367 --- 5.494 seconds
+Epoch[75/120], Reconst Loss: 0.5011, KL Div (MSA): 0.0000, KL Div 2: 161.4418, Attribute Loss: 191.0219 --- 5.502 seconds
+Epoch[76/120], Reconst Loss: 0.4820, KL Div (MSA): 0.0000, KL Div 2: 166.1961, Attribute Loss: 160.5621 --- 5.531 seconds
+Epoch[77/120], Reconst Loss: 0.3664, KL Div (MSA): 0.0000, KL Div 2: 154.9872, Attribute Loss: 198.0146 --- 5.499 seconds
+Epoch[78/120], Reconst Loss: 0.5256, KL Div (MSA): 0.0000, KL Div 2: 155.7101, Attribute Loss: 180.3841 --- 5.444 seconds
+Epoch[79/120], Reconst Loss: 0.5164, KL Div (MSA): 0.0000, KL Div 2: 166.7268, Attribute Loss: 198.2740 --- 5.404 seconds
+Epoch[80/120], Reconst Loss: 0.5460, KL Div (MSA): 0.0000, KL Div 2: 851.1819, Attribute Loss: 108.8124 --- 5.437 seconds
+Epoch[81/120], Reconst Loss: 0.4857, KL Div (MSA): 0.0000, KL Div 2: 173.9897, Attribute Loss: 185.9532 --- 5.494 seconds
+Epoch[82/120], Reconst Loss: 0.6535, KL Div (MSA): 0.0000, KL Div 2: 184.3582, Attribute Loss: 200.3846 --- 5.471 seconds
+Epoch[83/120], Reconst Loss: 0.5247, KL Div (MSA): 0.0000, KL Div 2: 557.2663, Attribute Loss: 132.4380 --- 5.459 seconds
+Epoch[84/120], Reconst Loss: 0.5734, KL Div (MSA): 0.0000, KL Div 2: 153.5878, Attribute Loss: 166.2650 --- 5.446 seconds
+Epoch[85/120], Reconst Loss: 0.4614, KL Div (MSA): 0.0000, KL Div 2: 183.0681, Attribute Loss: 157.5344 --- 5.473 seconds
+Epoch[86/120], Reconst Loss: 0.5258, KL Div (MSA): 0.0000, KL Div 2: 4250.4346, Attribute Loss: 95.3805 --- 5.468 seconds
+Epoch[87/120], Reconst Loss: 0.6168, KL Div (MSA): 0.0000, KL Div 2: 2360.0930, Attribute Loss: 120.7522 --- 5.407 seconds
+Epoch[88/120], Reconst Loss: 0.4439, KL Div (MSA): 0.0000, KL Div 2: 2320.8562, Attribute Loss: 103.7150 --- 5.411 seconds
+Epoch[89/120], Reconst Loss: 0.5760, KL Div (MSA): 0.0000, KL Div 2: 2259.2268, Attribute Loss: 97.7566 --- 5.458 seconds
+Epoch[90/120], Reconst Loss: 0.5491, KL Div (MSA): 0.0000, KL Div 2: 3482.0481, Attribute Loss: 197.8078 --- 5.444 seconds
+Epoch[91/120], Reconst Loss: 0.5211, KL Div (MSA): 0.0000, KL Div 2: 6890616285822976.0000, Attribute Loss: 8573802.0000 --- 5.475 seconds
+Epoch[92/120], Reconst Loss: 1.0633, KL Div (MSA): 0.0000, KL Div 2: 6898.3325, Attribute Loss: 119.3895 --- 5.472 seconds
+Epoch[93/120], Reconst Loss: 0.9214, KL Div (MSA): 0.0000, KL Div 2: 6209.7822, Attribute Loss: 106.5517 --- 5.504 seconds
+Epoch[94/120], Reconst Loss: 0.7426, KL Div (MSA): 0.0000, KL Div 2: 5651.8413, Attribute Loss: 111.9357 --- 5.507 seconds
+Epoch[95/120], Reconst Loss: 0.7039, KL Div (MSA): 0.0000, KL Div 2: 5184.8657, Attribute Loss: 104.6136 --- 5.498 seconds
+Epoch[96/120], Reconst Loss: 0.6723, KL Div (MSA): 0.0000, KL Div 2: 5272.1147, Attribute Loss: 94.2990 --- 5.518 seconds
+Epoch[97/120], Reconst Loss: 0.7835, KL Div (MSA): 0.0000, KL Div 2: 4265.5366, Attribute Loss: 127.8314 --- 5.552 seconds
+Epoch[98/120], Reconst Loss: 0.5613, KL Div (MSA): 0.0000, KL Div 2: 3254.1311, Attribute Loss: 118.2902 --- 5.506 seconds
+Epoch[99/120], Reconst Loss: 0.6267, KL Div (MSA): 0.0000, KL Div 2: 2109.5723, Attribute Loss: 111.7057 --- 5.469 seconds
+Epoch[100/120], Reconst Loss: 0.5720, KL Div (MSA): 0.0000, KL Div 2: 1623.5123, Attribute Loss: 120.3525 --- 5.425 seconds
+Epoch[101/120], Reconst Loss: 0.8060, KL Div (MSA): 0.0000, KL Div 2: 9270.4102, Attribute Loss: 282.1544 --- 5.441 seconds
+Epoch[102/120], Reconst Loss: 0.7679, KL Div (MSA): 0.0000, KL Div 2: 7828.6006, Attribute Loss: 120.1585 --- 5.426 seconds
+Epoch[103/120], Reconst Loss: 0.5453, KL Div (MSA): 0.0000, KL Div 2: 6442.4219, Attribute Loss: 123.9358 --- 5.405 seconds
+Epoch[104/120], Reconst Loss: 0.6572, KL Div (MSA): 0.0000, KL Div 2: 5039.0942, Attribute Loss: 181.1004 --- 5.438 seconds
+Epoch[105/120], Reconst Loss: 0.5235, KL Div (MSA): 0.0000, KL Div 2: 3945.7336, Attribute Loss: 92.9190 --- 5.714 seconds
+Epoch[106/120], Reconst Loss: 0.6767, KL Div (MSA): 0.0000, KL Div 2: 3552.5371, Attribute Loss: 90.5805 --- 5.517 seconds
+Epoch[107/120], Reconst Loss: 0.8502, KL Div (MSA): 0.0000, KL Div 2: 3538.4897, Attribute Loss: 94.6429 --- 5.499 seconds
+Epoch[108/120], Reconst Loss: 0.6140, KL Div (MSA): 0.0000, KL Div 2: 3434.9009, Attribute Loss: 107.5135 --- 5.488 seconds
+Epoch[109/120], Reconst Loss: 0.6192, KL Div (MSA): 0.0000, KL Div 2: 3370.3809, Attribute Loss: 83.9913 --- 5.511 seconds
+Epoch[110/120], Reconst Loss: 0.5960, KL Div (MSA): 0.0000, KL Div 2: 3257.6301, Attribute Loss: 87.7849 --- 5.456 seconds
+Epoch[111/120], Reconst Loss: 0.6298, KL Div (MSA): 0.0000, KL Div 2: 2992.6816, Attribute Loss: 92.4440 --- 5.532 seconds
+Epoch[112/120], Reconst Loss: 0.7232, KL Div (MSA): 0.0000, KL Div 2: 2844.6636, Attribute Loss: 97.7796 --- 5.494 seconds
+Epoch[113/120], Reconst Loss: 0.9028, KL Div (MSA): 0.0000, KL Div 2: 2807.0403, Attribute Loss: 96.3613 --- 5.495 seconds
+Epoch[114/120], Reconst Loss: 0.7338, KL Div (MSA): 0.0000, KL Div 2: 2801.2117, Attribute Loss: 71.2511 --- 5.445 seconds
+Epoch[115/120], Reconst Loss: 0.6853, KL Div (MSA): 0.0000, KL Div 2: 2725.8716, Attribute Loss: 101.3480 --- 5.498 seconds
+Epoch[116/120], Reconst Loss: 0.5949, KL Div (MSA): 0.0000, KL Div 2: 2662.8228, Attribute Loss: 104.3017 --- 5.503 seconds
+Epoch[117/120], Reconst Loss: 0.6185, KL Div (MSA): 0.0000, KL Div 2: 2474.0972, Attribute Loss: 67.5719 --- 5.450 seconds
+Epoch[118/120], Reconst Loss: 0.7056, KL Div (MSA): 0.0000, KL Div 2: 2196.0332, Attribute Loss: 66.4812 --- 5.465 seconds
+Epoch[119/120], Reconst Loss: 0.6648, KL Div (MSA): 0.0000, KL Div 2: 1857.9337, Attribute Loss: 84.1172 --- 5.456 seconds
+Epoch[120/120], Reconst Loss: 0.5201, KL Div (MSA): 0.0000, KL Div 2: 3720.1274, Attribute Loss: 60.6149 --- 5.471 seconds
+Total Time: 646.793 seconds
+#################### Feature Extraction ####################
+Saved Features: /home/jyang4/ProtTP/saved/VAE+AD_MSA4/embeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/VAE+AD_MSA4/reconstructions.csv
+Saved Probabilities: /home/jyang4/ProtTP/saved/VAE+AD_MSA4/log_probs.csv
+Saved Features: /home/jyang4/ProtTP/saved/VAE+AD_MSA4/MSAembeddings.npy
+Saved Reconstructions: /home/jyang4/ProtTP/saved/VAE+AD_MSA4/MSAreconstructions.csv
