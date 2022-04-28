@@ -81,8 +81,7 @@ def start_training(save_path, data_config, model_config, train_config, device):
                 #alternate forward passes between the two tracks during training
                 model(x1, a, track=1)
                 #second track will only forwad pass if the attribute decoding loss > 0
-                if model.attributes:
-                    model(x2, a, track=2)
+                model(x2, a, track=2)
                 
                 #backward pass
                 model.optimize()
@@ -98,8 +97,8 @@ def start_training(save_path, data_config, model_config, train_config, device):
             print ("Epoch[{}/{}], Reconst Loss: {:.4f}, KL Div: {:.4f}, Attribute Loss: {:.4f} --- {:.3f} seconds" 
                 .format(epoch+1, train_config['num_epochs'], cum_losses['reconst_loss'], cum_losses['kl_div'], cum_losses['attr_loss'], epoch_time))
         if model_config['name'] == 'MSATP':
-            print ("Epoch[{}/{}], Reconst Loss: {:.4f}, KL Div (MSA): {:.4f}, KL Div 2: {:.4f}, Attribute Loss: {:.4f} --- {:.3f} seconds" 
-                .format(epoch+1, train_config['num_epochs'], cum_losses['reconst_loss'], cum_losses['kl_div1'], cum_losses['kl_div2'], cum_losses['attr_loss'], epoch_time)) 
+            print ("Epoch[{}/{}], Reconst Loss (MSA): {:.4f}, Reconst Loss (Mutants): {:.4f}, KL Div (MSA): {:.4f}, KL Div (Mutants): {:.4f}, Attr Loss: {:.4f} --- {:.3f} seconds" 
+                .format(epoch+1, train_config['num_epochs'], cum_losses['reconst_loss1'], cum_losses['reconst_loss2'], cum_losses['kl_div1'], cum_losses['kl_div2'], cum_losses['attr_loss'], epoch_time)) 
             
         #update the best model after each epoch
         if epoch == 0 or total_loss < best_loss:

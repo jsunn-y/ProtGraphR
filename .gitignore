@@ -8,3 +8,4 @@
 ./.git/objects/fb/b4eadf2e597a6a74ae5a3f2a4e79a221cc13c3
 *.npy
 *.csv
+*.model_params

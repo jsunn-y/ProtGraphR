@@ -40,6 +40,7 @@ class BaseDataset(Dataset):
         return self.X[index], self.attributes[index]
 
     def encode_X(self):
+        #all_combos needs to be defined from the child classes
         self.X = torch.tensor(encoding_dict[self.encoding](self.all_combos.values)).float()
         self.input_dim = self.X.shape[1]
         self.n_residues = self.input_dim/len(ALL_AAS)
@@ -101,6 +102,7 @@ class MSADataset(Dataset):
         self.n_positions_combined = len(self.all_combos[0])
 
         #make this better later
+        #placeholder solution
         self.attributes = torch.zeros(len(self.all_combos))
 
     def __len__(self):

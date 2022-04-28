@@ -28,9 +28,9 @@ class BaseModel(nn.Module):
         self.variational = model_config['kl_div_weight'] != 0
         self.attributes = model_config['attr_decoding_loss_weight'] != 0
         
-        #if decoding attributes, check to make sure attributes were specified
+        #if decoding attributes, check to make sure attributes were specified in the dataset
         if self.attributes:
-            assert torch.sum(dataset.attributes) != 0
+            assert torch.sum(dataset.attributes, 0)[0] != 0
 
         self.losses = {}
         self.losses['reconst_loss'] = 0
@@ -126,9 +126,13 @@ class MSATP(BaseModel):
     def __init__(self, MSAdataset, **kwargs):
         super().__init__(**kwargs)
 
-        #separate kl_divergences for each set
+        #separate kl_divergences for each dataset
         self.losses['kl_div1'] = 0
         self.losses['kl_div2'] = 0
+
+        #separate the reconstruction losses for each dataset
+        self.losses['reconst_loss1'] = 0
+        self.losses['reconst_loss2'] = 0
 
     def forward(self, x, a, track):
         #both tracks initially encode the sequence to the latent space
@@ -141,21 +145,28 @@ class MSATP(BaseModel):
                 self.losses['kl_div1'] = compute_kl_div(mu, log_var)
                 self.losses['kl_div'] += self.losses['kl_div1']
             if track == 2:
-                pass
-                #self.losses['kl_div2'] = compute_kl_div(mu, log_var)
-                #self.losses['kl_div'] += self.losses['kl_div2'] 
+                self.losses['kl_div2'] = compute_kl_div(mu, log_var)
+                self.losses['kl_div'] += self.losses['kl_div2'] 
         else:
             z = self.encode(x)
         
         #track 1 decodes the MSA
         if track == 1:
+            self.losses['reconst_loss'] = 0
             x_reconst = self.decode(z)
-            self.losses['reconst_loss'] = compute_reconst_loss(self.encoding, x, x_reconst)
+            self.losses['reconst_loss1'] = compute_reconst_loss(self.encoding, x, x_reconst)
+            self.losses['reconst_loss'] += self.losses['reconst_loss1']
         
-        #track 2 decodes the attributes
+        #track 2 decodes the attributes from the mutant sequences
         elif track == 2:
-            attr_reconst = self.decode_attr(z)
-            self.losses['attr_loss'] = compute_attr_loss(a, attr_reconst)
+            if self.attributes:
+                attr_reconst = self.decode_attr(z)
+                self.losses['attr_loss'] = compute_attr_loss(a, attr_reconst)
+
+            #reconstruct the mutants
+            x_reconst = self.decode(z)
+            self.losses['reconst_loss2'] = compute_reconst_loss(self.encoding, x, x_reconst)
+            self.losses['reconst_loss'] += 10 * self.losses['reconst_loss2']
 
 model_dict = {
     'ProtTP' : ProtTP,

@@ -22,13 +22,14 @@ def load_dataset(data_config, model_config, extract=False):
 
     dataset = data_dict[dataset_name]['dataset_class'](dataframe = df, encoding = data_config['encoding'], attribute_names = data_config['attributes'])
     dataset.encode_X()
+
     if model_name == 'MSATP':
         align = AlignIO.read(data_dict[dataset_name]['alignment_file'], format='fasta')
         list = []
         for entry in align:
             list.append(str(entry.seq))
         MSAdf = pd.DataFrame(list, columns=['seq'])
-        # Sam sinai only too the first part of the alignment
+        # Sam sinai only used the first part of the alignment
         # MSAdf = MSAdf[:50000]
         MSAdf.to_csv('MSA.csv')
         MSAdataset = MSADataset(dataframe = df, MSAdataframe = MSAdf, encoding = data_config['encoding'])
