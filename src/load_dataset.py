@@ -1,7 +1,7 @@
 import pandas as pd
 from pyparsing import col
 from torch.utils.data import DataLoader
-from util.Datasets import *
+from src.Datasets import *
 from Bio import AlignIO
 
 #could make this better (some should go in config file, some should be parser arguments for evSeq)

@@ -4,7 +4,7 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
-from util.encoding_utils import *
+from src.encoding_utils import *
 
 encoding_dict = {
     'one-hot' : generate_onehot,

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-from util.encoding_utils import *
+from src.encoding_utils import *
 
 def unflatten(tensor):
     batch_size = tensor.shape[0]

@@ -8,7 +8,7 @@ import numpy as np
 
 from torch.utils.data import DataLoader
 from time import gmtime, strftime
-from util.train import start_training
+from src.train import start_training
 from extract import extract_features
 
 class Logger(object):

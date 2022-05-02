@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd
 
 from torch.utils.data import DataLoader
-from util.load_dataset import load_dataset
-from util.model import *
-from util.encoding_utils import *
+from src.load_dataset import load_dataset
+from src.model import *
+from src.encoding_utils import *
 
 def index2AA(index):
     return ALL_AAS[index]
