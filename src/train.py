@@ -51,6 +51,46 @@ def train(model: nn.Module, device: torch.device, data_loader: DataLoader, optim
     avg_loss = total_loss / len(data_loader)
     return avg_loss
 
+def eval(model: nn.Module, device: torch.device, loader: DataLoader,
+         pbar: tqdm) -> np.array:
+    """Evaluates the model by extracting the embeddings.
+
+    Args
+    - model: nn.Module, GNN model, already moved to device
+    - device: torch.device
+    - loader: DataLoader
+    - evaluator: Evaluator from OGB
+    - pbar: tqdm, progress bar
+
+    Returns: dict, with one (key, value)
+    - key is dataset.eval_metric (which in this case is 'rocauc')
+    - value is the AUROC
+    """
+    model.eval()
+    save_embeddings = np.array([])
+
+    pbar.reset(total=len(loader))
+    pbar.set_description('Evaluating')
+    
+    for step, batch in enumerate(loader):
+        batch = batch.to(device)
+        x = batch.x.to(device)
+        pos_edge_index = batch.edge_index.to(device)
+        neg_edge_index = batch.neg_edge_index.to(device)
+
+        with torch.no_grad():
+            embedding = model.encode(x, pos_edge_index)
+
+        #need to figure out how to get the right features from the graph object
+
+        if save_embeddings.shape[0] == 0:
+            save_embeddings = embedding.cpu()
+        else:
+            save_embeddings = np.concatenate([save_embeddings, embedding.cpu()], axis=0)
+        pbar.update()
+
+    return save_embeddings
+
 def start_training(save_path, data_config, model_config, train_config, device):
 
     # Sample and fix a random seed if not set in train_config
@@ -67,7 +107,7 @@ def start_training(save_path, data_config, model_config, train_config, device):
     model_class = get_model_class(model_config['name'])
     
     # Initialize dataset
-    dataset = load_dataset(data_config, model_config)
+    dataset, model_config = load_dataset(data_config, model_config)
     model = model_class(GraphEncoder(model_config = model_config)).to(device)
     
     #Initialize dataloaders
@@ -79,7 +119,7 @@ def start_training(save_path, data_config, model_config, train_config, device):
     # Start training
     pbar = tqdm()
     for epoch in range(1, 1 + train_config['num_epochs']):
-        loss = train(model_class, device, train_loader, optimizer, pbar)
+        loss = train(model, device, train_loader, optimizer, pbar)
 
         #train_result = eval(model, device, train_loader, evaluator, pbar)
         #val_result = eval(model, device, valid_loader, evaluator, pbar)
