@@ -71,7 +71,7 @@ def start_training(save_path, data_config, model_config, train_config, device):
     model = model_class(GraphEncoder(model_config = model_config)).to(device)
     
     #Initialize dataloaders
-    train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], shuffle=True)
+    train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0005)

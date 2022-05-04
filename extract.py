@@ -11,30 +11,6 @@ from src.load_dataset import load_dataset
 from src.model import *
 from src.encoding_utils import *
 
-def index2AA(index):
-    return ALL_AAS[index]
-
-index2AA = np.vectorize(index2AA)
-
-def compute_log_probability(x,x_reconst):
-    #flipped from sam sinai code
-    prod_mat= x @ x_reconst.T
-    #take the log before or after?
-    prod_mat = np.log(prod_mat)
-    sum_diag=np.trace(prod_mat)
-    diag = prod_mat.diagonal().reshape(1, -1)
-    return sum_diag, diag
-
-def reconst2seq(reconstructions):
-    """Converts a one-hot encoding of a reconstruction to its corresponding amino-acid sequence."""
-    reconstructions = unflatten(torch.tensor(reconstructions))
-    reconstructions = torch.argmax(reconstructions, axis = 2)
-    letters = index2AA(reconstructions)
-    seqs = []
-    for row in letters:
-        seqs.append(''.join(row))
-    return pd.DataFrame(seqs)
-
 def run_forward(model, dataset, device, train_config):
     model.eval()
     with torch.no_grad():
@@ -97,12 +73,6 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     if model_config['name'] == 'ProtTP':
         dataset = load_dataset(data_config, model_config, extract=True)
         model = model_class(model_config=model_config, dataset=dataset).to(device)
-    elif model_config['name'] == 'MSATP':
-        dataset, MSAdataset = load_dataset(data_config, model_config, extract=True)
-        model = model_class(model_config=model_config, dataset=dataset, MSAdataset=MSAdataset).to(device)
-        #make sure the WT sequences match
-        #for i, j in zip(dataset.X[-1], MSAdataset.X[0]):
-        #    assert i == j
 
     #Get embeddings
     model.load_state_dict(torch.load(save_path + '/best.pth'))

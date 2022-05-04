@@ -1,0 +1,22 @@
+{
+    "data_config": {
+        "name": "GB1",
+        "encoding": "ESM"
+    },
+    "model_config": {
+        "name": "GAE",
+        "node_dim": 1,
+        "hidden_dim": 1,
+        "num_layers": 2, 
+        "dropout": 0.3, 
+        "edge_dim": 1, 
+        "reconstruction_loss_weight": 1,
+        "kl_div_weight": 0
+    },
+    "train_config": {
+        "seed": 42,
+        "batch_size": 128,
+        "learning_rate": 1e-3,
+        "num_epochs": 80
+    }
+}

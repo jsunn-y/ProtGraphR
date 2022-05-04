@@ -17,6 +17,7 @@ def get_model_class(model_name):
 class GraphEncoder(nn.Module):
     def __init__(self, model_config):
         """
+        Encoder module for the GAE or VGAE.
         """
         super(GraphEncoder, self).__init__()
 
