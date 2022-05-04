@@ -9,29 +9,9 @@ from tqdm.auto import tqdm
 
 from torch.utils.data import DataLoader
 from src.load_dataset import load_dataset
-from src.train import eval
+from src.train_eval import extract_features
 from src.model import *
 from src.encoding_utils import *
-
-def extract_features(save_path, data_config, model_config, train_config, device):
-    '''Saves features after training. '''
-    print('#################### Feature Extraction ####################')
-
-    # Get model class and load data
-    model_class = get_model_class(model_config['name'])
-    dataset, model_config = load_dataset(data_config, model_config, extract=True)
-    model = model_class(GraphEncoder(model_config = model_config)).to(device)
-    
-    #Initialize dataloaders
-    loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
-
-    #Get best model
-    model.load_state_dict(torch.load(save_path + '/best.pth'))
-    pbar = tqdm()
-    embeddings = eval(model, device, loader, pbar)
-
-    np.save(os.path.join(save_path, 'embeddings.npy'), embeddings)
-    print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -67,6 +47,9 @@ if __name__ == "__main__":
         device = 'cpu'
     print('Device:\t {}'.format(device))
 
+    '''Saves features after training. '''
+    print('#################### Feature Extraction ####################')
+    
     extract_features(
         save_path=save_dir,
         data_config=config['data_config'],

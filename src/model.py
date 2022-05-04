@@ -28,21 +28,24 @@ class GraphEncoder(nn.Module):
         self.dropout = model_config['dropout']
         self.edge_dim = model_config['edge_dim']
 
-        # a list of GATv2 layers, with dropout
-        self.convs = nn.ModuleList()
-        self.bns = nn.ModuleList()
-        for l in range(self.num_layers):
-            layer = pyg_nn.GATv2Conv(in_channels=self.hidden_dim,
-                                     out_channels=self.hidden_dim,
-                                     dropout=self.dropout,
-                                     edge_dim = self.edge_dim)
-            self.convs.append(layer)
-            self.bns.append(nn.BatchNorm1d(self.hidden_dim))
+        self.conv1 = GATv2Conv(
+            in_channels=self.node_dim,
+            out_channels=self.hidden_dim,
+            dropout=self.dropout,
+            edge_dim=self.edge_dim
+        )
+
+        self.conv2 = GATv2Conv(
+            in_channels=self.hidden_dim,
+            out_channels=self.hidden_dim,
+            dropout=self.dropout,
+            edge_dim=self.edge_dim
+        )
 
         # fully-connected final layer
         self.fc = nn.Linear(self.hidden_dim, 1)
 
-    def forward(self, data: pyg.data.Data) -> torch.Tensor:
+    def forward(self, data: pyg.data.Data, pool = False) -> torch.Tensor:
         """
         Args
         - data: pyg.data.Batch, a batch of graphs
@@ -51,16 +54,16 @@ class GraphEncoder(nn.Module):
             probability for each graph
         """
         x, edge_index, edge_attr, batch = (
-            data.x, data.edge_index, data.edge_attr, data.batch) #use edge_attr.to(torch.float32)
+            data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
 
-        for l, conv in enumerate(self.convs):
-            x = conv(x, edge_index, edge_attr)
-            if l != self.num_layers - 1:
-                x = self.bns[l](x)
-                x = F.relu(x)
+        x = self.conv1(x, edge_index, edge_attr)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index, edge_attr)
+        x = F.relu(x)
 
-        x = pyg_nn.global_mean_pool(x, batch=batch)
-        x = self.fc(x)
+        if pool:
+            x = pyg_nn.global_mean_pool(x, batch=batch)
+            #x = self.fc(x)
         return x
 
 # class GAE_new(GAE):

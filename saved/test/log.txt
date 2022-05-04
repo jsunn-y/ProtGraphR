@@ -1,0 +1,152 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+768
+5
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+768
+5
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+768
+5
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2561
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2569
+Best model saved
+Epoch 02, loss: 172.2489
+Best model saved
+Epoch 03, loss: 171.6535
+Best model saved
+Epoch 04, loss: 171.3309
+Best model saved
+Epoch 05, loss: 170.6752
+Best model saved
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2562
+Best model saved
+#################### Feature Extraction ####################
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2561
+Best model saved
+#################### Feature Extraction ####################
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2561
+Best model saved
+/scratch/ml/jyang4/ProtGraphR/data/gb1_graphs_fixed_esm
+#################### Feature Extraction ####################
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 610.2563
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 177.0710
+Best model saved
+#################### Feature Extraction ####################

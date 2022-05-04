@@ -6,15 +6,15 @@
     "model_config": {
         "name": "GAE",
         "hidden_dim": 32,
-        "num_layers": 2, 
-        "dropout": 0.5, 
+        "num_layers": 2,
+        "dropout": 0.5,
         "reconstruction_loss_weight": 1,
         "kl_div_weight": 0
     },
     "train_config": {
         "seed": 42,
         "batch_size": 128,
-        "learning_rate": 1e-4,
+        "learning_rate": 0.0001,
         "num_epochs": 1,
         "num_workers": 8
     }

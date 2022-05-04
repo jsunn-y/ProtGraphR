@@ -5,10 +5,10 @@ import numpy as np
 from itertools import cycle
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader
+from torch_geometric.loader import DataLoader
 from tqdm.auto import tqdm
 
-from src.Datasets import MSADataset
+from src.Datasets import *
 from src.load_dataset import load_dataset
 from src.model import *
 
@@ -36,11 +36,11 @@ def train(model: nn.Module, device: torch.device, data_loader: DataLoader, optim
         batch_size = batch.batch.max().item()
 
         x = batch.x.to(device)
-        pos_edge_index = batch.edge_index.to(device)
-        neg_edge_index = batch.neg_edge_index.to(device)
+        edge_index = batch.edge_index.to(device)
+        #neg_edge_index = batch.neg_edge_index.to(device)
         
-        z = model.encode(x, pos_edge_index)
-        loss = model.recon_loss(z, pos_edge_index, neg_edge_index)
+        z = model.encode(batch)
+        loss = model.recon_loss(z, edge_index)
         total_loss += loss.item() * batch_size
 
         optimizer.zero_grad()
@@ -74,15 +74,11 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
     
     for step, batch in enumerate(loader):
         batch = batch.to(device)
-        x = batch.x.to(device)
-        pos_edge_index = batch.edge_index.to(device)
-        neg_edge_index = batch.neg_edge_index.to(device)
 
         with torch.no_grad():
-            embedding = model.encode(x, pos_edge_index)
+            embedding = model.encode(batch, pool=True)
 
         #need to figure out how to get the right features from the graph object
-
         if save_embeddings.shape[0] == 0:
             save_embeddings = embedding.cpu()
         else:
@@ -127,8 +123,28 @@ def start_training(save_path, data_config, model_config, train_config, device):
         tqdm.write(f'Epoch {epoch:02d}, loss: {loss:.4f}')
             
         #update the best model after each epoch
-        if epoch == 0 or loss < best_loss:
+        if epoch == 1 or loss < best_loss:
             best_loss = loss
             torch.save(model.state_dict(), save_path + '/best.pth')
             print('Best model saved') 
+
+def extract_features(save_path, data_config, model_config, train_config, device):
+
+    # Get model class and load data
+    model_class = get_model_class(model_config['name'])
+    dataset, model_config = load_dataset(data_config, model_config, extract=True)
+
+    #Use Pytorch's built in GAE/VGAE
+    model = model_class(GraphEncoder(model_config = model_config)).to(device)
+    
+    #Initialize dataloaders
+    loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+
+    #Get best model
+    model.load_state_dict(torch.load(save_path + '/best.pth'))
+    pbar = tqdm()
+    embeddings = eval(model, device, loader, pbar)
+
+    np.save(os.path.join(save_path, 'embeddings.npy'), embeddings)
+    print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))
 

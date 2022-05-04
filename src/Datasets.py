@@ -5,7 +5,8 @@ import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
 from src.encoding_utils import *
-
+import torch_geometric
+from tqdm.auto import tqdm
 
 # encoding_dict = {
 #     'one-hot' : generate_onehot,
@@ -24,11 +25,18 @@ class GraphDataset(Dataset):
         self._graph_dir = graph_dir
         self._s2g_list = os.listdir(graph_dir)
         self.pygs = []
+
+        pbar = tqdm()
+        pbar.set_description('Loading Graphs')
+        pbar.reset(total=len(self._s2g_list))
+
         for s2g in self._s2g_list:
+            s2g = os.path.join(os.getcwd(), graph_dir, s2g) 
             self.pygs.append(torch.load(s2g))
+            pbar.update()
 
     def __len__(self) -> int:
         return len(self._s2g_list)
 
-    def __getitem__(self, index: int) -> torch_geometric.Data:
+    def __getitem__(self, index: int):
         return self.pygs[index]

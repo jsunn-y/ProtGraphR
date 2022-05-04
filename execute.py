@@ -8,8 +8,7 @@ import numpy as np
 
 from torch.utils.data import DataLoader
 from time import gmtime, strftime
-from src.train import start_training
-from extract import extract_features
+from src.train_eval import start_training, extract_features
 
 class Logger(object):
     def __init__(self):
@@ -92,6 +91,10 @@ start_training(
 if args.extract:    
     # Get exp_directory
     #exp_dir = os.path.join(os.getcwd(), save_dir)
+    
+    '''Saves features after training. '''
+    print('#################### Feature Extraction ####################')
+
     extract_features(
         save_path=save_dir,
         data_config=config['data_config'],
