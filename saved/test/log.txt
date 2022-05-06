@@ -150,3 +150,225 @@ Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, p
 Epoch 01, loss: 177.0710
 Best model saved
 #################### Feature Extraction ####################
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 177.1215
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/test/embeddings.npy
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test
+Device:	 cuda:0
+########## Experiment test: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 2390.6057
+Best model saved
+Epoch 02, loss: 1383.1342
+Best model saved
+Epoch 03, loss: 1318.8375
+Best model saved
+Epoch 04, loss: 1286.3026
+Best model saved
+Epoch 05, loss: 1260.5448
+Best model saved
+Epoch 06, loss: 1239.9375
+Best model saved
+Epoch 07, loss: 1225.4640
+Best model saved
+Epoch 08, loss: 1213.6714
+Best model saved
+Epoch 09, loss: 1201.6985
+Best model saved
+Epoch 10, loss: 1189.6864
+Best model saved
+Epoch 11, loss: 1178.6349
+Best model saved
+Epoch 12, loss: 1167.7300
+Best model saved
+Epoch 13, loss: 1155.0977
+Best model saved
+Epoch 14, loss: 1143.2332
+Best model saved
+Epoch 15, loss: 1131.2666
+Best model saved
+Epoch 16, loss: 1120.4590
+Best model saved
+Epoch 17, loss: 1110.3931
+Best model saved
+Epoch 18, loss: 1101.2078
+Best model saved
+Epoch 19, loss: 1093.0344
+Best model saved
+Epoch 20, loss: 1085.5632
+Best model saved
+Epoch 21, loss: 1077.8893
+Best model saved
+Epoch 22, loss: 1071.6297
+Best model saved
+Epoch 23, loss: 1065.2554
+Best model saved
+Epoch 24, loss: 1059.3969
+Best model saved
+Epoch 25, loss: 1053.6715
+Best model saved
+Epoch 26, loss: 1048.6960
+Best model saved
+Epoch 27, loss: 1042.9091
+Best model saved
+Epoch 28, loss: 1037.7449
+Best model saved
+Epoch 29, loss: 1031.9332
+Best model saved
+Epoch 30, loss: 1026.8822
+Best model saved
+Epoch 31, loss: 1022.0204
+Best model saved
+Epoch 32, loss: 1017.4756
+Best model saved
+Epoch 33, loss: 1013.2291
+Best model saved
+Epoch 34, loss: 1009.4010
+Best model saved
+Epoch 35, loss: 1005.7935
+Best model saved
+Epoch 36, loss: 1002.4169
+Best model saved
+Epoch 37, loss: 998.9306
+Best model saved
+Epoch 38, loss: 995.8736
+Best model saved
+Epoch 39, loss: 993.0606
+Best model saved
+Epoch 40, loss: 990.2804
+Best model saved
+Epoch 41, loss: 987.8899
+Best model saved
+Epoch 42, loss: 985.2651
+Best model saved
+Epoch 43, loss: 983.1961
+Best model saved
+Epoch 44, loss: 980.9161
+Best model saved
+Epoch 45, loss: 979.0010
+Best model saved
+Epoch 46, loss: 976.7863
+Best model saved
+Epoch 47, loss: 974.6374
+Best model saved
+Epoch 48, loss: 973.2302
+Best model saved
+Epoch 49, loss: 971.2191
+Best model saved
+Epoch 50, loss: 969.9947
+Best model saved
+Epoch 51, loss: 968.0248
+Best model saved
+Epoch 52, loss: 967.0595
+Best model saved
+Epoch 53, loss: 965.4216
+Best model saved
+Epoch 54, loss: 964.0183
+Best model saved
+Epoch 55, loss: 962.9674
+Best model saved
+Epoch 56, loss: 961.9172
+Best model saved
+Epoch 57, loss: 960.4975
+Best model saved
+Epoch 58, loss: 959.4286
+Best model saved
+Epoch 59, loss: 958.3810
+Best model saved
+Epoch 60, loss: 957.4868
+Best model saved
+Epoch 61, loss: 956.5473
+Best model saved
+Epoch 62, loss: 955.6675
+Best model saved
+Epoch 63, loss: 954.0089
+Best model saved
+Epoch 64, loss: 954.0257
+Epoch 65, loss: 952.7177
+Best model saved
+Epoch 66, loss: 952.1220
+Best model saved
+Epoch 67, loss: 951.0901
+Best model saved
+Epoch 68, loss: 950.4430
+Best model saved
+Epoch 69, loss: 949.3607
+Best model saved
+Epoch 70, loss: 948.9223
+Best model saved
+Epoch 71, loss: 947.7306
+Best model saved
+Epoch 72, loss: 947.6342
+Best model saved
+Epoch 73, loss: 946.0811
+Best model saved
+Epoch 74, loss: 945.4606
+Best model saved
+Epoch 75, loss: 945.0900
+Best model saved
+Epoch 76, loss: 943.7031
+Best model saved
+Epoch 77, loss: 943.2377
+Best model saved
+Epoch 78, loss: 942.1944
+Best model saved
+Epoch 79, loss: 941.9415
+Best model saved
+Epoch 80, loss: 941.6456
+Best model saved
+Epoch 81, loss: 940.7391
+Best model saved
+Epoch 82, loss: 940.2984
+Best model saved
+Epoch 83, loss: 939.6274
+Best model saved
+Epoch 84, loss: 939.0541
+Best model saved
+Epoch 85, loss: 938.6584
+Best model saved
+Epoch 86, loss: 937.9794
+Best model saved
+Epoch 87, loss: 937.4161
+Best model saved
+Epoch 88, loss: 936.9242
+Best model saved
+Epoch 89, loss: 936.2094
+Best model saved
+Epoch 90, loss: 935.3110
+Best model saved
+Epoch 91, loss: 935.1768
+Best model saved
+Epoch 92, loss: 934.4975
+Best model saved
+Epoch 93, loss: 934.0468
+Best model saved
+Epoch 94, loss: 933.6535
+Best model saved
+Epoch 95, loss: 933.2386
+Best model saved
+Epoch 96, loss: 932.7302
+Best model saved
+Epoch 97, loss: 932.2544
+Best model saved
+Epoch 98, loss: 931.9846
+Best model saved
+Epoch 99, loss: 931.4354
+Best model saved
+Epoch 100, loss: 930.7764
+Best model saved

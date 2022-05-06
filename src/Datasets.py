@@ -24,8 +24,9 @@ class GraphDataset(Dataset):
         
         self._graph_dir = graph_dir
         self._s2g_list = os.listdir(graph_dir)
+        
+        #stuff below is for loading all the data initially
         self.pygs = []
-
         pbar = tqdm()
         pbar.set_description('Loading Graphs')
         pbar.reset(total=len(self._s2g_list))
@@ -39,4 +40,7 @@ class GraphDataset(Dataset):
         return len(self._s2g_list)
 
     def __getitem__(self, index: int):
+        # s2g = os.path.join(os.getcwd(), self._graph_dir, self._s2g_list[index]) 
+        # return torch.load(s2g)
+
         return self.pygs[index]
