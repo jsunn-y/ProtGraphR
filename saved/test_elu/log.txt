@@ -1,0 +1,104 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_elu.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_elu
+Device:	 cuda:0
+########## Experiment test_elu: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 2303.0876
+Best model saved
+Epoch 02, loss: 1273.4562
+Best model saved
+Epoch 03, loss: 1139.6700
+Best model saved
+Epoch 04, loss: 1032.4362
+Best model saved
+Epoch 05, loss: 1002.5262
+Best model saved
+Epoch 06, loss: 983.9454
+Best model saved
+Epoch 07, loss: 970.0757
+Best model saved
+Epoch 08, loss: 961.2628
+Best model saved
+Epoch 09, loss: 954.7483
+Best model saved
+Epoch 10, loss: 949.6309
+Best model saved
+Epoch 11, loss: 944.1713
+Best model saved
+Epoch 12, loss: 939.6690
+Best model saved
+Epoch 13, loss: 937.4675
+Best model saved
+Epoch 14, loss: 932.8449
+Best model saved
+Epoch 15, loss: 931.3424
+Best model saved
+Epoch 16, loss: 927.3572
+Best model saved
+Epoch 17, loss: 925.3325
+Best model saved
+Epoch 18, loss: 922.4602
+Best model saved
+Epoch 19, loss: 919.5430
+Best model saved
+Epoch 20, loss: 917.5136
+Best model saved
+Epoch 21, loss: 917.2598
+Best model saved
+Epoch 22, loss: 913.8498
+Best model saved
+Epoch 23, loss: 911.3578
+Best model saved
+Epoch 24, loss: 910.7288
+Best model saved
+Epoch 25, loss: 907.3287
+Best model saved
+Epoch 26, loss: 907.4305
+Epoch 27, loss: 906.4960
+Best model saved
+Epoch 28, loss: 905.0806
+Best model saved
+Epoch 29, loss: 903.6783
+Best model saved
+Epoch 30, loss: 901.3138
+Best model saved
+Epoch 31, loss: 900.1281
+Best model saved
+Epoch 32, loss: 899.7076
+Best model saved
+Epoch 33, loss: 897.5804
+Best model saved
+Epoch 34, loss: 897.4971
+Best model saved
+Epoch 35, loss: 896.3884
+Best model saved
+Epoch 36, loss: 894.1443
+Best model saved
+Epoch 37, loss: 894.1486
+Epoch 38, loss: 892.7822
+Best model saved
+Epoch 39, loss: 891.3418
+Best model saved
+Epoch 40, loss: 890.6009
+Best model saved
+Epoch 41, loss: 889.9298
+Best model saved
+Epoch 42, loss: 888.3748
+Best model saved
+Epoch 43, loss: 888.4313
+Epoch 44, loss: 888.0556
+Best model saved
+Epoch 45, loss: 886.8545
+Best model saved
+Epoch 46, loss: 885.9021
+Best model saved
+Epoch 47, loss: 885.7960
+Best model saved
+Epoch 48, loss: 884.3793
+Best model saved
+Epoch 49, loss: 883.4314
+Best model saved
+Epoch 50, loss: 883.8024
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/test_elu/embeddings.npy

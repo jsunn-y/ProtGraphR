@@ -59,12 +59,10 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
     - model: nn.Module, GNN model, already moved to device
     - device: torch.device
     - loader: DataLoader
-    - evaluator: Evaluator from OGB
     - pbar: tqdm, progress bar
 
-    Returns: dict, with one (key, value)
-    - key is dataset.eval_metric (which in this case is 'rocauc')
-    - value is the AUROC
+    Returns: np.array 
+    - extracting embeddings (before the decoding layer)
     """
     model.eval()
     save_embeddings = np.array([])
@@ -138,7 +136,7 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     model = model_class(GraphEncoder(model_config = model_config)).to(device)
     
     #Initialize dataloaders
-    loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+    loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=False)
 
     #Get best model
     model.load_state_dict(torch.load(save_path + '/best.pth'))
