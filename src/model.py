@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torch_geometric
 import torch_geometric as pyg
 import torch_geometric.nn as pyg_nn
-from torch_geometric.nn import GAE, VGAE, GCN, GATv2Conv, GCNConv, NNConv, global_mean_pool
+from torch_geometric.nn import GCN, GATv2Conv, GCNConv, NNConv, global_mean_pool, global_max_pool
 from torch_geometric.utils import (
     add_self_loops,
     negative_sampling,
@@ -35,6 +35,8 @@ class GraphEncoder(nn.Module):
         self.dropout = model_config['dropout']
         self.edge_dim = model_config['edge_dim']
 
+        self.variational = model_config['kl_div_weight'] != 0
+
         self.conv1 = GATv2Conv(
             in_channels=self.node_dim,
             out_channels=self.hidden_dim,
@@ -48,11 +50,18 @@ class GraphEncoder(nn.Module):
             dropout=self.dropout,
             edge_dim=self.edge_dim
         )
+        
+        self.convvar = GATv2Conv(
+            in_channels=self.hidden_dim,
+            out_channels=self.hidden_dim,
+            dropout=self.dropout,
+            edge_dim=self.edge_dim
+        )
 
         # fully-connected final layer
-        self.fc = nn.Linear(self.hidden_dim, 1)
+        #self.fc = nn.Linear(self.hidden_dim, 1)
 
-    def forward(self, data: pyg.data.Data, pool = False) -> torch.Tensor:
+    def forward(self, data: pyg.data.Data, extract = False) -> torch.Tensor:
         """
         Args
         - data: pyg.data.Batch, a batch of graphs
@@ -65,15 +74,20 @@ class GraphEncoder(nn.Module):
 
         x = self.conv1(x, edge_index, edge_attr)
         x = F.elu(x)
-        x = self.conv2(x, edge_index, edge_attr)
-        x = F.elu(x)
+        mu = self.conv2(x, edge_index, edge_attr)
+        if extract:
+            z = pyg_nn.global_max_pool(mu, batch=batch)
+            #z = self.fc(z)
+            return z
 
-        if pool:
-            x = pyg_nn.global_max_pool(x, batch=batch)
-            #x = self.fc(x)
-        return x
-
-
+        if self.variational:
+            var = self.convvar(x, edge_index, edge_attr)
+            z = mu, var
+            return z
+        else:
+            #should be no activation in the final layer
+            #x = F.elu(x)
+            return mu
 
 EPS = 1e-15
 MAX_LOGSTD = 10
@@ -129,10 +143,11 @@ class GAE(torch.nn.Module):
             :class:`torch_geometric.nn.models.InnerProductDecoder`.
             (default: :obj:`None`)
     """
-    def __init__(self, encoder, decoder=None):
+    def __init__(self, encoder, model_config, decoder=None):
         super().__init__()
         self.encoder = encoder
         self.decoder = InnerProductDecoder() if decoder is None else decoder
+
         #GAE.reset_parameters(self)
 
     # def reset_parameters(self):
@@ -204,7 +219,8 @@ class GAE(torch.nn.Module):
         y, pred = y.detach().cpu().numpy(), pred.detach().cpu().numpy()
 
         return roc_auc_score(y, pred), average_precision_score(y, pred)
-
+    
+    #the methods below are not in the original paper:
 
 
 class VGAE(GAE):
@@ -220,15 +236,14 @@ class VGAE(GAE):
             :class:`torch_geometric.nn.models.InnerProductDecoder`.
             (default: :obj:`None`)
     """
-    def __init__(self, encoder, decoder=None):
-        super().__init__(encoder, decoder)
+    def __init__(self, encoder, model_config, decoder=None):
+        super().__init__(encoder, model_config, decoder)
 
     def reparametrize(self, mu, logstd):
         if self.training:
             return mu + torch.randn_like(logstd) * torch.exp(logstd)
         else:
             return mu
-
 
     def encode(self, *args, **kwargs):
         """"""
@@ -255,6 +270,8 @@ class VGAE(GAE):
             max=MAX_LOGSTD)
         return -0.5 * torch.mean(
             torch.sum(1 + 2 * logstd - mu**2 - logstd.exp()**2, dim=1))
+    
+    #the methods below are not in the original paper:
 
 
 model_dict = {

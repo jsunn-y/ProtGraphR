@@ -10,3 +10,4 @@
 *.csv
 *.model_params
 *.pt
+analysis/names.pkl

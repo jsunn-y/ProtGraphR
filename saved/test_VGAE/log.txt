@@ -1,0 +1,46 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+hello
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+tensor([[ -1.7049,   0.5094,  -0.0503,  ...,   1.1967, -10.3349, -22.2355],
+        [ -2.0239,  -1.2071,   0.6036,  ...,   1.1465,  14.4585, -13.0890],
+        [ -2.5214,   1.1163,  -1.1927,  ...,   1.0926,  -0.4037,  -3.7205],
+        ...,
+        [ -1.9313,   3.8933,   0.4763,  ...,   0.3069,  -9.0949,   2.4558],
+        [ -1.4171,   0.6280,   0.9139,  ...,   0.9484,   3.2951,  -0.2051],
+        [ -0.5572,   0.7045,  -0.2728,  ...,   0.6779,   0.4721,   7.2579]],
+       device='cuda:0', grad_fn=<AddBackward0>)
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_VGAE
+Device:	 cuda:0
+########## Experiment test_VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, loss: 45827.6088
+Best model saved

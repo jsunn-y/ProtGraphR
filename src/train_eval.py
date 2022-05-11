@@ -12,7 +12,7 @@ from src.Datasets import *
 from src.load_dataset import load_dataset
 from src.model import *
 
-def train(model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
+def train(model_name: str, model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
     """Trains a GNN model.
 
     Args
@@ -26,7 +26,8 @@ def train(model: nn.Module, device: torch.device, data_loader: DataLoader, optim
     - loss: float, avg loss across epoch
     """
     model.train()
-    total_loss = 0
+    total_recon_loss = 0
+    total_kl_div = 0
 
     pbar.reset(len(data_loader))
     pbar.set_description('Training')
@@ -40,16 +41,26 @@ def train(model: nn.Module, device: torch.device, data_loader: DataLoader, optim
         #neg_edge_index = batch.neg_edge_index.to(device)
         
         z = model.encode(batch)
-        loss = model.recon_loss(z, edge_index)
-        total_loss += loss.item() * batch_size
 
+        recon_loss = model.recon_loss(z, edge_index)
+        total_recon_loss += recon_loss.item() * batch_size
+        
+        if model_name == 'VGAE':
+            kl_div = model.kl_loss() #don't need to specify mu or loss since it will use the last one
+            total_kl_div += kl_div.item() * batch_size
+        else:
+            kl_div = 0
+
+        loss = recon_loss + kl_div
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         pbar.update()
-        
-    avg_loss = total_loss / len(data_loader)
-    return avg_loss
+
+    total_loss = total_recon_loss + total_kl_div    
+    avg_recon_loss = total_recon_loss / len(data_loader)
+    avg_kl_div = total_kl_div / len(data_loader)
+    return avg_recon_loss, avg_kl_div
 
 def eval(model: nn.Module, device: torch.device, loader: DataLoader,
          pbar: tqdm) -> np.array:
@@ -74,7 +85,7 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
         batch = batch.to(device)
 
         with torch.no_grad():
-            embedding = model.encode(batch, pool=True)
+            embedding = model.encode(batch, extract=True)
 
         #need to figure out how to get the right features from the graph object
         if save_embeddings.shape[0] == 0:
@@ -102,23 +113,24 @@ def start_training(save_path, data_config, model_config, train_config, device):
     
     # Initialize dataset
     dataset, model_config = load_dataset(data_config, model_config)
-    model = model_class(GraphEncoder(model_config = model_config)).to(device)
+    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config).to(device)
     
     #Initialize dataloaders
     train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Initialize optimizer
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0005)
+    optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
 
     # Start training
     pbar = tqdm()
     for epoch in range(1, 1 + train_config['num_epochs']):
-        loss = train(model, device, train_loader, optimizer, pbar)
-
+        recon_loss, kl_div = train(model_config['name'], model, device, train_loader, optimizer, pbar)
+        loss = recon_loss + kl_div
+        
         #train_result = eval(model, device, train_loader, evaluator, pbar)
         #val_result = eval(model, device, valid_loader, evaluator, pbar)
 
-        tqdm.write(f'Epoch {epoch:02d}, loss: {loss:.4f}')
+        tqdm.write(f'Epoch {epoch:02d}, recon_loss: {recon_loss:.4f}, kl_div: {kl_div:.4f}')
             
         #update the best model after each epoch
         if epoch == 1 or loss < best_loss:
@@ -133,7 +145,7 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     dataset, model_config = load_dataset(data_config, model_config, extract=True)
 
     #Use Pytorch's built in GAE/VGAE
-    model = model_class(GraphEncoder(model_config = model_config)).to(device)
+    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config).to(device)
     
     #Initialize dataloaders
     loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=False)
