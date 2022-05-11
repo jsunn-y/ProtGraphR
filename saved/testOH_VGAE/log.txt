@@ -1,0 +1,35 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testOH_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE
+Device:	 cuda:0
+########## Experiment testOH_VGAE: ##########
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testOH_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE
+Device:	 cuda:0
+########## Experiment testOH_VGAE: ##########
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, recon_loss: 8835.1682, kl_div: 505.7993
+Best model saved
+Epoch 02, recon_loss: 8717.4088, kl_div: 360.9091
+Best model saved
+Epoch 03, recon_loss: 8697.6521, kl_div: 358.9568
+Best model saved
+Epoch 04, recon_loss: 8688.0155, kl_div: 360.2157
+Best model saved
+Epoch 05, recon_loss: 8686.3605, kl_div: 361.5536
+Best model saved
+Epoch 06, recon_loss: 8684.3469, kl_div: 361.9521
+Best model saved
+Epoch 07, recon_loss: 8683.3762, kl_div: 362.3851
+Best model saved
+Epoch 08, recon_loss: 8686.4351, kl_div: 362.6515
+Epoch 09, recon_loss: 8683.9555, kl_div: 362.6046
+Epoch 10, recon_loss: 8685.2369, kl_div: 362.8976
+Epoch 11, recon_loss: 8682.9043, kl_div: 362.9842
+Epoch 12, recon_loss: 8682.0863, kl_div: 362.8127
+Best model saved
+Epoch 13, recon_loss: 8682.5677, kl_div: 363.0577
+Epoch 14, recon_loss: 8682.6593, kl_div: 363.2006
+Epoch 15, recon_loss: 8682.4548, kl_div: 363.2720
+Epoch 16, recon_loss: 8681.3889, kl_div: 363.2585
+Best model saved

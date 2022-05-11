@@ -40,7 +40,7 @@ def train(model_name: str, model: nn.Module, device: torch.device, data_loader: 
         edge_index = batch.edge_index.to(device)
         #neg_edge_index = batch.neg_edge_index.to(device)
         
-        z = model.encode(batch)
+        z = model.encode(data = batch)
 
         recon_loss = model.recon_loss(z, edge_index)
         total_recon_loss += recon_loss.item() * batch_size

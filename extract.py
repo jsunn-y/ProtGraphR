@@ -50,6 +50,15 @@ if __name__ == "__main__":
     '''Saves features after training. '''
     print('#################### Feature Extraction ####################')
     
+    #generate the fitness dataframe in the correct order to the folder
+    names = os.listdir('data/graphs/' + config['data_config']['name'])
+    names = [name[:-3] for name in names]
+    namesdf = pd.DataFrame(names, columns = ['muts'])
+    fitnessdf = pd.read_csv('data/GB1_Wu_2016.csv', index_col = 0)
+    fitnessdf.iloc[0, 0] = 'WT'
+    merged = namesdf.merge(fitnessdf, on='muts', how='left')
+    merged.to_csv(save_dir + '/fitness.csv')
+
     extract_features(
         save_path=save_dir,
         data_config=config['data_config'],
@@ -57,4 +66,6 @@ if __name__ == "__main__":
         train_config=config['train_config'],
         device=device
     )
+
+
 
