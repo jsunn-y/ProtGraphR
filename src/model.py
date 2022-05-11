@@ -13,8 +13,6 @@ from torch_geometric.utils import (
 
 #from ..inits import reset
 
-from src.loss import *
-
 def get_model_class(model_name):
     if model_name in model_dict:
         return model_dict[model_name]
@@ -61,7 +59,7 @@ class GraphEncoder(nn.Module):
         # fully-connected final layer
         #self.fc = nn.Linear(self.hidden_dim, 1)
 
-    def forward(self, data: pyg.data.Data, extract = False) -> torch.Tensor:
+    def forward(self, data: pyg.data.Data, pool = False) -> torch.Tensor:
         """
         Args
         - data: pyg.data.Batch, a batch of graphs
@@ -75,7 +73,8 @@ class GraphEncoder(nn.Module):
         x = self.conv1(x, edge_index, edge_attr)
         x = F.elu(x)
         mu = self.conv2(x, edge_index, edge_attr)
-        if extract:
+        
+        if pool:
             z = pyg_nn.global_max_pool(mu, batch=batch)
             #z = self.fc(z)
             return z
@@ -245,11 +244,16 @@ class VGAE(GAE):
         else:
             return mu
 
-    def encode(self, *args, **kwargs):
+    def encode(self, extract=False, *args, **kwargs):
         """"""
-        self.__mu__, self.__logstd__ = self.encoder(*args, **kwargs)
-        self.__logstd__ = self.__logstd__.clamp(max=MAX_LOGSTD)
-        z = self.reparametrize(self.__mu__, self.__logstd__)
+        if extract == False:
+            self.__mu__, self.__logstd__ = self.encoder(*args, **kwargs)
+            self.__logstd__ = self.__logstd__.clamp(max=MAX_LOGSTD)
+            z = self.reparametrize(self.__mu__, self.__logstd__)
+        else:
+            self.__mu__ = self.encoder(pool = True, *args, **kwargs)
+            z = self.__mu__
+            
         return z
 
 
