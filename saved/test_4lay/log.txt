@@ -1,0 +1,46 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+hello1

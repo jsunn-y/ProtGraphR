@@ -41,13 +41,22 @@ class GraphEncoder(nn.Module):
             dropout=self.dropout,
             edge_dim=self.edge_dim
         )
+        
+        self.bns = nn.ModuleList()
+        self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
-        self.conv2 = GATv2Conv(
+        self.convs = nn.ModuleList()
+        
+        for l in range(self.num_layers-1):
+            layer = GATv2Conv(
             in_channels=self.hidden_dim,
             out_channels=self.hidden_dim,
             dropout=self.dropout,
             edge_dim=self.edge_dim
-        )
+            )
+            self.convs.append(layer)
+            self.bns.append(nn.BatchNorm1d(self.hidden_dim))
+
         
         self.convvar = GATv2Conv(
             in_channels=self.hidden_dim,
@@ -72,21 +81,28 @@ class GraphEncoder(nn.Module):
 
         x = self.conv1(x, edge_index, edge_attr)
         x = F.elu(x)
-        mu = self.conv2(x, edge_index, edge_attr)
-        
+        x = self.bns[0](x)
+
+        for l, conv in enumerate(self.convs):
+            x = conv(x, edge_index)
+            if l != self.num_layers - 2:    
+                #should be no activation in the final laye
+                x = self.bns[l+1](x)
+                x = F.elu(x)
+            if l == self.num_layers - 3:
+                if self.variational:
+                    var = self.convvar(x, edge_index, edge_attr)
+    
         if pool:
-            z = pyg_nn.global_max_pool(mu, batch=batch)
+            z = pyg_nn.global_max_pool(x, batch=batch)
             #z = self.fc(z)
             return z
 
         if self.variational:
-            var = self.convvar(x, edge_index, edge_attr)
-            z = mu, var
+            z = x, var
             return z
         else:
-            #should be no activation in the final layer
-            #x = F.elu(x)
-            return mu
+            return x
 
 EPS = 1e-15
 MAX_LOGSTD = 10
