@@ -44,3 +44,110 @@ Device:	 cuda:0
 ########## Experiment test_4lay: ##########
 Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
 hello1
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/test_4lay.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/test_4lay
+Device:	 cuda:0
+########## Experiment test_4lay: ##########
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, recon_loss: 12214.3715, kl_div: 43543.3535
+Best model saved
+Epoch 02, recon_loss: 9369.4866, kl_div: 7353.2758
+Best model saved
+Epoch 03, recon_loss: 8810.3641, kl_div: 4439.2326
+Best model saved
+Epoch 04, recon_loss: 8694.2888, kl_div: 3058.6363
+Best model saved
+Epoch 05, recon_loss: 8673.4110, kl_div: 2328.8392
+Best model saved
+Epoch 06, recon_loss: 8673.6418, kl_div: 1883.3220
+Best model saved
+Epoch 07, recon_loss: 8689.0029, kl_div: 1631.5083
+Best model saved
+Epoch 08, recon_loss: 8679.3541, kl_div: 1414.3525
+Best model saved
+Epoch 09, recon_loss: 8676.9969, kl_div: 1237.6936
+Best model saved
+Epoch 10, recon_loss: 8682.5460, kl_div: 1109.4511
+Best model saved
+Epoch 11, recon_loss: 8684.1708, kl_div: 1001.6185
+Best model saved
+Epoch 12, recon_loss: 8683.5520, kl_div: 916.5726
+Best model saved
+Epoch 13, recon_loss: 8685.8276, kl_div: 852.0749
+Best model saved
+Epoch 14, recon_loss: 8688.4768, kl_div: 793.2664
+Best model saved
+Epoch 15, recon_loss: 8691.4453, kl_div: 739.1457
+Best model saved
+Epoch 16, recon_loss: 8692.6401, kl_div: 702.5857
+Best model saved
+Epoch 17, recon_loss: 8695.2049, kl_div: 663.0196
+Best model saved
+Epoch 18, recon_loss: 8693.2211, kl_div: 632.2744
+Best model saved
+Epoch 19, recon_loss: 8696.2904, kl_div: 608.0296
+Best model saved
+Epoch 20, recon_loss: 8694.1108, kl_div: 584.1265
+Best model saved
+Epoch 21, recon_loss: 8693.7808, kl_div: 565.2771
+Best model saved
+Epoch 22, recon_loss: 8694.5391, kl_div: 547.7663
+Best model saved
+Epoch 23, recon_loss: 8697.6065, kl_div: 535.1437
+Best model saved
+Epoch 24, recon_loss: 8694.3605, kl_div: 520.1435
+Best model saved
+Epoch 25, recon_loss: 8695.9610, kl_div: 508.4516
+Best model saved
+Epoch 26, recon_loss: 8694.4637, kl_div: 500.4193
+Best model saved
+Epoch 27, recon_loss: 8694.6524, kl_div: 491.0505
+Best model saved
+Epoch 28, recon_loss: 8694.5248, kl_div: 483.9028
+Best model saved
+Epoch 29, recon_loss: 8692.3402, kl_div: 475.9881
+Best model saved
+Epoch 30, recon_loss: 8694.4451, kl_div: 469.1652
+Best model saved
+Epoch 31, recon_loss: 8692.6398, kl_div: 462.7399
+Best model saved
+Epoch 32, recon_loss: 8693.1316, kl_div: 457.1626
+Best model saved
+Epoch 33, recon_loss: 8691.8370, kl_div: 453.0793
+Best model saved
+Epoch 34, recon_loss: 8692.8235, kl_div: 448.9777
+Best model saved
+Epoch 35, recon_loss: 8690.0978, kl_div: 443.3421
+Best model saved
+Epoch 36, recon_loss: 8689.9988, kl_div: 438.2038
+Best model saved
+Epoch 37, recon_loss: 8690.2932, kl_div: 436.2289
+Best model saved
+Epoch 38, recon_loss: 8689.8854, kl_div: 432.6987
+Best model saved
+Epoch 39, recon_loss: 8690.5733, kl_div: 430.0008
+Best model saved
+Epoch 40, recon_loss: 8689.2167, kl_div: 425.6592
+Best model saved
+Epoch 41, recon_loss: 8691.0523, kl_div: 423.9940
+Epoch 42, recon_loss: 8687.0091, kl_div: 420.2697
+Best model saved
+Epoch 43, recon_loss: 8687.4252, kl_div: 417.5675
+Best model saved
+Epoch 44, recon_loss: 8687.4112, kl_div: 414.4802
+Best model saved
+Epoch 45, recon_loss: 8688.7385, kl_div: 412.8619
+Best model saved
+Epoch 46, recon_loss: 8689.0084, kl_div: 410.6040
+Best model saved
+Epoch 47, recon_loss: 8687.8372, kl_div: 408.4985
+Best model saved
+Epoch 48, recon_loss: 8687.8294, kl_div: 406.8755
+Best model saved
+Epoch 49, recon_loss: 8685.5023, kl_div: 405.5487
+Best model saved
+Epoch 50, recon_loss: 8686.0600, kl_div: 403.7489
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/test_4lay/embeddings.npy
