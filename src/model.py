@@ -83,10 +83,13 @@ class GraphEncoder(nn.Module):
         x = F.elu(x)
         x = self.bns[0](x)
 
+        if self.num_layers == 2 and self.variational:
+                var = self.convvar(x, edge_index, edge_attr)
+
         for l, conv in enumerate(self.convs):
             x = conv(x, edge_index)
             if l != self.num_layers - 2:    
-                #should be no activation in the final laye
+                #should be no activation in the final layer
                 x = self.bns[l+1](x)
                 x = F.elu(x)
             if l == self.num_layers - 3:
@@ -104,6 +107,7 @@ class GraphEncoder(nn.Module):
         else:
             return x
 
+#written by pytorch below
 EPS = 1e-15
 MAX_LOGSTD = 10
 
@@ -267,7 +271,8 @@ class VGAE(GAE):
             self.__logstd__ = self.__logstd__.clamp(max=MAX_LOGSTD)
             z = self.reparametrize(self.__mu__, self.__logstd__)
         else:
-            self.__mu__ = self.encoder(pool = True, *args, **kwargs)
+            #self.__mu__ = self.encoder(pool = True, *args, **kwargs)
+            self.__mu__ = self.encoder(pool = False, *args, **kwargs)
             z = self.__mu__
             
         return z

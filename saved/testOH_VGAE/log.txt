@@ -33,3 +33,8 @@ Epoch 14, recon_loss: 8682.6593, kl_div: 363.2006
 Epoch 15, recon_loss: 8682.4548, kl_div: 363.2720
 Epoch 16, recon_loss: 8681.3889, kl_div: 363.2585
 Best model saved
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testOH_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE
+Device:	 cuda:0
+########## Experiment testOH_VGAE: ##########
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')

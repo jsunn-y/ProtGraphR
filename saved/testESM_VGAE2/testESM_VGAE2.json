@@ -1,12 +1,12 @@
 {
     "data_config": {
-        "name": "gb1_graphs_fixed_onehot",
-        "encoding": "onehot"
+        "name": "gb1_graphs_fixed_esm",
+        "encoding": "esm"
     },
     "model_config": {
         "name": "VGAE",
         "hidden_dim": 32,
-        "num_layers": 2,
+        "num_layers": 4,
         "dropout": 0.5,
         "reconstruction_loss_weight": 1,
         "kl_div_weight": 1

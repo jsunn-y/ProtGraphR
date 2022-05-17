@@ -1,7 +1,7 @@
 {
     "data_config": {
-        "name": "gb1_graphs_fixed_onehot",
-        "encoding": "onehot"
+        "name": "gb1_graphs_fixed_esm",
+        "encoding": "esm"
     },
     "model_config": {
         "name": "VGAE",
