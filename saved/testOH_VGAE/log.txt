@@ -38,3 +38,91 @@ Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE
 Device:	 cuda:0
 ########## Experiment testOH_VGAE: ##########
 Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testOH_VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE
+Device:	 cuda:0
+########## Experiment testOH_VGAE: ##########
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, recon_loss: 5123.2785, kl_div: 7478.1551
+Best model saved
+Epoch 02, recon_loss: 3817.7166, kl_div: 1203.3924
+Best model saved
+Epoch 03, recon_loss: 3784.7828, kl_div: 646.6344
+Best model saved
+Epoch 04, recon_loss: 3778.3173, kl_div: 520.5237
+Best model saved
+Epoch 05, recon_loss: 3777.6014, kl_div: 466.7722
+Best model saved
+Epoch 06, recon_loss: 3776.9510, kl_div: 438.0724
+Best model saved
+Epoch 07, recon_loss: 3773.7485, kl_div: 420.3568
+Best model saved
+Epoch 08, recon_loss: 3772.6332, kl_div: 408.6095
+Best model saved
+Epoch 09, recon_loss: 3770.2990, kl_div: 400.6618
+Best model saved
+Epoch 10, recon_loss: 3769.9039, kl_div: 394.8019
+Best model saved
+Epoch 11, recon_loss: 3768.5687, kl_div: 390.2972
+Best model saved
+Epoch 12, recon_loss: 3768.2793, kl_div: 386.9758
+Best model saved
+Epoch 13, recon_loss: 3767.1605, kl_div: 384.2708
+Best model saved
+Epoch 14, recon_loss: 3766.3847, kl_div: 382.1390
+Best model saved
+Epoch 15, recon_loss: 3766.3451, kl_div: 380.5591
+Best model saved
+Epoch 16, recon_loss: 3764.8897, kl_div: 379.0596
+Best model saved
+Epoch 17, recon_loss: 3764.2866, kl_div: 377.9470
+Best model saved
+Epoch 18, recon_loss: 3764.5809, kl_div: 377.2341
+Best model saved
+Epoch 19, recon_loss: 3764.8431, kl_div: 376.5430
+Best model saved
+Epoch 20, recon_loss: 3764.3596, kl_div: 375.8963
+Best model saved
+Epoch 21, recon_loss: 3763.1281, kl_div: 375.1679
+Best model saved
+Epoch 22, recon_loss: 3764.0542, kl_div: 374.9714
+Epoch 23, recon_loss: 3764.3339, kl_div: 374.6129
+Epoch 24, recon_loss: 3764.0993, kl_div: 374.2981
+Epoch 25, recon_loss: 3764.0568, kl_div: 373.7830
+Best model saved
+Epoch 26, recon_loss: 3764.0023, kl_div: 373.5697
+Best model saved
+Epoch 27, recon_loss: 3764.0505, kl_div: 373.3718
+Best model saved
+Epoch 28, recon_loss: 3763.4876, kl_div: 372.9834
+Best model saved
+Epoch 29, recon_loss: 3763.3050, kl_div: 372.6271
+Best model saved
+Epoch 30, recon_loss: 3763.6964, kl_div: 372.5145
+Epoch 31, recon_loss: 3763.4925, kl_div: 372.3765
+Best model saved
+Epoch 32, recon_loss: 3763.9888, kl_div: 372.3289
+Epoch 33, recon_loss: 3763.7565, kl_div: 372.1185
+Epoch 34, recon_loss: 3763.6021, kl_div: 372.0163
+Best model saved
+Epoch 35, recon_loss: 3762.8814, kl_div: 371.6124
+Best model saved
+Epoch 36, recon_loss: 3763.3536, kl_div: 371.6781
+Epoch 37, recon_loss: 3762.9992, kl_div: 371.4595
+Best model saved
+Epoch 38, recon_loss: 3764.0824, kl_div: 371.5875
+Epoch 39, recon_loss: 3763.4051, kl_div: 371.4297
+Epoch 40, recon_loss: 3764.0100, kl_div: 371.4652
+Epoch 41, recon_loss: 3763.8616, kl_div: 371.3526
+Epoch 42, recon_loss: 3763.4664, kl_div: 371.1997
+Epoch 43, recon_loss: 3763.6796, kl_div: 371.2519
+Epoch 44, recon_loss: 3763.9868, kl_div: 371.2211
+Epoch 45, recon_loss: 3764.1812, kl_div: 371.2588
+Epoch 46, recon_loss: 3763.6344, kl_div: 371.0884
+Epoch 47, recon_loss: 3763.8380, kl_div: 371.0473
+Epoch 48, recon_loss: 3763.9227, kl_div: 371.0594
+Epoch 49, recon_loss: 3762.5011, kl_div: 370.6859
+Best model saved
+Epoch 50, recon_loss: 3763.9049, kl_div: 370.9199
+#################### Feature Extraction ####################
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')

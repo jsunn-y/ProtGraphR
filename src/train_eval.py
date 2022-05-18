@@ -87,15 +87,21 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
         with torch.no_grad():
             #print(model.encode(batch, extract=True).shape)
             embedding = model.encode(extract=True, data=batch)
-            a = embedding[38*128:41*128]
-            b = embedding[53*128:54*128]
+            embedding = embedding.cpu()
+            embedding = embedding.reshape((56, -1, 32))
+
+            a = embedding[38:41, :, :]
+            print(a.shape)
+            b = embedding[53, :, :]
+            print(b.shape)
             embedding = np.concatenate((a, b), axis=1)
+            print(embedding.shape)
 
         #need to figure out how to get the right features from the graph object
         if save_embeddings.shape[0] == 0:
-            save_embeddings = embedding.cpu()
+            save_embeddings = embedding
         else:
-            save_embeddings = np.concatenate([save_embeddings, embedding.cpu()], axis=0)
+            save_embeddings = np.concatenate([save_embeddings, embedding], axis=0)
         pbar.update()
 
     return save_embeddings

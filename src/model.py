@@ -272,7 +272,7 @@ class VGAE(GAE):
             z = self.reparametrize(self.__mu__, self.__logstd__)
         else:
             #self.__mu__ = self.encoder(pool = True, *args, **kwargs)
-            self.__mu__ = self.encoder(pool = False, *args, **kwargs)
+            self.__mu__, self.__logstd__ = self.encoder(pool = False, *args, **kwargs)
             z = self.__mu__
             
         return z
