@@ -1,0 +1,3 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testOH_VGAE_noedge.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testOH_VGAE_noedge
+Device:	 cuda:0

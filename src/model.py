@@ -32,11 +32,11 @@ class GraphEncoder(nn.Module):
         self.num_layers = model_config['num_layers']
         self.dropout = model_config['dropout']
         self.edge_dim = model_config['edge_dim']
-        self.edge_features = model_config['edge_features']
+        self.edge_features = model_config['edge_features'] == 1
 
         self.variational = model_config['kl_div_weight'] != 0
 
-        if self.edge_features == 1:
+        if self.edge_features == True:
             self.conv1 = GATv2Conv(
                 in_channels=self.node_dim,
                 out_channels=self.hidden_dim,
@@ -56,7 +56,7 @@ class GraphEncoder(nn.Module):
         self.convs = nn.ModuleList()
         
         for l in range(self.num_layers-1):
-            if self.edge_features == 1:
+            if self.edge_features == True:
                 layer = GATv2Conv(
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
@@ -72,7 +72,7 @@ class GraphEncoder(nn.Module):
             self.convs.append(layer)
             self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
-        if self.edge_features == 1:
+        if self.edge_features == True:
             self.convvar = GATv2Conv(
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
@@ -94,13 +94,15 @@ class GraphEncoder(nn.Module):
         Args
         - data: pyg.data.Batch, a batch of graphs
 
-        Returns: torch.Tensor, shape [batch_size], unnormalized classification
-            probability for each graph
+        Returns: 
         """
         x, edge_index, edge_attr, batch = (
             data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
 
-        x = self.conv1(x, edge_index, edge_attr)
+        if self.edge_features == True:
+            x = self.conv1(x, edge_index, edge_attr)
+        else:
+            x = self.conv1(x, edge_index)
         x = F.elu(x)
         x = self.bns[0](x)
 
@@ -108,14 +110,21 @@ class GraphEncoder(nn.Module):
                 var = self.convvar(x, edge_index, edge_attr)
 
         for l, conv in enumerate(self.convs):
-            x = conv(x, edge_index)
+            if self.edge_features == True:
+                x = conv(x, edge_index, edge_attr)
+            else:
+                x = conv(x, edge_index)
+
             if l != self.num_layers - 2:    
                 #should be no activation in the final layer
                 x = self.bns[l+1](x)
                 x = F.elu(x)
             if l == self.num_layers - 3:
                 if self.variational:
-                    var = self.convvar(x, edge_index, edge_attr)
+                    if self.edge_features == True:
+                        var = self.convvar(x, edge_index, edge_attr)
+                    else:
+                        var = self.convvar(x, edge_index)
     
         if pool:
             z = pyg_nn.global_max_pool(x, batch=batch)
@@ -128,7 +137,7 @@ class GraphEncoder(nn.Module):
         else:
             return x
 
-#written by pytorch below
+#written by pytorch below (with modifications)
 EPS = 1e-15
 MAX_LOGSTD = 10
 
@@ -170,6 +179,15 @@ class InnerProductDecoder(torch.nn.Module):
         return torch.sigmoid(adj) if sigmoid else adj
 
 #write the classes for other self-supervised decoders here
+class ZSDecoder(torch.nn.Module):
+    def __init__(self, model_config, data_config):
+        self.hidden_dim = model_config['hidden_dim']
+        self.attribute_dim = len(data_config['attribute_names'])
+        self.fc = nn.Linear(self.hidden_dim, self.attribute_dim)
+    
+    def forward(self, z, edge_index):
+        z = pyg_nn.global_max_pool(z)
+        return self.fc(z)
 
 class GAE(torch.nn.Module):
     r"""The Graph Auto-Encoder model from the
@@ -187,6 +205,7 @@ class GAE(torch.nn.Module):
         super().__init__()
         self.encoder = encoder
         self.decoder = InnerProductDecoder() if decoder is None else decoder
+        self.zsdecoder = ZSDecoder()
 
         #GAE.reset_parameters(self)
 
@@ -204,6 +223,9 @@ class GAE(torch.nn.Module):
         r"""Runs the decoder and computes edge probabilities."""
         return self.decoder(*args, **kwargs)
 
+    def zsdecode(self, *args, **kwargs):
+        r"""Runs the zsdecoder"""
+        return self.zsdecoder(*args, **kwargs)
 
     def recon_loss(self, z, pos_edge_index, neg_edge_index=None):
         r"""Given latent variables :obj:`z`, computes the binary cross
@@ -231,6 +253,13 @@ class GAE(torch.nn.Module):
                               EPS).mean()
 
         return pos_loss + neg_loss
+    
+    def zs_loss(self, z, pos_edge_index):
+        a_pred = self.zsdecoder(z, pos_edge_index)
+        a = 
+
+        loss_function = nn.MSELoss(reduction='none')
+        return loss_function(a_pred, a).sum()
 
 
     def test(self, z, pos_edge_index, neg_edge_index):
