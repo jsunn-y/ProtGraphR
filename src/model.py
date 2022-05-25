@@ -32,15 +32,23 @@ class GraphEncoder(nn.Module):
         self.num_layers = model_config['num_layers']
         self.dropout = model_config['dropout']
         self.edge_dim = model_config['edge_dim']
+        self.edge_features = model_config['edge_features']
 
         self.variational = model_config['kl_div_weight'] != 0
 
-        self.conv1 = GATv2Conv(
-            in_channels=self.node_dim,
-            out_channels=self.hidden_dim,
-            dropout=self.dropout,
-            edge_dim=self.edge_dim
-        )
+        if self.edge_features == 1:
+            self.conv1 = GATv2Conv(
+                in_channels=self.node_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout,
+                edge_dim=self.edge_dim
+            )
+        else:
+            self.conv1 = GATv2Conv(
+                in_channels=self.node_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout
+            )
         
         self.bns = nn.ModuleList()
         self.bns.append(nn.BatchNorm1d(self.hidden_dim))
@@ -48,22 +56,35 @@ class GraphEncoder(nn.Module):
         self.convs = nn.ModuleList()
         
         for l in range(self.num_layers-1):
-            layer = GATv2Conv(
-            in_channels=self.hidden_dim,
-            out_channels=self.hidden_dim,
-            dropout=self.dropout,
-            edge_dim=self.edge_dim
-            )
+            if self.edge_features == 1:
+                layer = GATv2Conv(
+                in_channels=self.hidden_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout,
+                edge_dim=self.edge_dim
+                )
+            else:
+                layer = GATv2Conv(
+                in_channels=self.hidden_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout
+                )
             self.convs.append(layer)
             self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
-        
-        self.convvar = GATv2Conv(
-            in_channels=self.hidden_dim,
-            out_channels=self.hidden_dim,
-            dropout=self.dropout,
-            edge_dim=self.edge_dim
-        )
+        if self.edge_features == 1:
+            self.convvar = GATv2Conv(
+                in_channels=self.hidden_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout,
+                edge_dim=self.edge_dim
+            )
+        else:
+            self.convvar = GATv2Conv(
+                in_channels=self.hidden_dim,
+                out_channels=self.hidden_dim,
+                dropout=self.dropout
+            )
 
         # fully-connected final layer
         #self.fc = nn.Linear(self.hidden_dim, 1)

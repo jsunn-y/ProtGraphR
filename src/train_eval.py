@@ -88,16 +88,21 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
             #print(model.encode(batch, extract=True).shape)
             embedding = model.encode(extract=True, data=batch)
             embedding = embedding.cpu()
-            embedding = embedding.reshape((56, -1, 32))
+            embedding = embedding.reshape((-1, 56, 32))
+            embedding = torch.mean(embedding, axis = 1)
 
-            a = embedding[38:41, :, :]
-            print(a.shape)
-            b = embedding[53, :, :]
-            print(b.shape)
-            embedding = np.concatenate((a, b), axis=1)
-            print(embedding.shape)
+            # a = embedding[:, 38:41,:]
+            # b = embedding[:, 53, :].reshape(-1, 1, 32)
+            # embedding = np.concatenate((a, b), axis=1)
 
-        #need to figure out how to get the right features from the graph object
+            # embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
+            
+            # empty = np.zeros((embedding.shape[0], 32*4))
+            # for i, row in enumerate(embedding):
+            #     empty[i, :] = row.flatten()
+            # embedding = empty
+
+        #need to think about out how to get the most relevant features from the graph object
         if save_embeddings.shape[0] == 0:
             save_embeddings = embedding
         else:
