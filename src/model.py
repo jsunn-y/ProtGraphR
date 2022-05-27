@@ -131,6 +131,7 @@ class GraphEncoder(nn.Module):
             #z = self.fc(z)
             return z
 
+        #to make the code work with the zsdecoder, need each entry to return the corresponding zs scores
         if self.variational:
             z = x, var
             return z
@@ -201,14 +202,15 @@ class GAE(torch.nn.Module):
             :class:`torch_geometric.nn.models.InnerProductDecoder`.
             (default: :obj:`None`)
     """
-    def __init__(self, encoder, model_config, decoder=None):
+    def __init__(self, encoder, model_config, data_config, decoder=None):
         super().__init__()
         self.encoder = encoder
         self.decoder = InnerProductDecoder() if decoder is None else decoder
-        self.zsdecoder = ZSDecoder()
+        self.zsdecoder = ZSDecoder(model_config, data_config)
 
         #GAE.reset_parameters(self)
 
+    #this doesn't work, so I had to comment it out
     # def reset_parameters(self):
     #     reset(self.encoder)
     #     reset(self.decoder)
@@ -256,7 +258,7 @@ class GAE(torch.nn.Module):
     
     def zs_loss(self, z, pos_edge_index):
         a_pred = self.zsdecoder(z, pos_edge_index)
-        a = 
+        #a = 
 
         loss_function = nn.MSELoss(reduction='none')
         return loss_function(a_pred, a).sum()

@@ -85,18 +85,20 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
         batch = batch.to(device)
 
         with torch.no_grad():
-            #print(model.encode(batch, extract=True).shape)
             embedding = model.encode(extract=True, data=batch)
             embedding = embedding.cpu()
             embedding = embedding.reshape((-1, 56, 32))
-            embedding = torch.mean(embedding, axis = 1)
 
-            # a = embedding[:, 38:41,:]
-            # b = embedding[:, 53, :].reshape(-1, 1, 32)
-            # embedding = np.concatenate((a, b), axis=1)
+            #keep this if you want mean global pooling
+            #embedding = torch.mean(embedding, axis = 1)
 
-            # embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
+            #keep this if you want all features from the 34 mutated residues
+            a = embedding[:, 38:41,:]
+            b = embedding[:, 53, :].reshape(-1, 1, 32)
+            embedding = np.concatenate((a, b), axis=1)
+            embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
             
+            #old stuff
             # empty = np.zeros((embedding.shape[0], 32*4))
             # for i, row in enumerate(embedding):
             #     empty[i, :] = row.flatten()

@@ -13,3 +13,111 @@ Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge
 Device:	 cuda:0
 ########## Experiment testESM_VGAE_noedge: ##########
 Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge: ##########
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Epoch 01, recon_loss: 5443.1451, kl_div: 10891.7297
+Best model saved
+Epoch 02, recon_loss: 3978.2173, kl_div: 3278.3463
+Best model saved
+Epoch 03, recon_loss: 3794.5754, kl_div: 2138.7677
+Best model saved
+Epoch 04, recon_loss: 3782.3408, kl_div: 1556.1438
+Best model saved
+Epoch 05, recon_loss: 3784.2712, kl_div: 1223.3486
+Best model saved
+Epoch 06, recon_loss: 3787.1899, kl_div: 1013.3875
+Best model saved
+Epoch 07, recon_loss: 3792.9242, kl_div: 882.6723
+Best model saved
+Epoch 08, recon_loss: 3789.1907, kl_div: 764.6890
+Best model saved
+Epoch 09, recon_loss: 3785.8645, kl_div: 697.2928
+Best model saved
+Epoch 10, recon_loss: 3784.1439, kl_div: 646.0815
+Best model saved
+Epoch 11, recon_loss: 3782.5636, kl_div: 608.8944
+Best model saved
+Epoch 12, recon_loss: 3779.8745, kl_div: 577.8423
+Best model saved
+Epoch 13, recon_loss: 3777.9836, kl_div: 552.4158
+Best model saved
+Epoch 14, recon_loss: 3775.3301, kl_div: 531.9534
+Best model saved
+Epoch 15, recon_loss: 3774.0252, kl_div: 515.5836
+Best model saved
+Epoch 16, recon_loss: 3773.5844, kl_div: 501.9942
+Best model saved
+Epoch 17, recon_loss: 3772.2028, kl_div: 490.7260
+Best model saved
+Epoch 18, recon_loss: 3770.3898, kl_div: 480.7342
+Best model saved
+Epoch 19, recon_loss: 3770.3172, kl_div: 470.7400
+Best model saved
+Epoch 20, recon_loss: 3769.5279, kl_div: 462.8382
+Best model saved
+Epoch 21, recon_loss: 3768.3120, kl_div: 457.1902
+Best model saved
+Epoch 22, recon_loss: 3767.2189, kl_div: 449.8813
+Best model saved
+Epoch 23, recon_loss: 3767.8095, kl_div: 443.8805
+Best model saved
+Epoch 24, recon_loss: 3767.3035, kl_div: 437.7098
+Best model saved
+Epoch 25, recon_loss: 3766.8345, kl_div: 433.9677
+Best model saved
+Epoch 26, recon_loss: 3766.8008, kl_div: 430.6702
+Best model saved
+Epoch 27, recon_loss: 3765.5947, kl_div: 425.4907
+Best model saved
+Epoch 28, recon_loss: 3765.9089, kl_div: 421.2268
+Best model saved
+Epoch 29, recon_loss: 3765.9928, kl_div: 417.9246
+Best model saved
+Epoch 30, recon_loss: 3765.6753, kl_div: 415.2721
+Best model saved
+Epoch 31, recon_loss: 3765.2845, kl_div: 412.4118
+Best model saved
+Epoch 32, recon_loss: 3765.8940, kl_div: 410.6010
+Best model saved
+Epoch 33, recon_loss: 3765.5846, kl_div: 407.8400
+Best model saved
+Epoch 34, recon_loss: 3765.2635, kl_div: 405.5828
+Best model saved
+Epoch 35, recon_loss: 3764.3194, kl_div: 403.2097
+Best model saved
+Epoch 36, recon_loss: 3765.2490, kl_div: 402.0337
+Best model saved
+Epoch 37, recon_loss: 3765.1862, kl_div: 399.7287
+Best model saved
+Epoch 38, recon_loss: 3764.7700, kl_div: 398.5441
+Best model saved
+Epoch 39, recon_loss: 3764.9269, kl_div: 396.8914
+Best model saved
+Epoch 40, recon_loss: 3764.5893, kl_div: 395.3312
+Best model saved
+Epoch 41, recon_loss: 3764.4253, kl_div: 393.5445
+Best model saved
+Epoch 42, recon_loss: 3763.7053, kl_div: 392.1281
+Best model saved
+Epoch 43, recon_loss: 3764.4358, kl_div: 391.1780
+Best model saved
+Epoch 44, recon_loss: 3764.0416, kl_div: 389.9455
+Best model saved
+Epoch 45, recon_loss: 3763.8137, kl_div: 388.7730
+Best model saved
+Epoch 46, recon_loss: 3764.3227, kl_div: 388.1521
+Best model saved
+Epoch 47, recon_loss: 3763.6207, kl_div: 387.0883
+Best model saved
+Epoch 48, recon_loss: 3763.5381, kl_div: 385.8467
+Best model saved
+Epoch 49, recon_loss: 3764.2946, kl_div: 384.9359
+Best model saved
+Epoch 50, recon_loss: 3763.5354, kl_div: 383.9655
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 20], edge_index=[2, 558], edge_attr=[558, 5], y=0.00308858515856, pos=[56, 3], label='V39K:D40A:G41P:V54S')
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge/embeddings.npy
