@@ -78,7 +78,7 @@ def train(model_config: dict, model: nn.Module, device: torch.device, data_loade
 
     return avg_recon_loss, avg_kl_div, avg_zs_loss
 
-def eval(model: nn.Module, device: torch.device, loader: DataLoader,
+def eval(model_config: dict, model: nn.Module, device: torch.device, loader: DataLoader,
          pbar: tqdm) -> np.array:
     """Evaluates the model by extracting the embeddings.
 
@@ -103,16 +103,16 @@ def eval(model: nn.Module, device: torch.device, loader: DataLoader,
         with torch.no_grad():
             embedding = model.encode(extract=True, data=batch)
             embedding = embedding.cpu()
-            embedding = embedding.reshape((-1, 56, 32))
+            embedding = embedding.reshape((-1, 56, model_config['hidden_dim']))
 
             #keep this if you want mean global pooling
-            #embedding = torch.mean(embedding, axis = 1)
+            embedding = torch.mean(embedding, axis = 1)
 
-            #keep this if you want all features from the 34 mutated residues
-            a = embedding[:, 38:41,:]
-            b = embedding[:, 53, :].reshape(-1, 1, 32)
-            embedding = np.concatenate((a, b), axis=1)
-            embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
+            #keep this if you want all features from only the 4 mutated residues
+            # a = embedding[:, 38:41,:]
+            # b = embedding[:, 53, :].reshape(-1, 1, 32)
+            # embedding = np.concatenate((a, b), axis=1)
+            # embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
             
             #old stuff
             # empty = np.zeros((embedding.shape[0], 32*4))
@@ -186,7 +186,7 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     #Get best model
     model.load_state_dict(torch.load(save_path + '/best.pth'))
     pbar = tqdm()
-    embeddings = eval(model, device, loader, pbar)
+    embeddings = eval(model_config, model, device, loader, pbar)
 
     np.save(os.path.join(save_path, 'embeddings.npy'), embeddings)
     print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))

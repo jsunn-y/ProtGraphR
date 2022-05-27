@@ -26,8 +26,14 @@ class GraphEncoder(nn.Module):
         Encoder module for the GAE or VGAE.
         """
         super(GraphEncoder, self).__init__()
+        
+        self.type_dict = {
+            'GCN' : GCNConv,
+            'GAT' : GATv2Conv              
+        }
 
         # save all of the info
+        self.type = model_config['type']
         self.node_dim = model_config['node_dim']
         self.hidden_dim = model_config['hidden_dim']
         self.num_layers = model_config['num_layers']
@@ -40,17 +46,15 @@ class GraphEncoder(nn.Module):
         self.zs = model_config['zs_loss_weight'] != 0
 
         if self.edge_features == True:
-            self.conv1 = GATv2Conv(
+            self.conv1 = self.type_dict[self.type](
                 in_channels=self.node_dim,
                 out_channels=self.hidden_dim,
-                dropout=self.dropout,
                 edge_dim=self.edge_dim
             )
         else:
-            self.conv1 = GATv2Conv(
+            self.conv1 = self.type_dict[self.type](
                 in_channels=self.node_dim,
-                out_channels=self.hidden_dim,
-                dropout=self.dropout
+                out_channels=self.hidden_dim
             )
         
         self.bns = nn.ModuleList()
@@ -60,33 +64,29 @@ class GraphEncoder(nn.Module):
         
         for l in range(self.num_layers-1):
             if self.edge_features == True:
-                layer = GATv2Conv(
+                layer = self.type_dict[self.type](
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
-                dropout=self.dropout,
                 edge_dim=self.edge_dim
                 )
             else:
-                layer = GATv2Conv(
+                layer = self.type_dict[self.type](
                 in_channels=self.hidden_dim,
-                out_channels=self.hidden_dim,
-                dropout=self.dropout
+                out_channels=self.hidden_dim
                 )
             self.convs.append(layer)
             self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
         if self.edge_features == True:
-            self.convvar = GATv2Conv(
+            self.convvar = self.type_dict[self.type](
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
-                dropout=self.dropout,
                 edge_dim=self.edge_dim
             )
         else:
-            self.convvar = GATv2Conv(
+            self.convvar = self.type_dict[self.type](
                 in_channels=self.hidden_dim,
-                out_channels=self.hidden_dim,
-                dropout=self.dropout
+                out_channels=self.hidden_dim
             )
 
         # fully-connected final layer
@@ -222,7 +222,7 @@ class GAE(torch.nn.Module):
     #     reset(self.decoder)
 
 
-    def encode(self, *args, **kwargs):
+    def encode(self, extract=False, *args, **kwargs):
         r"""Runs the encoder and computes node-wise latent variables."""
         return self.encoder(*args, **kwargs)
 

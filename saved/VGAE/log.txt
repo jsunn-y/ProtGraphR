@@ -1,0 +1,5 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/VGAE
+Device:	 cuda:0
+########## Experiment VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])

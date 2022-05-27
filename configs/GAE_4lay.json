@@ -1,14 +1,15 @@
 {
     "data_config": {
-        "name": "gb1_graphs_fixed_onehot_zs",
-        "encoding": "onehot",
+        "name": "gb1_graphs_fixed_esm_zs",
+        "encoding": "esm",
         "attribute_names": ["EvMutation", "Triad-FixedBb-dG"]
     },
     "model_config": {
         "name": "GAE",
-        "hidden_dim": 32,
-        "num_layers": 2, 
-        "dropout": 0.5, 
+        "type": "GAT",
+        "hidden_dim": 128,
+        "num_layers": 4, 
+        "dropout": 0, 
         "edge_features": 0, 
         "reconstruction_loss_weight": 1,
         "kl_div_weight": 0,
