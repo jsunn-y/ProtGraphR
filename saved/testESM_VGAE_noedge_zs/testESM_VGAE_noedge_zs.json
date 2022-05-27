@@ -1,0 +1,27 @@
+{
+    "data_config": {
+        "name": "gb1_graphs_fixed_esm_zs",
+        "encoding": "onehot",
+        "attribute_names": [
+            "EvMutation",
+            "Triad-FixedBb-dG"
+        ]
+    },
+    "model_config": {
+        "name": "VGAE",
+        "hidden_dim": 32,
+        "num_layers": 4,
+        "dropout": 0.5,
+        "edge_features": 0,
+        "reconstruction_loss_weight": 1,
+        "kl_div_weight": 1,
+        "zs_loss_weight": 1
+    },
+    "train_config": {
+        "seed": 42,
+        "batch_size": 1024,
+        "learning_rate": 0.001,
+        "num_epochs": 50,
+        "num_workers": 8
+    }
+}

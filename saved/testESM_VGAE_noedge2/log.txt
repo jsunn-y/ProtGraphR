@@ -1,0 +1,7 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge2.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge2
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge2: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Epoch 01, recon_loss: 7427.0670, kl_div: 73018.9379, zs_loss: 0.0000
+Best model saved

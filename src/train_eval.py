@@ -12,7 +12,7 @@ from src.Datasets import *
 from src.load_dataset import load_dataset
 from src.model import *
 
-def train(model_name: str, model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
+def train(model_config: dict, model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
     """Trains a GNN model.
 
     Args
@@ -28,6 +28,7 @@ def train(model_name: str, model: nn.Module, device: torch.device, data_loader: 
     model.train()
     total_recon_loss = 0
     total_kl_div = 0
+    total_zs_loss = 0
 
     pbar.reset(len(data_loader))
     pbar.set_description('Training')
@@ -35,6 +36,12 @@ def train(model_name: str, model: nn.Module, device: torch.device, data_loader: 
     for step, batch in enumerate(data_loader):
         batch = batch.to(device)
         batch_size = batch.batch.max().item()
+
+        #get the fitness labels and zs predictors
+        y = batch.y
+        y = np.array(y, dtype=np.float32)
+        #may be a more efficient way to do this
+        y = torch.tensor(y[:,1:]).to(device)
 
         x = batch.x.to(device)
         edge_index = batch.edge_index.to(device)
@@ -45,22 +52,31 @@ def train(model_name: str, model: nn.Module, device: torch.device, data_loader: 
         recon_loss = model.recon_loss(z, edge_index)
         total_recon_loss += recon_loss.item() * batch_size
         
-        if model_name == 'VGAE':
+        if model_config['kl_div_weight'] != 0:
             kl_div = model.kl_loss() #don't need to specify mu or loss since it will use the last one
             total_kl_div += kl_div.item() * batch_size
         else:
             kl_div = 0
 
-        loss = recon_loss + kl_div
+        if model_config['zs_loss_weight'] != 0:
+            zs_loss = model.zs_loss(z, edge_index, batch.batch, y)
+            total_zs_loss += zs_loss.item() * batch_size
+        else:
+            zs_loss = 0
+
+        loss = recon_loss + kl_div + zs_loss
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         pbar.update()
 
-    total_loss = total_recon_loss + total_kl_div    
-    avg_recon_loss = total_recon_loss / len(data_loader)
-    avg_kl_div = total_kl_div / len(data_loader)
-    return avg_recon_loss, avg_kl_div
+    total_loss = total_recon_loss + total_kl_div + total_zs_loss  
+    n = len(data_loader) 
+    avg_recon_loss = total_recon_loss / n
+    avg_kl_div = total_kl_div / n
+    avg_zs_loss = total_zs_loss / n
+
+    return avg_recon_loss, avg_kl_div, avg_zs_loss
 
 def eval(model: nn.Module, device: torch.device, loader: DataLoader,
          pbar: tqdm) -> np.array:
@@ -130,7 +146,7 @@ def start_training(save_path, data_config, model_config, train_config, device):
     
     # Initialize dataset
     dataset, model_config = load_dataset(data_config, model_config)
-    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config).to(device)
+    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config, data_config=data_config).to(device)
     
     #Initialize dataloaders
     train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
@@ -141,13 +157,13 @@ def start_training(save_path, data_config, model_config, train_config, device):
     # Start training
     pbar = tqdm()
     for epoch in range(1, 1 + train_config['num_epochs']):
-        recon_loss, kl_div = train(model_config['name'], model, device, train_loader, optimizer, pbar)
-        loss = recon_loss + kl_div
+        recon_loss, kl_div, zs_loss = train(model_config, model, device, train_loader, optimizer, pbar)
+        loss = recon_loss + kl_div + zs_loss
         
         #train_result = eval(model, device, train_loader, evaluator, pbar)
         #val_result = eval(model, device, valid_loader, evaluator, pbar)
 
-        tqdm.write(f'Epoch {epoch:02d}, recon_loss: {recon_loss:.4f}, kl_div: {kl_div:.4f}')
+        tqdm.write(f'Epoch {epoch:02d}, recon_loss: {recon_loss:.4f}, kl_div: {kl_div:.4f}, zs_loss: {zs_loss:.4f}')
             
         #update the best model after each epoch
         if epoch == 1 or loss < best_loss:
@@ -162,7 +178,7 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     dataset, model_config = load_dataset(data_config, model_config, extract=True)
 
     #Use Pytorch's built in GAE/VGAE
-    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config).to(device)
+    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config, data_config=data_config).to(device)
     
     #Initialize dataloaders
     loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=False)

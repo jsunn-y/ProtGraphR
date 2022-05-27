@@ -1,3 +1,4 @@
+from tkinter import Y
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -35,6 +36,8 @@ class GraphEncoder(nn.Module):
         self.edge_features = model_config['edge_features'] == 1
 
         self.variational = model_config['kl_div_weight'] != 0
+        #not sure if this line is needed
+        self.zs = model_config['zs_loss_weight'] != 0
 
         if self.edge_features == True:
             self.conv1 = GATv2Conv(
@@ -180,14 +183,17 @@ class InnerProductDecoder(torch.nn.Module):
         return torch.sigmoid(adj) if sigmoid else adj
 
 #write the classes for other self-supervised decoders here
+#can I just write this as a function in the GAE class
+
 class ZSDecoder(torch.nn.Module):
     def __init__(self, model_config, data_config):
+        super().__init__()
         self.hidden_dim = model_config['hidden_dim']
         self.attribute_dim = len(data_config['attribute_names'])
         self.fc = nn.Linear(self.hidden_dim, self.attribute_dim)
     
-    def forward(self, z, edge_index):
-        z = pyg_nn.global_max_pool(z)
+    def forward(self, z, edge_index, batch):
+        z = pyg_nn.global_max_pool(z, batch)
         return self.fc(z)
 
 class GAE(torch.nn.Module):
@@ -256,12 +262,12 @@ class GAE(torch.nn.Module):
 
         return pos_loss + neg_loss
     
-    def zs_loss(self, z, pos_edge_index):
-        a_pred = self.zsdecoder(z, pos_edge_index)
-        #a = 
+    def zs_loss(self, z, pos_edge_index, batch, y):
+        y_pred = self.zsdecoder(z, pos_edge_index, batch)
 
+        #may need to fix exactly how this is calculated
         loss_function = nn.MSELoss(reduction='none')
-        return loss_function(a_pred, a).sum()
+        return loss_function(y_pred, y).sum()
 
 
     def test(self, z, pos_edge_index, neg_edge_index):
@@ -307,8 +313,8 @@ class VGAE(GAE):
             :class:`torch_geometric.nn.models.InnerProductDecoder`.
             (default: :obj:`None`)
     """
-    def __init__(self, encoder, model_config, decoder=None):
-        super().__init__(encoder, model_config, decoder)
+    def __init__(self, encoder, model_config, data_config, decoder=None):
+        super().__init__(encoder, model_config, data_config, decoder)
 
     def reparametrize(self, mu, logstd):
         if self.training:

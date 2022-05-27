@@ -1,0 +1,246 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+<class 'dict'>
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+1024
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+(1024, 3)
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+(1024, 2)
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+(1024, 2)
+torch.Size([1024, 2])
+(1024, 2)
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+torch.Size([1024, 2])
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/testESM_VGAE_noedge_zs.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs
+Device:	 cuda:0
+########## Experiment testESM_VGAE_noedge_zs: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Epoch 01, recon_loss: 23106.4691, kl_div: 3063522.0662, zs_loss: 10473727982.4469
+Best model saved
+Epoch 02, recon_loss: 29343.3234, kl_div: 1777979.3519, zs_loss: 1314807226.2894
+Best model saved
+Epoch 03, recon_loss: 28443.9568, kl_div: 1889733.1183, zs_loss: 464894579.0509
+Best model saved
+Epoch 04, recon_loss: 27767.4710, kl_div: 2040426.2596, zs_loss: 223234411.3863
+Best model saved
+Epoch 05, recon_loss: 27530.9520, kl_div: 2092408.0199, zs_loss: 165763183.8925
+Best model saved
+Epoch 06, recon_loss: 27313.4272, kl_div: 2119075.0493, zs_loss: 135558419.7367
+Best model saved
+Epoch 07, recon_loss: 27150.5699, kl_div: 2129354.2747, zs_loss: 117932420.1513
+Best model saved
+Epoch 08, recon_loss: 27069.6396, kl_div: 2127081.2218, zs_loss: 102824987.3623
+Best model saved
+Epoch 09, recon_loss: 27019.3370, kl_div: 2124607.9006, zs_loss: 90673103.4761
+Best model saved
+Epoch 10, recon_loss: 26977.6122, kl_div: 2116436.8200, zs_loss: 82558272.2495
+Best model saved
+Epoch 11, recon_loss: 26934.5298, kl_div: 2107829.1438, zs_loss: 73742373.3930
+Best model saved
+Epoch 12, recon_loss: 26870.2920, kl_div: 2095707.9970, zs_loss: 70150155.8066
+Best model saved
+Epoch 13, recon_loss: 26766.9602, kl_div: 2101153.2823, zs_loss: 69928304.5036
+Best model saved
+Epoch 14, recon_loss: 26896.3513, kl_div: 2034590.3430, zs_loss: 71506121.3484
+Epoch 15, recon_loss: 26810.5970, kl_div: 2045810.5227, zs_loss: 62591146.2417
+Best model saved
+Epoch 16, recon_loss: 26718.5361, kl_div: 2051233.3493, zs_loss: 56978725.5470
+Best model saved
+Epoch 17, recon_loss: 26653.8209, kl_div: 2052110.1529, zs_loss: 56092978.7570
+Best model saved
+Epoch 18, recon_loss: 26642.0556, kl_div: 2051177.6536, zs_loss: 52812075.5882
+Best model saved
+Epoch 19, recon_loss: 26515.1127, kl_div: 2044888.5316, zs_loss: 62766815.9841
+Epoch 20, recon_loss: 26535.8582, kl_div: 2013821.7560, zs_loss: 49853754.7656
+Best model saved
+Epoch 21, recon_loss: 26650.7636, kl_div: 1995309.5331, zs_loss: 174875468.2339
+Epoch 22, recon_loss: 26796.9689, kl_div: 1927129.1086, zs_loss: 104190897.1190
+Epoch 23, recon_loss: 26799.5820, kl_div: 1940899.8377, zs_loss: 71253932.6405
+Epoch 24, recon_loss: 26704.8031, kl_div: 1953627.5815, zs_loss: 59618738.9902
+Epoch 25, recon_loss: 26608.9123, kl_div: 1945640.8198, zs_loss: 51998321.1051
+Epoch 26, recon_loss: 26541.2737, kl_div: 1939985.7302, zs_loss: 46315353.3265
+Best model saved
+Epoch 27, recon_loss: 26480.3619, kl_div: 1935614.0470, zs_loss: 43205089.0252
+Best model saved
+Epoch 28, recon_loss: 26497.2477, kl_div: 1938023.2526, zs_loss: 40566724.9334
+Best model saved
+Epoch 29, recon_loss: 26544.7252, kl_div: 1939299.9961, zs_loss: 38863885.1364
+Best model saved
+Epoch 30, recon_loss: 26536.0880, kl_div: 1941746.4830, zs_loss: 37040421.1030
+Best model saved
+Epoch 31, recon_loss: 26527.8873, kl_div: 1949702.5531, zs_loss: 43779580.3832
+Epoch 32, recon_loss: 26515.5993, kl_div: 1947612.5063, zs_loss: 32287582.5545
+Best model saved
+Epoch 33, recon_loss: 26484.2591, kl_div: 1948216.2716, zs_loss: 29907314.5136
+Best model saved
+Epoch 34, recon_loss: 26452.3567, kl_div: 1958776.9248, zs_loss: 29161802.5647
+Best model saved
+Epoch 35, recon_loss: 26424.9256, kl_div: 1950829.1005, zs_loss: 26940147.7966
+Best model saved
+Epoch 36, recon_loss: 26403.9191, kl_div: 1956752.7738, zs_loss: 25351206.0399
+Best model saved
+Epoch 37, recon_loss: 26392.8212, kl_div: 1954692.3671, zs_loss: 23754283.2411
+Best model saved
+Epoch 38, recon_loss: 26350.7474, kl_div: 1961113.2543, zs_loss: 23129280.9763
+Best model saved
+Epoch 39, recon_loss: 26327.9568, kl_div: 1956453.3766, zs_loss: 21975479.6166
+Best model saved
+Epoch 40, recon_loss: 26314.3349, kl_div: 1951722.3404, zs_loss: 21539131.1754
+Best model saved
+Epoch 41, recon_loss: 26286.6381, kl_div: 1954795.3507, zs_loss: 21312516.7049
+Best model saved
+Epoch 42, recon_loss: 26255.7187, kl_div: 1955213.7613, zs_loss: 21519106.7325
+Epoch 43, recon_loss: 26234.3473, kl_div: 1951169.2671, zs_loss: 21834594.2980
+Epoch 44, recon_loss: 26222.6394, kl_div: 1951819.6574, zs_loss: 19715031.6223
+Best model saved
+Epoch 45, recon_loss: 26223.0317, kl_div: 1948136.5097, zs_loss: 18438408.0100
+Best model saved
+Epoch 46, recon_loss: 26146.6026, kl_div: 1962309.1495, zs_loss: 23486813.1342
+Epoch 47, recon_loss: 26166.9526, kl_div: 1940245.0435, zs_loss: 17762411.2147
+Best model saved
+Epoch 48, recon_loss: 26140.2654, kl_div: 1931393.1267, zs_loss: 17681679.4826
+Best model saved
+Epoch 49, recon_loss: 26127.2005, kl_div: 1920056.9601, zs_loss: 17720483.1950
+Epoch 50, recon_loss: 26106.7808, kl_div: 1912753.3882, zs_loss: 17058293.4090
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/testESM_VGAE_noedge_zs/embeddings.npy
