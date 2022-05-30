@@ -106,11 +106,15 @@ class GraphEncoder(nn.Module):
             x = self.conv1(x, edge_index, edge_attr)
         else:
             x = self.conv1(x, edge_index)
+
         x = F.elu(x)
         x = self.bns[0](x)
 
         if self.num_layers == 2 and self.variational:
+            if self.edge_features == True:
                 var = self.convvar(x, edge_index, edge_attr)
+            else:
+                var = self.convvar(x, edge_index)
 
         for l, conv in enumerate(self.convs):
             if self.edge_features == True:

@@ -8,14 +8,14 @@
         ]
     },
     "model_config": {
-        "name": "VGAE",
-        "type": "GAT",
+        "name": "GAE",
+        "type": "GCN",
         "hidden_dim": 128,
         "num_layers": 2,
         "dropout": 0,
         "edge_features": 0,
         "reconstruction_loss_weight": 1,
-        "kl_div_weight": 1,
+        "kl_div_weight": 0,
         "zs_loss_weight": 0
     },
     "train_config": {
