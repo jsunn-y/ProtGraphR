@@ -19,3 +19,64 @@ Device:	 cuda:0
 ########## Experiment VGAE: ##########
 Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
 False
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/VGAE.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/VGAE
+Device:	 cuda:0
+########## Experiment VGAE: ##########
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Epoch 01, recon_loss: 9138.4644, kl_div: 7089.4179, zs_loss: 0.0000
+Best model saved
+Epoch 02, recon_loss: 8903.2228, kl_div: 998.2323, zs_loss: 0.0000
+Best model saved
+Epoch 03, recon_loss: 8958.0347, kl_div: 724.4094, zs_loss: 0.0000
+Best model saved
+Epoch 04, recon_loss: 8979.4721, kl_div: 616.6644, zs_loss: 0.0000
+Best model saved
+Epoch 05, recon_loss: 8994.1848, kl_div: 556.0179, zs_loss: 0.0000
+Best model saved
+Epoch 06, recon_loss: 9007.5227, kl_div: 521.2291, zs_loss: 0.0000
+Best model saved
+Epoch 07, recon_loss: 9010.6048, kl_div: 498.2693, zs_loss: 0.0000
+Best model saved
+Epoch 08, recon_loss: 9016.1562, kl_div: 482.5322, zs_loss: 0.0000
+Best model saved
+Epoch 09, recon_loss: 9018.8143, kl_div: 470.6482, zs_loss: 0.0000
+Best model saved
+Epoch 10, recon_loss: 9022.4764, kl_div: 461.6622, zs_loss: 0.0000
+Best model saved
+Epoch 11, recon_loss: 9023.7339, kl_div: 454.7746, zs_loss: 0.0000
+Best model saved
+Epoch 12, recon_loss: 9024.5194, kl_div: 449.4652, zs_loss: 0.0000
+Best model saved
+Epoch 13, recon_loss: 9026.2219, kl_div: 445.4083, zs_loss: 0.0000
+Best model saved
+Epoch 14, recon_loss: 9027.4830, kl_div: 441.7097, zs_loss: 0.0000
+Best model saved
+Epoch 15, recon_loss: 9028.2752, kl_div: 438.9146, zs_loss: 0.0000
+Best model saved
+Epoch 16, recon_loss: 9030.0736, kl_div: 436.3794, zs_loss: 0.0000
+Best model saved
+Epoch 17, recon_loss: 9029.7045, kl_div: 434.4461, zs_loss: 0.0000
+Best model saved
+Epoch 18, recon_loss: 9032.0027, kl_div: 432.4417, zs_loss: 0.0000
+Epoch 19, recon_loss: 9031.5301, kl_div: 431.0114, zs_loss: 0.0000
+Best model saved
+Epoch 20, recon_loss: 9032.5367, kl_div: 429.5923, zs_loss: 0.0000
+Best model saved
+Epoch 21, recon_loss: 9034.1215, kl_div: 428.4610, zs_loss: 0.0000
+Epoch 22, recon_loss: 9032.1722, kl_div: 427.3378, zs_loss: 0.0000
+Best model saved
+Epoch 23, recon_loss: 9031.0686, kl_div: 426.5092, zs_loss: 0.0000
+Best model saved
+Epoch 24, recon_loss: 9032.3585, kl_div: 425.8535, zs_loss: 0.0000
+Epoch 25, recon_loss: 9033.1299, kl_div: 425.0400, zs_loss: 0.0000
+Epoch 26, recon_loss: 9032.3496, kl_div: 424.4947, zs_loss: 0.0000
+Best model saved
+Epoch 27, recon_loss: 9035.8596, kl_div: 423.8216, zs_loss: 0.0000
+Epoch 28, recon_loss: 9030.4311, kl_div: 422.9380, zs_loss: 0.0000
+Best model saved
+Epoch 29, recon_loss: 9031.4597, kl_div: 422.7129, zs_loss: 0.0000
+Epoch 30, recon_loss: 9031.7944, kl_div: 422.5614, zs_loss: 0.0000
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/VGAE/embeddings.npy

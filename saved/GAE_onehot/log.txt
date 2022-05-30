@@ -1,0 +1,68 @@
+Config file:	 /scratch/ml/jyang4/ProtGraphR/configs/GAE_onehot.json
+Save directory:	 /scratch/ml/jyang4/ProtGraphR/saved/GAE_onehot
+Device:	 cuda:0
+########## Experiment GAE_onehot: ##########
+Data(x=[56, 20], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Epoch 01, recon_loss: 1319.5997, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 02, recon_loss: 990.7737, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 03, recon_loss: 972.4493, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 04, recon_loss: 961.4213, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 05, recon_loss: 954.4112, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 06, recon_loss: 948.5151, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 07, recon_loss: 943.0877, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 08, recon_loss: 938.8625, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 09, recon_loss: 935.0726, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 10, recon_loss: 931.8178, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 11, recon_loss: 928.6495, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 12, recon_loss: 925.7801, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 13, recon_loss: 923.2706, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 14, recon_loss: 920.4774, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 15, recon_loss: 917.9915, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 16, recon_loss: 915.4292, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 17, recon_loss: 913.1189, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 18, recon_loss: 911.2834, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 19, recon_loss: 909.6745, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 20, recon_loss: 908.1374, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 21, recon_loss: 906.9854, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 22, recon_loss: 905.7727, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 23, recon_loss: 904.7885, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 24, recon_loss: 904.1233, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 25, recon_loss: 903.4765, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 26, recon_loss: 902.7254, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 27, recon_loss: 902.1846, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 28, recon_loss: 901.5078, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 29, recon_loss: 901.1479, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 30, recon_loss: 900.5254, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 20], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
+Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/GAE_onehot/embeddings.npy
