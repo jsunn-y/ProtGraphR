@@ -106,13 +106,13 @@ def eval(model_config: dict, model: nn.Module, device: torch.device, loader: Dat
             embedding = embedding.reshape((-1, 56, model_config['hidden_dim']))
 
             #keep this if you want mean global pooling
-            embedding = torch.mean(embedding, axis = 1)
+            #embedding = torch.mean(embedding, axis = 1)
 
             #keep this if you want all features from only the 4 mutated residues
-            # a = embedding[:, 38:41,:]
-            # b = embedding[:, 53, :].reshape(-1, 1, 32)
-            # embedding = np.concatenate((a, b), axis=1)
-            # embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
+            a = embedding[:, 38:41,:]
+            b = embedding[:, 53, :].reshape(-1, 1, model_config['hidden_dim'])
+            embedding = np.concatenate((a, b), axis=1)
+            embedding = embedding.reshape(-1, embedding.shape[1]*embedding.shape[2])
             
             #old stuff
             # empty = np.zeros((embedding.shape[0], 32*4))
