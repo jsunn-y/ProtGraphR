@@ -195,6 +195,7 @@ class ZSDecoder(torch.nn.Module):
         self.hidden_dim = model_config['hidden_dim']
         self.attribute_dim = len(data_config['attribute_names'])
         self.fc = nn.Linear(self.hidden_dim, self.attribute_dim)
+        #add nonlinear activation here?
     
     def forward(self, z, edge_index, batch):
         z = pyg_nn.global_max_pool(z, batch)
@@ -270,8 +271,8 @@ class GAE(torch.nn.Module):
         y_pred = self.zsdecoder(z, pos_edge_index, batch)
 
         #may need to fix exactly how this is calculated
-        loss_function = nn.MSELoss(reduction='none')
-        return loss_function(y_pred, y).sum()
+        loss_function = nn.MSELoss(reduction='mean')
+        return loss_function(y_pred, y)#.sum()
 
 
     def test(self, z, pos_edge_index, neg_edge_index):

@@ -1,0 +1,28 @@
+{
+    "data_config": {
+        "name": "gb1_graphs_fixed_esm_zs",
+        "encoding": "esm",
+        "attribute_names": [
+            "EvMutation",
+            "Triad-FixedBb-dG"
+        ]
+    },
+    "model_config": {
+        "name": "GAE",
+        "type": "GAT",
+        "hidden_dim": 128,
+        "num_layers": 2,
+        "dropout": 0,
+        "edge_features": 0,
+        "reconstruction_loss_weight": 1,
+        "kl_div_weight": 0,
+        "zs_loss_weight": 1
+    },
+    "train_config": {
+        "seed": 42,
+        "batch_size": 1024,
+        "learning_rate": 0.001,
+        "num_epochs": 30,
+        "num_workers": 8
+    }
+}
