@@ -1,0 +1,4 @@
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge2
+Device:	 cuda:0
+########## Experiment GAE_edge2: ##########
