@@ -2,6 +2,7 @@ Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge2.json
 Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge2
 Device:	 cuda:0
 ########## Experiment GAE_edge2: ##########
+<<<<<<< HEAD
 Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge2.json
 Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge2
 Device:	 cuda:0
@@ -11,3 +12,5 @@ Epoch 01, recon_loss: 1291.1490, kl_div: 0.0000, zs_loss: 0.0000
 Best model saved
 Epoch 02, recon_loss: 807.1326, kl_div: 0.0000, zs_loss: 0.0000
 Best model saved
+=======
+>>>>>>> 31864c4ebf780e33121e97c0bd7f873d163d35e0
