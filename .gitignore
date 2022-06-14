@@ -10,4 +10,7 @@
 *.csv
 *.model_params
 *.pt
+*.tar.gz
 analysis/names.pkl
+data/graphs
+src/__pycache__
