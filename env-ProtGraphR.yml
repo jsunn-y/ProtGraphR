@@ -1,0 +1,89 @@
+# Install or update using
+# conda env update --file env-mlprot.yml --prune
+#
+# Notes:
+# - Python >= 3.9, for better typing annotation support
+# - PyTorch <= 1.9.1, to avoid need for GLIBC >= 2.27 (which PyTorch Geometric needs)
+#   - as of 2022-02-18, ml-login4 is running OpenSUSE Leap 15.1, which has GLIBC 2.26
+# - PyTorch Geometric >= 2.0.3, to support edge features on GATv2Conv
+name: ProtGraphR
+channels:
+- pyg  # pyg (PyTorch Geometric)
+- pytorch3d  # pytorch3d
+- pytorch  # torch (PyTorch)
+- conda-forge
+- anaconda
+- bioconda
+- schrodinger  # pymol
+- salilab  # dssp
+dependencies:
+- python=3.9
+- biopandas               # required by graphein
+- biopython               # required by graphein
+- click
+- cudatoolkit=11.3
+- dssp                    # optional for graphein, required for computing secondary structural features
+- flake8
+- ipympl
+- jupyterlab
+- matplotlib
+- multipledispatch        # required by graphein
+- mypy
+- networkx                # required by graphein
+- nodejs
+- numpy
+- pandas
+- pip
+- plotly                  # required by graphein
+- pydantic                # required by graphein
+- pyg>=2.0.3
+# - pymol                 # optional for graphein, for molecule visualization, version 2.5.2 only supports Python 3.7-3.8
+- pytables  # for handling HDF5 files
+- python-wget             # required by graphein
+- pytorch=1.9.1  # PyTorch-3D (v0.6.1) only supports up to PyTorch 1.10.0
+- pytorch3d=0.6.1         # optional for graphein, required for protein visualization
+- pyyaml                  # required by graphein
+- scikit-learn
+- scipy
+- torchvision=0.10.1  # latest version of torchvision compatible with PyTorch 1.9.1
+- tqdm
+- versioneer              # might be required by graphein??
+- xarray                  # required by graphein
+- holoviews=1.14.6        # for plotting
+- bokeh=2.3.3             # for plotting
+- panel=0.12.1            # for plotting
+- colorcet=2.0.2          # for plotting
+- pyviz_comms=2.1.0       # for plotting
+- selenium=3.141.0        # for saving bokeh plots
+- firefox=99.0            # for saving bokeh plots
+- geckodriver=0.30.0      # for saving bokeh plots
+- jinja2=3.0.3            # env troubleshot for holoview
+
+# things fzl installed for plotting and such
+# conda install -c anaconda colorcet
+# conda install bokeh
+# conda install -c pyviz holoviews bokeh
+# conda install selenium
+# conda install -c conda-forge firefox geckodriver
+
+# with specific version
+# holoviews=1.14.6 
+# bokeh=2.3.3
+# panel=0.12.1   
+# colorcet=2.0.2
+# pyviz_comms=2.1.0
+# selenium=3.141.0
+# firefox=97.0.2
+# geckodriver=0.30.0
+# pip install biovec
+# pip install --upgrade iqplot
+
+- pip:
+  - bioservices           # optional for graphein, for certain node features
+  - biovec              # optional for graphein, for computing Biovec embeddings
+  - graphein>=1.0.11
+  - propy3                # optional for graphein, for computing Propy descriptors
+#  - pyaaisc              # optional for graphein, for AAindex
+  - iqplot==0.2.4          # for plotting
+
+
