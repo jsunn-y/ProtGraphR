@@ -194,12 +194,15 @@ class ZSDecoder(torch.nn.Module):
         super().__init__()
         self.hidden_dim = model_config['hidden_dim']
         self.attribute_dim = len(data_config['attribute_names'])
-        self.fc = nn.Linear(self.hidden_dim, self.attribute_dim)
+        self.fc1 = nn.Linear(self.hidden_dim, self.hidden_dim)
+        self.fc2 = nn.Linear(self.hidden_dim, self.attribute_dim)
         #add nonlinear activation here?
     
     def forward(self, z, edge_index, batch):
-        z = pyg_nn.global_max_pool(z, batch)
-        return self.fc(z)
+        z = pyg_nn.global_mean_pool(z, batch)
+        z = F.elu(self.fc1(z))
+        z = self.fc2(z)
+        return z
 
 class GAE(torch.nn.Module):
     r"""The Graph Auto-Encoder model from the
