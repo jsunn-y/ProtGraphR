@@ -4,7 +4,8 @@
         "encoding": "esm",
         "attribute_names": [
             "EvMutation",
-            "Triad-FixedBb-dG"
+            "Triad-FixedBb-dG",
+            "weak_supervision"
         ]
     },
     "model_config": {

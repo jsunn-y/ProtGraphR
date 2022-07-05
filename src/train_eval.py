@@ -3,14 +3,25 @@ import random
 import time
 import numpy as np
 from itertools import cycle
+from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.utils import resample
+from sklearn.metrics import r2_score, ndcg_score
+from sklearn.model_selection import train_test_split, KFold
+from sklearn.utils import shuffle
+
 import torch
 import torch.nn as nn
+from torch.utils.data import TensorDataset, DataLoader
 from torch_geometric.loader import DataLoader
 from tqdm.auto import tqdm
 
 from src.Datasets import *
 from src.load_dataset import load_dataset
 from src.model import *
+
+def ndcg(y_true, y_pred):
+    y_true_normalized = y_true - min(y_true)
+    return ndcg_score(y_true_normalized.reshape(1, -1), y_pred.reshape(1, -1))
 
 def train(model_config: dict, model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
     """Trains a GNN model.
@@ -129,6 +140,34 @@ def eval(model_config: dict, model: nn.Module, device: torch.device, loader: Dat
 
     return save_embeddings
 
+def train_supervised(N_train_samples = 384, n_splits = 5):
+    fitness_df = pd.read_csv('fitness.csv')
+    dataset = GB1Dataset(dataframe = fitness_df, encoding = 'one-hot', attribute_names = ["EvMutation", "Triad-FixedBb-dG"])
+    dataset.encode_X()
+    seed = 0
+    X, y = shuffle(X, y, random_state=seed)
+    X_train_all = dataset.X
+    y_train_all = fitness_df['fit'].values
+
+    X_resample, y_resample = resample(X_train_all, y_train_all, n_samples=N_train_samples)
+    kf = KFold(n_splits=n_splits)
+    clfs = []
+    y_pred_tests = np.zeros((n_splits, len(X_train_all)))
+
+    for i, (train_index, test_index) in enumerate(kf.split(X_resample)):
+        X_train, X_test = X_resample[train_index], X_resample[test_index]
+        y_train, y_test = y_resample[train_index], y_resample[test_index]
+        
+        clf = Ridge(alpha=1)
+        clf.fit(X_train, y_train)
+        clfs.append(clf)
+
+        y_pred_tests[i] = clf.predict(X_train_all)
+    
+    y_pred_test = np.mean(y_pred_tests, axis = 0)
+    print(ndcg(y_train_all, y_pred_test))
+    return y_pred_test
+
 def start_training(save_path, data_config, model_config, train_config, device):
 
     # Sample and fix a random seed if not set in train_config
@@ -149,10 +188,16 @@ def start_training(save_path, data_config, model_config, train_config, device):
     model = model_class(GraphEncoder(model_config = model_config), model_config=model_config, data_config=data_config).to(device)
     
     #Initialize dataloaders
-    train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+    train_loader = torch_geometric.loader.DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
+
+    #Get labels for weak supervision if desired
+    if 'weak_supervision' in data_config["attribute_names"]:
+        y_pred = train_supervised()
+        dataset2 = torch.TensorDataset(torch.tensor(y_pred))
+        train_loader2 = torch.utils.data.DataLoader(dataset2, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Start training
     pbar = tqdm()
