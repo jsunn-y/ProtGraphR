@@ -1,0 +1,124 @@
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/VGAE_edge_WS2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/VGAE_edge_WS2
+Device:	 cuda:0
+########## Experiment VGAE_edge_WS2: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.8211206959896264
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/VGAE_edge_WS2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/VGAE_edge_WS2
+Device:	 cuda:0
+########## Experiment VGAE_edge_WS2: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.8211206959896264
+Epoch 01, recon_loss: 33778.8371, kl_div: 393064.0763, zs_loss: 993697.9242
+Best model saved
+Epoch 02, recon_loss: 34293.8145, kl_div: 100359.5583, zs_loss: 30442.2975
+Best model saved
+Epoch 03, recon_loss: 33693.8312, kl_div: 56574.0531, zs_loss: 23678.7358
+Best model saved
+Epoch 04, recon_loss: 33085.1003, kl_div: 40230.1635, zs_loss: 16418.0004
+Best model saved
+Epoch 05, recon_loss: 32295.2727, kl_div: 31126.0618, zs_loss: 11639.9348
+Best model saved
+Epoch 06, recon_loss: 31388.3785, kl_div: 24990.3904, zs_loss: 9831.4026
+Best model saved
+Epoch 07, recon_loss: 30295.8564, kl_div: 20855.5248, zs_loss: 9814.0683
+Best model saved
+Epoch 08, recon_loss: 28850.3862, kl_div: 17702.9189, zs_loss: 8831.6280
+Best model saved
+Epoch 09, recon_loss: 27206.0050, kl_div: 15328.7126, zs_loss: 9448.6381
+Best model saved
+Epoch 10, recon_loss: 25503.1859, kl_div: 13487.8921, zs_loss: 8792.8383
+Best model saved
+Epoch 11, recon_loss: 23806.4063, kl_div: 12025.5151, zs_loss: 9416.5712
+Best model saved
+Epoch 12, recon_loss: 22210.7973, kl_div: 10853.9595, zs_loss: 9518.6818
+Best model saved
+Epoch 13, recon_loss: 20805.0314, kl_div: 9974.4022, zs_loss: 9678.8298
+Best model saved
+Epoch 14, recon_loss: 19529.4788, kl_div: 9143.9917, zs_loss: 8985.0520
+Best model saved
+Epoch 15, recon_loss: 20871.9747, kl_div: 15538.2459, zs_loss: 48227.1915
+Epoch 16, recon_loss: 20646.0034, kl_div: 14418.3168, zs_loss: 22764.0024
+Epoch 17, recon_loss: 17836.9966, kl_div: 10093.0734, zs_loss: 17038.1187
+Epoch 18, recon_loss: 16583.2462, kl_div: 8794.5985, zs_loss: 14397.4854
+Epoch 19, recon_loss: 15791.3158, kl_div: 8133.2638, zs_loss: 14240.9557
+Epoch 20, recon_loss: 15175.6954, kl_div: 7705.4476, zs_loss: 13599.2162
+Best model saved
+Epoch 21, recon_loss: 14719.9818, kl_div: 7426.8236, zs_loss: 13778.1489
+Best model saved
+Epoch 22, recon_loss: 14316.3934, kl_div: 7174.4660, zs_loss: 12737.0627
+Best model saved
+Epoch 23, recon_loss: 13986.5837, kl_div: 6987.8657, zs_loss: 12838.0123
+Best model saved
+Epoch 24, recon_loss: 13700.1735, kl_div: 6870.3380, zs_loss: 12380.1959
+Best model saved
+Epoch 25, recon_loss: 13466.7800, kl_div: 6738.6589, zs_loss: 12352.8010
+Best model saved
+Epoch 26, recon_loss: 13246.8429, kl_div: 6654.3010, zs_loss: 12880.9812
+Epoch 27, recon_loss: 13086.1897, kl_div: 6563.8482, zs_loss: 12517.9949
+Best model saved
+Epoch 28, recon_loss: 12944.6746, kl_div: 6479.1711, zs_loss: 11987.4381
+Best model saved
+Epoch 29, recon_loss: 12784.0731, kl_div: 6390.4307, zs_loss: 11449.2754
+Best model saved
+Epoch 30, recon_loss: 12631.0497, kl_div: 6274.7200, zs_loss: 11338.5690
+Best model saved
+Epoch 31, recon_loss: 12480.9729, kl_div: 6221.5201, zs_loss: 11082.4769
+Best model saved
+Epoch 32, recon_loss: 12368.3454, kl_div: 6215.7067, zs_loss: 11477.7444
+Epoch 33, recon_loss: 12248.5485, kl_div: 6092.7494, zs_loss: 10414.9459
+Best model saved
+Epoch 34, recon_loss: 12149.4131, kl_div: 6041.2320, zs_loss: 10482.9194
+Best model saved
+Epoch 35, recon_loss: 12047.8557, kl_div: 5961.1351, zs_loss: 10263.5303
+Best model saved
+Epoch 36, recon_loss: 11953.7638, kl_div: 5960.6225, zs_loss: 10525.2370
+Epoch 37, recon_loss: 11896.6930, kl_div: 5895.5221, zs_loss: 10214.5118
+Best model saved
+Epoch 38, recon_loss: 11811.3145, kl_div: 5827.5752, zs_loss: 9902.3457
+Best model saved
+Epoch 39, recon_loss: 11743.6143, kl_div: 5765.3165, zs_loss: 9573.6713
+Best model saved
+Epoch 40, recon_loss: 11666.0847, kl_div: 5753.5357, zs_loss: 9892.0122
+Epoch 41, recon_loss: 11611.4219, kl_div: 5694.7389, zs_loss: 9336.3028
+Best model saved
+Epoch 42, recon_loss: 11544.8272, kl_div: 5638.6281, zs_loss: 9083.8441
+Best model saved
+Epoch 43, recon_loss: 11457.0029, kl_div: 5582.9197, zs_loss: 8931.5263
+Best model saved
+Epoch 44, recon_loss: 11380.1084, kl_div: 5556.5028, zs_loss: 8946.7241
+Best model saved
+Epoch 45, recon_loss: 11310.6156, kl_div: 5523.7632, zs_loss: 8635.1356
+Best model saved
+Epoch 46, recon_loss: 11231.6447, kl_div: 5488.4200, zs_loss: 8876.9189
+Epoch 47, recon_loss: 11160.9017, kl_div: 5443.6280, zs_loss: 8336.5823
+Best model saved
+Epoch 48, recon_loss: 11090.3816, kl_div: 5421.4934, zs_loss: 8390.2574
+Best model saved
+Epoch 49, recon_loss: 11008.4726, kl_div: 5346.0360, zs_loss: 7875.1737
+Best model saved
+Epoch 50, recon_loss: 10923.9871, kl_div: 5302.4885, zs_loss: 7735.3095
+Best model saved
+Epoch 51, recon_loss: 10852.2340, kl_div: 5307.0507, zs_loss: 8258.1616
+Epoch 52, recon_loss: 10765.6119, kl_div: 5233.4310, zs_loss: 7403.0198
+Best model saved
+Epoch 53, recon_loss: 10683.7329, kl_div: 5205.7272, zs_loss: 7432.9342
+Best model saved
+Epoch 54, recon_loss: 10596.1005, kl_div: 5118.7948, zs_loss: 6869.6951
+Best model saved
+Epoch 55, recon_loss: 10501.8977, kl_div: 5070.7487, zs_loss: 6889.8440
+Best model saved
+Epoch 56, recon_loss: 10416.5418, kl_div: 5042.7480, zs_loss: 6647.2201
+Best model saved
+Epoch 57, recon_loss: 10316.4409, kl_div: 4966.0894, zs_loss: 6167.8215
+Best model saved
+Epoch 58, recon_loss: 10220.0433, kl_div: 4942.0749, zs_loss: 6223.6557
+Best model saved
+Epoch 59, recon_loss: 10131.2914, kl_div: 4901.9638, zs_loss: 6060.7328
+Best model saved
+Epoch 60, recon_loss: 10032.3982, kl_div: 4836.4773, zs_loss: 5711.3580
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Saved Features: /home/jyang4/repos/ProtGraphR/saved/VGAE_edge_WS2/embeddings.npy

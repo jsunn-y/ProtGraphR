@@ -1,0 +1,6 @@
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge_WS_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge_WS_test
+Device:	 cuda:0
+########## Experiment GAE_edge_WS_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.7906361159864254

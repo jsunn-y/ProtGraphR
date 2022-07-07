@@ -193,7 +193,7 @@ class ZSDecoder(torch.nn.Module):
     def __init__(self, model_config, data_config):
         super().__init__()
         self.hidden_dim = model_config['hidden_dim']
-        self.attribute_dim = len(data_config['attribute_names'])
+        self.attribute_dim = len(data_config['attribute_names']) + model_config['weak_supervision']
         self.fc1 = nn.Linear(self.hidden_dim, self.hidden_dim)
         self.fc2 = nn.Linear(self.hidden_dim, self.attribute_dim)
         #add nonlinear activation here?

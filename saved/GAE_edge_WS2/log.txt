@@ -1,0 +1,187 @@
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge_WS2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge_WS2
+Device:	 cuda:0
+########## Experiment GAE_edge_WS2: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.7906361159864254
+Epoch 01, recon_loss: 32843.6254, kl_div: 0.0000, zs_loss: 752084.3191
+Best model saved
+Epoch 02, recon_loss: 29444.2393, kl_div: 0.0000, zs_loss: 28021.5558
+Best model saved
+Epoch 03, recon_loss: 27217.6233, kl_div: 0.0000, zs_loss: 18629.4394
+Best model saved
+Epoch 04, recon_loss: 24521.0315, kl_div: 0.0000, zs_loss: 8423.7788
+Best model saved
+Epoch 05, recon_loss: 22252.2936, kl_div: 0.0000, zs_loss: 5590.0017
+Best model saved
+Epoch 06, recon_loss: 20331.9148, kl_div: 0.0000, zs_loss: 4812.7075
+Best model saved
+Epoch 07, recon_loss: 18895.0251, kl_div: 0.0000, zs_loss: 4147.1957
+Best model saved
+Epoch 08, recon_loss: 18154.0668, kl_div: 0.0000, zs_loss: 3584.9046
+Best model saved
+Epoch 09, recon_loss: 17629.5720, kl_div: 0.0000, zs_loss: 3549.9740
+Best model saved
+Epoch 10, recon_loss: 17152.8021, kl_div: 0.0000, zs_loss: 3242.3312
+Best model saved
+Epoch 11, recon_loss: 16567.0657, kl_div: 0.0000, zs_loss: 3311.6935
+Best model saved
+Epoch 12, recon_loss: 16043.7576, kl_div: 0.0000, zs_loss: 3415.8555
+Best model saved
+Epoch 13, recon_loss: 14770.2433, kl_div: 0.0000, zs_loss: 3223.3834
+Best model saved
+Epoch 14, recon_loss: 13356.7671, kl_div: 0.0000, zs_loss: 3327.3718
+Best model saved
+Epoch 15, recon_loss: 12626.5389, kl_div: 0.0000, zs_loss: 3578.2276
+Best model saved
+Epoch 16, recon_loss: 11949.3856, kl_div: 0.0000, zs_loss: 3091.5525
+Best model saved
+Epoch 17, recon_loss: 11300.9071, kl_div: 0.0000, zs_loss: 3029.7007
+Best model saved
+Epoch 18, recon_loss: 10782.4929, kl_div: 0.0000, zs_loss: 2849.1781
+Best model saved
+Epoch 19, recon_loss: 10338.4629, kl_div: 0.0000, zs_loss: 2675.6922
+Best model saved
+Epoch 20, recon_loss: 10035.7605, kl_div: 0.0000, zs_loss: 2800.5903
+Best model saved
+Epoch 21, recon_loss: 9610.0914, kl_div: 0.0000, zs_loss: 2673.2361
+Best model saved
+Epoch 22, recon_loss: 9309.2048, kl_div: 0.0000, zs_loss: 2901.2759
+Best model saved
+Epoch 23, recon_loss: 9090.2337, kl_div: 0.0000, zs_loss: 2668.5807
+Best model saved
+Epoch 24, recon_loss: 8697.3740, kl_div: 0.0000, zs_loss: 2779.5417
+Best model saved
+Epoch 25, recon_loss: 8411.3945, kl_div: 0.0000, zs_loss: 2675.9628
+Best model saved
+Epoch 26, recon_loss: 8051.4491, kl_div: 0.0000, zs_loss: 2576.9882
+Best model saved
+Epoch 27, recon_loss: 7873.1752, kl_div: 0.0000, zs_loss: 2415.5156
+Best model saved
+Epoch 28, recon_loss: 7730.3954, kl_div: 0.0000, zs_loss: 2334.9269
+Best model saved
+Epoch 29, recon_loss: 7405.1739, kl_div: 0.0000, zs_loss: 2392.7098
+Best model saved
+Epoch 30, recon_loss: 7428.2345, kl_div: 0.0000, zs_loss: 2562.0725
+Epoch 31, recon_loss: 6952.1574, kl_div: 0.0000, zs_loss: 2357.3107
+Best model saved
+Epoch 32, recon_loss: 6946.5408, kl_div: 0.0000, zs_loss: 2645.5266
+Epoch 33, recon_loss: 6490.9155, kl_div: 0.0000, zs_loss: 2295.3224
+Best model saved
+Epoch 34, recon_loss: 6268.0197, kl_div: 0.0000, zs_loss: 2297.9620
+Best model saved
+Epoch 35, recon_loss: 6198.5568, kl_div: 0.0000, zs_loss: 2481.7170
+Epoch 36, recon_loss: 6221.2511, kl_div: 0.0000, zs_loss: 2495.6137
+Epoch 37, recon_loss: 5799.1197, kl_div: 0.0000, zs_loss: 2278.5140
+Best model saved
+Epoch 38, recon_loss: 5735.6632, kl_div: 0.0000, zs_loss: 2347.3193
+Epoch 39, recon_loss: 5677.3184, kl_div: 0.0000, zs_loss: 2225.5618
+Best model saved
+Epoch 40, recon_loss: 5538.9394, kl_div: 0.0000, zs_loss: 2425.1416
+Epoch 41, recon_loss: 5430.4955, kl_div: 0.0000, zs_loss: 2171.3201
+Best model saved
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge_WS2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge_WS2
+Device:	 cuda:0
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge_WS2.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge_WS2
+Device:	 cuda:0
+########## Experiment GAE_edge_WS2: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.8211206959896264
+Epoch 01, recon_loss: 31437.7048, kl_div: 0.0000, zs_loss: 748493.4885
+Best model saved
+Epoch 02, recon_loss: 28797.6055, kl_div: 0.0000, zs_loss: 28034.6922
+Best model saved
+Epoch 03, recon_loss: 27457.4640, kl_div: 0.0000, zs_loss: 22488.5608
+Best model saved
+Epoch 04, recon_loss: 26097.2201, kl_div: 0.0000, zs_loss: 15753.5944
+Best model saved
+Epoch 05, recon_loss: 24312.3077, kl_div: 0.0000, zs_loss: 8847.3791
+Best model saved
+Epoch 06, recon_loss: 22105.6813, kl_div: 0.0000, zs_loss: 6145.3666
+Best model saved
+Epoch 07, recon_loss: 20513.9787, kl_div: 0.0000, zs_loss: 5348.4406
+Best model saved
+Epoch 08, recon_loss: 19164.6254, kl_div: 0.0000, zs_loss: 5077.5094
+Best model saved
+Epoch 09, recon_loss: 18014.2400, kl_div: 0.0000, zs_loss: 4426.5794
+Best model saved
+Epoch 10, recon_loss: 17205.5830, kl_div: 0.0000, zs_loss: 3869.7098
+Best model saved
+Epoch 11, recon_loss: 16373.7951, kl_div: 0.0000, zs_loss: 3568.2159
+Best model saved
+Epoch 12, recon_loss: 15518.0022, kl_div: 0.0000, zs_loss: 3873.9596
+Best model saved
+Epoch 13, recon_loss: 14333.8237, kl_div: 0.0000, zs_loss: 3279.9545
+Best model saved
+Epoch 14, recon_loss: 13064.8681, kl_div: 0.0000, zs_loss: 3387.4101
+Best model saved
+Epoch 15, recon_loss: 11901.9375, kl_div: 0.0000, zs_loss: 3353.2628
+Best model saved
+Epoch 16, recon_loss: 10429.6463, kl_div: 0.0000, zs_loss: 3160.8177
+Best model saved
+Epoch 17, recon_loss: 9683.2824, kl_div: 0.0000, zs_loss: 3021.0341
+Best model saved
+Epoch 18, recon_loss: 8776.6783, kl_div: 0.0000, zs_loss: 2769.5659
+Best model saved
+Epoch 19, recon_loss: 8314.6631, kl_div: 0.0000, zs_loss: 2600.2807
+Best model saved
+Epoch 20, recon_loss: 8187.9884, kl_div: 0.0000, zs_loss: 2745.0138
+Epoch 21, recon_loss: 8035.6081, kl_div: 0.0000, zs_loss: 2722.1559
+Best model saved
+Epoch 22, recon_loss: 7979.3848, kl_div: 0.0000, zs_loss: 2590.7990
+Best model saved
+Epoch 23, recon_loss: 7854.1459, kl_div: 0.0000, zs_loss: 2524.0382
+Best model saved
+Epoch 24, recon_loss: 7851.4184, kl_div: 0.0000, zs_loss: 2628.6645
+Epoch 25, recon_loss: 12877.3353, kl_div: 0.0000, zs_loss: 10342.9467
+Epoch 26, recon_loss: 15958.3175, kl_div: 0.0000, zs_loss: 6157.8545
+Epoch 27, recon_loss: 12697.1830, kl_div: 0.0000, zs_loss: 4036.2675
+Epoch 28, recon_loss: 11984.0325, kl_div: 0.0000, zs_loss: 3567.4339
+Epoch 29, recon_loss: 11732.9212, kl_div: 0.0000, zs_loss: 3222.5675
+Epoch 30, recon_loss: 10531.3423, kl_div: 0.0000, zs_loss: 3113.1658
+Epoch 31, recon_loss: 9456.6623, kl_div: 0.0000, zs_loss: 2993.6951
+Epoch 32, recon_loss: 9041.6059, kl_div: 0.0000, zs_loss: 3218.9109
+Epoch 33, recon_loss: 8446.5333, kl_div: 0.0000, zs_loss: 2841.6355
+Epoch 34, recon_loss: 7800.3869, kl_div: 0.0000, zs_loss: 3003.7919
+Epoch 35, recon_loss: 7303.2170, kl_div: 0.0000, zs_loss: 3171.2175
+Epoch 36, recon_loss: 7723.3033, kl_div: 0.0000, zs_loss: 3298.6209
+Epoch 37, recon_loss: 6862.9837, kl_div: 0.0000, zs_loss: 2661.5815
+Best model saved
+Epoch 38, recon_loss: 6746.5287, kl_div: 0.0000, zs_loss: 2686.4254
+Best model saved
+Epoch 39, recon_loss: 6699.0904, kl_div: 0.0000, zs_loss: 2525.8795
+Best model saved
+Epoch 40, recon_loss: 6714.9033, kl_div: 0.0000, zs_loss: 2808.3484
+Epoch 41, recon_loss: 6659.4810, kl_div: 0.0000, zs_loss: 2438.5132
+Best model saved
+Epoch 42, recon_loss: 6646.3419, kl_div: 0.0000, zs_loss: 2241.8298
+Best model saved
+Epoch 43, recon_loss: 6626.0178, kl_div: 0.0000, zs_loss: 2346.7689
+Epoch 44, recon_loss: 6636.3176, kl_div: 0.0000, zs_loss: 2502.7881
+Epoch 45, recon_loss: 6621.3337, kl_div: 0.0000, zs_loss: 2267.4962
+Epoch 46, recon_loss: 6600.2331, kl_div: 0.0000, zs_loss: 2247.3227
+Best model saved
+Epoch 47, recon_loss: 6575.2584, kl_div: 0.0000, zs_loss: 2221.5552
+Best model saved
+Epoch 48, recon_loss: 6584.6362, kl_div: 0.0000, zs_loss: 2468.1586
+Epoch 49, recon_loss: 6580.1208, kl_div: 0.0000, zs_loss: 2087.8095
+Best model saved
+Epoch 50, recon_loss: 6569.2710, kl_div: 0.0000, zs_loss: 2103.7867
+Epoch 51, recon_loss: 6596.0739, kl_div: 0.0000, zs_loss: 2425.9602
+Epoch 52, recon_loss: 6574.2865, kl_div: 0.0000, zs_loss: 2274.5702
+Epoch 53, recon_loss: 6551.6768, kl_div: 0.0000, zs_loss: 2065.7505
+Best model saved
+Epoch 54, recon_loss: 6504.4411, kl_div: 0.0000, zs_loss: 2134.2987
+Epoch 55, recon_loss: 6525.7101, kl_div: 0.0000, zs_loss: 2267.2840
+Epoch 56, recon_loss: 6510.3888, kl_div: 0.0000, zs_loss: 2311.6018
+Epoch 57, recon_loss: 6458.4849, kl_div: 0.0000, zs_loss: 2102.6401
+Best model saved
+Epoch 58, recon_loss: 6469.1319, kl_div: 0.0000, zs_loss: 2183.2736
+Epoch 59, recon_loss: 6443.4546, kl_div: 0.0000, zs_loss: 2177.1767
+Epoch 60, recon_loss: 6434.8669, kl_div: 0.0000, zs_loss: 2066.7257
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Saved Features: /home/jyang4/repos/ProtGraphR/saved/GAE_edge_WS2/embeddings.npy

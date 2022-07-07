@@ -23,8 +23,8 @@ def ndcg(y_true, y_pred):
     y_true_normalized = y_true - min(y_true)
     return ndcg_score(y_true_normalized.reshape(1, -1), y_pred.reshape(1, -1))
 
-def train(model_config: dict, model: nn.Module, device: torch.device, data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
-    """Trains a GNN model.
+def train(model_config: dict, model: nn.Module, device: torch.device, data_loader1: DataLoader, data_loader2: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
+    """Trains a GNN model for one epoch.
 
     Args
     - model: nn.Module, GNN model, already placed on device
@@ -41,18 +41,26 @@ def train(model_config: dict, model: nn.Module, device: torch.device, data_loade
     total_kl_div = 0
     total_zs_loss = 0
 
-    pbar.reset(len(data_loader))
+    n = len(data_loader1) 
+    pbar.reset(n)
     pbar.set_description('Training')
 
-    for step, batch in enumerate(data_loader):
+    #enumerate through both dataloaders
+    #the first datalopader contains the graph object and the second contains the weakly supervised labels
+    for step, (batch, y_pred) in enumerate(zip(data_loader1, data_loader2)):
         batch = batch.to(device)
         batch_size = batch.batch.max().item()
 
         #get the fitness labels and zs predictors
         y = batch.y
         y = np.array(y, dtype=np.float32)
+        y = torch.tensor(y, dtype=torch.float32)
+
         #may be a more efficient way to do this
-        y = torch.tensor(y[:,1:]).to(device)
+        if model_config['weak_supervision'] == 1:
+            y = torch.cat((y[:,1:], y_pred[0].reshape(-1, 1)), 1).to(device)
+        else:
+            y = y[:,1:].to(device)
 
         x = batch.x.to(device)
         edge_index = batch.edge_index.to(device)
@@ -82,7 +90,7 @@ def train(model_config: dict, model: nn.Module, device: torch.device, data_loade
         pbar.update()
 
     total_loss = total_recon_loss + total_kl_div + total_zs_loss  
-    n = len(data_loader) 
+    
     avg_recon_loss = total_recon_loss / n
     avg_kl_div = total_kl_div / n
     avg_zs_loss = total_zs_loss / n
@@ -141,11 +149,9 @@ def eval(model_config: dict, model: nn.Module, device: torch.device, loader: Dat
     return save_embeddings
 
 def train_supervised(N_train_samples = 384, n_splits = 5):
-    fitness_df = pd.read_csv('fitness.csv')
-    dataset = GB1Dataset(dataframe = fitness_df, encoding = 'one-hot', attribute_names = ["EvMutation", "Triad-FixedBb-dG"])
+    fitness_df = pd.read_csv('/home/jyang4/repos/ProtGraphR/analysis/fitness.csv')
+    dataset = GB1Dataset(dataframe = fitness_df, encoding = 'one-hot', attribute_names = [])
     dataset.encode_X()
-    seed = 0
-    X, y = shuffle(X, y, random_state=seed)
     X_train_all = dataset.X
     y_train_all = fitness_df['fit'].values
 
@@ -166,6 +172,8 @@ def train_supervised(N_train_samples = 384, n_splits = 5):
     
     y_pred_test = np.mean(y_pred_tests, axis = 0)
     print(ndcg(y_train_all, y_pred_test))
+    # with open('preds.npy', 'wb') as f:
+    #     np.save(f, y_pred_test)
     return y_pred_test
 
 def start_training(save_path, data_config, model_config, train_config, device):
@@ -194,15 +202,15 @@ def start_training(save_path, data_config, model_config, train_config, device):
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
 
     #Get labels for weak supervision if desired
-    if 'weak_supervision' in data_config["attribute_names"]:
+    if model_config["weak_supervision"] == 1:
         y_pred = train_supervised()
-        dataset2 = torch.TensorDataset(torch.tensor(y_pred))
+        dataset2 = TensorDataset(torch.tensor(y_pred, dtype= torch.float32))
         train_loader2 = torch.utils.data.DataLoader(dataset2, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Start training
     pbar = tqdm()
     for epoch in range(1, 1 + train_config['num_epochs']):
-        recon_loss, kl_div, zs_loss = train(model_config, model, device, train_loader, optimizer, pbar)
+        recon_loss, kl_div, zs_loss = train(model_config, model, device, train_loader, train_loader2, optimizer, pbar)
         loss = recon_loss + kl_div + zs_loss
         
         #train_result = eval(model, device, train_loader, evaluator, pbar)
