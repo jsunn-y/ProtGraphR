@@ -201,11 +201,10 @@ def start_training(save_path, data_config, model_config, train_config, device):
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
 
-    #Get labels for weak supervision if desired
-    if model_config["weak_supervision"] == 1:
-        y_pred = train_supervised()
-        dataset2 = TensorDataset(torch.tensor(y_pred, dtype= torch.float32))
-        train_loader2 = torch.utils.data.DataLoader(dataset2, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+    #Get labels for weak supervision (does it even if no weak supervision as a filler)
+    y_pred = train_supervised()
+    dataset2 = TensorDataset(torch.tensor(y_pred, dtype= torch.float32))
+    train_loader2 = torch.utils.data.DataLoader(dataset2, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Start training
     pbar = tqdm()

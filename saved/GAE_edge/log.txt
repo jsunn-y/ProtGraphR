@@ -66,3 +66,87 @@ Best model saved
 #################### Feature Extraction ####################
 Data(x=[56, 768], edge_index=[2, 532], pos=[56, 3], label='V39K:D40A:G41P:V54S', edge_attr=[532, 9], y=[3])
 Saved Features: /scratch/ml/jyang4/ProtGraphR/saved/GAE_edge/embeddings.npy
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge
+Device:	 cuda:0
+########## Experiment GAE_edge: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge
+Device:	 cuda:0
+########## Experiment GAE_edge: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge
+Device:	 cuda:0
+########## Experiment GAE_edge: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GAE_edge.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GAE_edge
+Device:	 cuda:0
+########## Experiment GAE_edge: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0.8211206959896264
+Epoch 01, recon_loss: 1289.5797, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 02, recon_loss: 807.3973, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 03, recon_loss: 790.2134, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 04, recon_loss: 780.9901, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 05, recon_loss: 775.3602, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 06, recon_loss: 771.4539, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 07, recon_loss: 768.4755, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 08, recon_loss: 765.9529, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 09, recon_loss: 764.1037, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 10, recon_loss: 762.3870, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 11, recon_loss: 761.1175, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 12, recon_loss: 759.8947, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 13, recon_loss: 758.8013, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 14, recon_loss: 757.9337, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 15, recon_loss: 756.8245, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 16, recon_loss: 756.1677, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 17, recon_loss: 755.3042, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 18, recon_loss: 754.7625, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 19, recon_loss: 754.0940, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 20, recon_loss: 753.7968, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 21, recon_loss: 753.1476, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 22, recon_loss: 752.5458, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 23, recon_loss: 752.2253, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 24, recon_loss: 751.7672, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 25, recon_loss: 751.3854, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 26, recon_loss: 751.0852, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 27, recon_loss: 750.6519, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 28, recon_loss: 750.4271, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 29, recon_loss: 749.9976, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+Epoch 30, recon_loss: 749.8230, kl_div: 0.0000, zs_loss: 0.0000
+Best model saved
+#################### Feature Extraction ####################
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Saved Features: /home/jyang4/repos/ProtGraphR/saved/GAE_edge/embeddings.npy
