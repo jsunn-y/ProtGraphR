@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import json
 import os
@@ -7,7 +9,7 @@ import torch
 
 from src.train_eval import start_training, extract_features
 
-class Logger(object):
+class Logger:
     def __init__(self):
         self.terminal = sys.stdout
         self.log = open(os.path.join(save_dir, 'log.txt'), 'a')
