@@ -1,11 +1,12 @@
-from tkinter import Y
+from __future__ import annotations
+
+from collections.abc import Mapping
+from typing import Any
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torch_geometric
 import torch_geometric as pyg
-import torch_geometric.nn as pyg_nn
-from torch_geometric.nn import GCN, GATv2Conv, GCNConv, NNConv, global_mean_pool, global_max_pool
 from torch_geometric.utils import (
     add_self_loops,
     negative_sampling,
@@ -19,17 +20,18 @@ def get_model_class(model_name):
         return model_dict[model_name]
     else:
         raise NotImplementedError
-    
+
+
 class GraphEncoder(nn.Module):
-    def __init__(self, model_config):
+    def __init__(self, model_config: Mapping[str, Any]):
         """
         Encoder module for the GAE or VGAE.
         """
         super(GraphEncoder, self).__init__()
-        
+
         self.type_dict = {
-            'GCN' : GCNConv,
-            'GAT' : GATv2Conv              
+            'GCN': pyg.nn.GCNConv,
+            'GAT': pyg.nn.GATv2Conv
         }
 
         # save all of the info
@@ -56,23 +58,23 @@ class GraphEncoder(nn.Module):
                 in_channels=self.node_dim,
                 out_channels=self.hidden_dim
             )
-        
+
         self.bns = nn.ModuleList()
         self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
         self.convs = nn.ModuleList()
-        
+
         for l in range(self.num_layers-1):
             if self.edge_features == True:
                 layer = self.type_dict[self.type](
-                in_channels=self.hidden_dim,
-                out_channels=self.hidden_dim,
-                edge_dim=self.edge_dim
+                    in_channels=self.hidden_dim,
+                    out_channels=self.hidden_dim,
+                    edge_dim=self.edge_dim
                 )
             else:
                 layer = self.type_dict[self.type](
-                in_channels=self.hidden_dim,
-                out_channels=self.hidden_dim
+                    in_channels=self.hidden_dim,
+                    out_channels=self.hidden_dim
                 )
             self.convs.append(layer)
             self.bns.append(nn.BatchNorm1d(self.hidden_dim))
@@ -97,7 +99,7 @@ class GraphEncoder(nn.Module):
         Args
         - data: pyg.data.Batch, a batch of graphs
 
-        Returns: 
+        Returns:
         """
         x, edge_index, edge_attr, batch = (
             data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
@@ -122,7 +124,7 @@ class GraphEncoder(nn.Module):
             else:
                 x = conv(x, edge_index)
 
-            if l != self.num_layers - 2:    
+            if l != self.num_layers - 2:
                 #should be no activation in the final layer
                 x = self.bns[l+1](x)
                 x = F.elu(x)
@@ -132,9 +134,9 @@ class GraphEncoder(nn.Module):
                         var = self.convvar(x, edge_index, edge_attr)
                     else:
                         var = self.convvar(x, edge_index)
-    
+
         if pool:
-            z = pyg_nn.global_max_pool(x, batch=batch)
+            z = pyg.nn.global_max_pool(x, batch=batch)
             #z = self.fc(z)
             return z
 
@@ -197,9 +199,9 @@ class ZSDecoder(torch.nn.Module):
         self.fc1 = nn.Linear(self.hidden_dim, self.hidden_dim)
         self.fc2 = nn.Linear(self.hidden_dim, self.attribute_dim)
         #add nonlinear activation here?
-    
+
     def forward(self, z, edge_index, batch):
-        z = pyg_nn.global_mean_pool(z, batch)
+        z = pyg.nn.global_mean_pool(z, batch)
         z = F.elu(self.fc1(z))
         z = self.fc2(z)
         return z
@@ -233,7 +235,6 @@ class GAE(torch.nn.Module):
     def encode(self, extract=False, *args, **kwargs):
         r"""Runs the encoder and computes node-wise latent variables."""
         return self.encoder(*args, **kwargs)
-
 
     def decode(self, *args, **kwargs):
         r"""Runs the decoder and computes edge probabilities."""
@@ -269,14 +270,13 @@ class GAE(torch.nn.Module):
                               EPS).mean()
 
         return pos_loss + neg_loss
-    
+
     def zs_loss(self, z, pos_edge_index, batch, y):
         y_pred = self.zsdecoder(z, pos_edge_index, batch)
 
         #may need to fix exactly how this is calculated
         loss_function = nn.MSELoss(reduction='mean')
         return loss_function(y_pred, y)#.sum()
-
 
     def test(self, z, pos_edge_index, neg_edge_index):
         r"""Given latent variables :obj:`z`, positive edges
@@ -304,7 +304,7 @@ class GAE(torch.nn.Module):
         y, pred = y.detach().cpu().numpy(), pred.detach().cpu().numpy()
 
         return roc_auc_score(y, pred), average_precision_score(y, pred)
-    
+
     #the methods below are not in the original paper:
 
 
@@ -340,9 +340,8 @@ class VGAE(GAE):
             #self.__mu__ = self.encoder(pool = True, *args, **kwargs)
             self.__mu__, self.__logstd__ = self.encoder(pool = False, *args, **kwargs)
             z = self.__mu__
-            
-        return z
 
+        return z
 
     def kl_loss(self, mu=None, logstd=None):
         r"""Computes the KL loss, either for the passed arguments :obj:`mu`
@@ -361,11 +360,11 @@ class VGAE(GAE):
             max=MAX_LOGSTD)
         return -0.5 * torch.mean(
             torch.sum(1 + 2 * logstd - mu**2 - logstd.exp()**2, dim=1))
-    
+
     #the methods below are not in the original paper:
 
 
 model_dict = {
     'GAE' : GAE,
-    'VGAE' : VGAE              
+    'VGAE' : VGAE
 }
