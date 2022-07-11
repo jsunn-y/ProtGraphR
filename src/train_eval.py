@@ -71,7 +71,7 @@ def train(model_config: dict, model: nn.Module, device: torch.device,
         edge_index = batch.edge_index.to(device)
         #neg_edge_index = batch.neg_edge_index.to(device)
 
-        z = model.encode(data = batch)
+        z = model.encode(data=batch)
 
         recon_loss = model.recon_loss(z, edge_index)
         total_recon_loss += recon_loss.item() * batch_size
@@ -209,7 +209,10 @@ def start_training(save_path: str, data_config: Mapping[str, Any],
 
     # Initialize dataset
     dataset, model_config = load_dataset(data_config, model_config)
-    model = model_class(GraphEncoder(model_config=model_config), model_config=model_config, data_config=data_config).to(device)
+    model = model_class(
+        encoder=GraphEncoder(model_config=model_config),
+        model_config=model_config,
+        data_config=data_config).to(device)
 
     #Initialize dataloaders
     train_loader = torch_geometric.loader.DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
@@ -246,7 +249,10 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     dataset, model_config = load_dataset(data_config, model_config, extract=True)
 
     #Use Pytorch's built in GAE/VGAE
-    model = model_class(GraphEncoder(model_config = model_config), model_config=model_config, data_config=data_config).to(device)
+    model = model_class(
+        encoder=GraphEncoder(model_config=model_config),
+        model_config=model_config,
+        data_config=data_config).to(device)
 
     #Initialize dataloaders
     loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=False)

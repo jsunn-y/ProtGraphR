@@ -29,72 +29,52 @@ class GraphEncoder(nn.Module):
         """
         super(GraphEncoder, self).__init__()
 
-        self.type_dict = {
-            'GCN': pyg.nn.GCNConv,
-            'GAT': pyg.nn.GATv2Conv
-        }
+        if model_config['type'] == 'GCN':
+            self.GraphConv = pyg.nn.GCNConv
+        elif model_config['type'] == 'GAT':
+            self.GraphConv = pyg.nn.GATv2Conv
 
         # save all of the info
-        self.type = model_config['type']
         self.node_dim = model_config['node_dim']
         self.hidden_dim = model_config['hidden_dim']
         self.num_layers = model_config['num_layers']
         self.dropout = model_config['dropout']
         self.edge_dim = model_config['edge_dim']
-        self.edge_features = model_config['edge_features'] == 1
+
+        if model_config['edge_features'] == 0:
+            self.edge_dim = None
 
         self.variational = model_config['kl_div_weight'] != 0
         #not sure if this line is needed
         self.zs = model_config['zs_loss_weight'] != 0
 
-        if self.edge_features == True:
-            self.conv1 = self.type_dict[self.type](
-                in_channels=self.node_dim,
-                out_channels=self.hidden_dim,
-                edge_dim=self.edge_dim
-            )
-        else:
-            self.conv1 = self.type_dict[self.type](
-                in_channels=self.node_dim,
-                out_channels=self.hidden_dim
-            )
-
-        self.bns = nn.ModuleList()
-        self.bns.append(nn.BatchNorm1d(self.hidden_dim))
-
         self.convs = nn.ModuleList()
+        self.bns = nn.ModuleList()
 
-        for l in range(self.num_layers-1):
-            if self.edge_features == True:
-                layer = self.type_dict[self.type](
+        for l in range(self.num_layers):
+            if l == 0:
+                layer = self.GraphConv(
+                    in_channels=self.node_dim,
+                    out_channels=self.hidden_dim,
+                    edge_dim=self.edge_dim)
+            else:
+                layer = self.GraphConv(
                     in_channels=self.hidden_dim,
                     out_channels=self.hidden_dim,
-                    edge_dim=self.edge_dim
-                )
-            else:
-                layer = self.type_dict[self.type](
-                    in_channels=self.hidden_dim,
-                    out_channels=self.hidden_dim
-                )
+                    edge_dim=self.edge_dim)
             self.convs.append(layer)
             self.bns.append(nn.BatchNorm1d(self.hidden_dim))
 
-        if self.edge_features == True:
-            self.convvar = self.type_dict[self.type](
+        if self.variational:
+            self.convvar = self.GraphConv(
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
-                edge_dim=self.edge_dim
-            )
-        else:
-            self.convvar = self.type_dict[self.type](
-                in_channels=self.hidden_dim,
-                out_channels=self.hidden_dim
-            )
+                edge_dim=self.edge_dim)
 
         # fully-connected final layer
         #self.fc = nn.Linear(self.hidden_dim, 1)
 
-    def forward(self, data: pyg.data.Data, pool = False) -> torch.Tensor:
+    def forward(self, data: pyg.data.Data) -> torch.Tensor:
         """
         Args
         - data: pyg.data.Batch, a batch of graphs
@@ -104,43 +84,19 @@ class GraphEncoder(nn.Module):
         x, edge_index, edge_attr, batch = (
             data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
 
-        if self.edge_features == True:
-            x = self.conv1(x, edge_index, edge_attr)
-        else:
-            x = self.conv1(x, edge_index)
-
-        x = F.elu(x)
-        x = self.bns[0](x)
-
-        if self.num_layers == 2 and self.variational:
-            if self.edge_features == True:
-                var = self.convvar(x, edge_index, edge_attr)
-            else:
-                var = self.convvar(x, edge_index)
+        if not self.edge_features:
+            edge_attr = None
 
         for l, conv in enumerate(self.convs):
-            if self.edge_features == True:
-                x = conv(x, edge_index, edge_attr)
-            else:
-                x = conv(x, edge_index)
+            x = conv(x, edge_index, edge_attr)
 
-            if l != self.num_layers - 2:
-                #should be no activation in the final layer
-                x = self.bns[l+1](x)
+            if l != self.num_layers - 1:  # no activation in the final layer
+                x = self.bns[l](x)
                 x = F.elu(x)
-            if l == self.num_layers - 3:
-                if self.variational:
-                    if self.edge_features == True:
-                        var = self.convvar(x, edge_index, edge_attr)
-                    else:
-                        var = self.convvar(x, edge_index)
+            if self.variational and (l == self.num_layers - 2):
+                var = self.convvar(x, edge_index, edge_attr)
 
-        if pool:
-            z = pyg.nn.global_max_pool(x, batch=batch)
-            #z = self.fc(z)
-            return z
-
-        #to make the code work with the zsdecoder, need each entry to return the corresponding zs scores
+        # to make the code work with the zsdecoder, need each entry to return the corresponding zs scores
         if self.variational:
             z = x, var
             return z
@@ -198,7 +154,6 @@ class ZSDecoder(torch.nn.Module):
         self.attribute_dim = len(data_config['attribute_names']) + model_config['weak_supervision']
         self.fc1 = nn.Linear(self.hidden_dim, self.hidden_dim)
         self.fc2 = nn.Linear(self.hidden_dim, self.attribute_dim)
-        #add nonlinear activation here?
 
     def forward(self, z, edge_index, batch):
         z = pyg.nn.global_mean_pool(z, batch)
@@ -230,7 +185,6 @@ class GAE(torch.nn.Module):
     # def reset_parameters(self):
     #     reset(self.encoder)
     #     reset(self.decoder)
-
 
     def encode(self, extract=False, *args, **kwargs):
         r"""Runs the encoder and computes node-wise latent variables."""
