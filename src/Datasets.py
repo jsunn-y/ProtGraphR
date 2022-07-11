@@ -1,16 +1,13 @@
 import os
-import numpy as np
-import pandas as pd
 import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
 from src.encoding_utils import *
-import torch_geometric
 from tqdm.auto import tqdm
 
 encoding_dict = {
     'one-hot' : generate_onehot,
-    'georgiev' : generate_georgiev,                
+    'georgiev' : generate_georgiev,
 }
 
 class GraphDataset(Dataset):
@@ -20,10 +17,10 @@ class GraphDataset(Dataset):
         - graph_dir: str, path to folder of .pt files containing the pytorch geomentric graph files
         """
         super().__init__()
-        
+
         self._graph_dir = graph_dir
         self._s2g_list = os.listdir(graph_dir)
-        
+
         # #stuff below is for loading all the data initially
         # self.pygs = []
         # pbar = tqdm()
@@ -31,7 +28,7 @@ class GraphDataset(Dataset):
         # pbar.reset(total=len(self._s2g_list))
 
         # for s2g in self._s2g_list:
-        #     s2g = os.path.join(os.getcwd(), graph_dir, s2g) 
+        #     s2g = os.path.join(os.getcwd(), graph_dir, s2g)
         #     self.pygs.append(torch.load(s2g))
         #     pbar.update()
 
@@ -39,7 +36,7 @@ class GraphDataset(Dataset):
         return len(self._s2g_list)
 
     def __getitem__(self, index: int):
-        s2g = os.path.join(os.getcwd(), self._graph_dir, self._s2g_list[index]) 
+        s2g = os.path.join(os.getcwd(), self._graph_dir, self._s2g_list[index])
         return torch.load(s2g)
 
         # return self.pygs[index]
@@ -68,8 +65,8 @@ class BaseDataset(Dataset):
 
     def __len__(self):
         return len(self.data)
-    
-    def __getitem__(self, index):          
+
+    def __getitem__(self, index):
         return self.X[index], self.attributes[index]
 
     def encode_X(self):
@@ -82,22 +79,22 @@ class BaseDataset(Dataset):
 class GB1Dataset(BaseDataset):
     """Class for GB1-specific datasets."""
     def __init__(self, full_sequence = False, SD_only = False, **kwargs):
-        
+
         super().__init__(**kwargs)
-        
+
         self.data['num_muts'] = self.data['Combo'].apply(self.diff_letters)
 
         #only select variants with 2 or less mutations
         if SD_only:
             self.data = self.data[self.data['num_muts'] <= 2]
-        
+
         self.all_combos = self.data["Combo"]
-        
+
         if full_sequence:
             self.all_combos = self.all_combos.apply(self.generate_full)
         self.n_positions_combined = len(self.all_combos[0])
         #self.y = self.data["Fitness"].values
-    
+
     @staticmethod
     def diff_letters(a, b = 'VDGV'):
         return sum ( a[i] != b[i] for i in range(len(a)) )

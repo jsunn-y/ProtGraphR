@@ -1,29 +1,26 @@
 import argparse
 import json
 import os
-from xmlrpc.client import Boolean
-import torch
 import sys
-import numpy as np
 
-from torch.utils.data import DataLoader
-from time import gmtime, strftime
+import torch
+
 from src.train_eval import start_training, extract_features
 
 class Logger(object):
     def __init__(self):
         self.terminal = sys.stdout
         self.log = open(os.path.join(save_dir, 'log.txt'), 'a')
-   
+
     def write(self, message):
         self.terminal.write(message)
-        self.log.write(message)  
+        self.log.write(message)
 
     def flush(self):
         # this flush method is needed for python 3 compatibility.
         # this handles the flush command by doing nothing.
         # you might want to specify some extra behavior here.
-        pass    
+        pass
 
 # Script starts here.
 parser = argparse.ArgumentParser()
@@ -88,10 +85,10 @@ start_training(
     device=device,
 )
 
-if args.extract:    
+if args.extract:
     # Get exp_directory
     #exp_dir = os.path.join(os.getcwd(), save_dir)
-    
+
     '''Saves features after training. '''
     print('#################### Feature Extraction ####################')
 
@@ -102,7 +99,3 @@ if args.extract:
         train_config=config['train_config'],
         device=device
     )
-        
-
-    
-     
