@@ -6,6 +6,7 @@ import random
 from typing import Any
 
 import numpy as np
+import pandas as pd
 from sklearn.linear_model import Ridge
 from sklearn.utils import resample
 from sklearn.metrics import ndcg_score
@@ -215,7 +216,7 @@ def start_training(save_path: str, data_config: Mapping[str, Any],
         data_config=data_config).to(device)
 
     #Initialize dataloaders
-    train_loader = torch_geometric.loader.DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+    train_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])

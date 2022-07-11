@@ -84,7 +84,7 @@ class GraphEncoder(nn.Module):
         x, edge_index, edge_attr, batch = (
             data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
 
-        if not self.edge_features:
+        if self.edge_dim is None:
             edge_attr = None
 
         for l, conv in enumerate(self.convs):
