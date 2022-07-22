@@ -7,7 +7,7 @@ import sys
 
 import torch
 
-from src.train_eval import start_training, extract_features
+from src.train_eval import start_vae_training, extract_features
 
 class Logger:
     def __init__(self):
@@ -79,17 +79,27 @@ with open(os.path.join(save_dir, args.config_file), 'w') as f:
 print('########## Experiment {}: ##########'.format(exp_name))
 
 # Start training
-start_training(
-    save_path=save_dir,
-    data_config=config['data_config'],
-    model_config=config['model_config'],
-    train_config=config['train_config'],
-    device=device,
-)
+if config['model_config'] == 'GNN':
+    start_gnn_training(
+        save_path=save_dir,
+        data_config=config['data_config'],
+        model_config=config['model_config'],
+        train_config=config['train_config'],
+        device=device,
+    )
+else:
+    start_ae_training(
+        save_path=save_dir,
+        data_config=config['data_config'],
+        model_config=config['model_config'],
+        train_config=config['train_config'],
+        device=device,
+    )
 
 if args.extract:
     # Get exp_directory
     #exp_dir = os.path.join(os.getcwd(), save_dir)
+    assert config['model_config'] == 'GAE' or config['model_config'] == 'VGAE'
 
     '''Saves features after training. '''
     print('#################### Feature Extraction ####################')

@@ -27,7 +27,7 @@ def ndcg(y_true, y_pred):
     return ndcg_score(y_true_normalized.reshape(1, -1), y_pred.reshape(1, -1))
 
 
-def train(model_config: dict, model: nn.Module, device: torch.device,
+def train_ae(model_config: dict, model: nn.Module, device: torch.device,
           data_loader1: DataLoader, data_loader2: DataLoader,
           optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
     """Trains a GNN model for one epoch.
@@ -103,7 +103,7 @@ def train(model_config: dict, model: nn.Module, device: torch.device,
 
     return avg_recon_loss, avg_kl_div, avg_zs_loss
 
-def eval(model_config: dict, model: nn.Module, device: torch.device, loader: DataLoader,
+def eval_ae(model_config: dict, model: nn.Module, device: torch.device, loader: DataLoader,
          pbar: tqdm) -> np.array:
     """Evaluates the model by extracting the embeddings.
 
@@ -154,8 +154,7 @@ def eval(model_config: dict, model: nn.Module, device: torch.device, loader: Dat
 
     return save_embeddings
 
-
-def train_supervised(N_train_samples = 384, n_splits = 5):
+def train_linear_supervised(N_train_samples = 384, n_splits = 5):
     fitness_df = pd.read_csv('/home/jyang4/repos/ProtGraphR/analysis/fitness.csv')
     dataset = GB1Dataset(dataframe = fitness_df, encoding = 'one-hot', attribute_names = [])
     dataset.encode_X()
@@ -183,7 +182,7 @@ def train_supervised(N_train_samples = 384, n_splits = 5):
     #     np.save(f, y_pred_test)
     return y_pred_test
 
-def start_training(save_path: str, data_config: Mapping[str, Any],
+def start_ae_training(save_path: str, data_config: Mapping[str, Any],
                    model_config: Mapping[str, Any],
                    train_config: Mapping[str, Any],
                    device: str | torch.device) -> None:
@@ -222,14 +221,14 @@ def start_training(save_path: str, data_config: Mapping[str, Any],
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
 
     #Get labels for weak supervision (does it even if no weak supervision as a filler)
-    y_pred = train_supervised()
+    y_pred = train_linear_supervised()
     dataset2 = TensorDataset(torch.tensor(y_pred, dtype= torch.float32))
     train_loader2 = torch.utils.data.DataLoader(dataset2, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Start training
     pbar = tqdm()
     for epoch in range(1, 1 + train_config['num_epochs']):
-        recon_loss, kl_div, zs_loss = train(model_config, model, device, train_loader, train_loader2, optimizer, pbar)
+        recon_loss, kl_div, zs_loss = train_ae(model_config, model, device, train_loader, train_loader2, optimizer, pbar)
         loss = recon_loss + kl_div + zs_loss
 
         #train_result = eval(model, device, train_loader, evaluator, pbar)
@@ -261,8 +260,120 @@ def extract_features(save_path, data_config, model_config, train_config, device)
     #Get best model
     model.load_state_dict(torch.load(save_path + '/best.pth'))
     pbar = tqdm()
-    embeddings = eval(model_config, model, device, loader, pbar)
+    embeddings = eval_ae(model_config, model, device, loader, pbar)
 
     np.save(os.path.join(save_path, 'embeddings.npy'), embeddings)
     print("Saved Features: " + os.path.join(save_path, 'embeddings.npy'))
 
+
+def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
+                   model_config: Mapping[str, Any],
+                   train_config: Mapping[str, Any],
+                   device: str | torch.device) -> None:
+    """
+    Args:
+        save_path: path to directory for saving outputs
+        data_config: dict of dataset parameters
+        model_config: dict of model parameters
+        train_config: dict of training parameters
+        device: str or torch.device
+    """
+    n_splits = 5
+
+    # Sample and fix a random seed if not set in train_config
+    if 'seed' not in train_config:
+        train_config['seed'] = random.randint(0, 9999)
+    seed = train_config['seed']
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.backends.cudnn.deterministic = True
+
+    # Get model class
+    model_class = get_model_class(model_config['name'])
+
+    # Initialize dataset
+    dataset, model_config = load_dataset(data_config, model_config)
+
+    model = SupervisedGNN(model_config=model_config)
+    mask = np.random.choice(range(len(dataset)), size=384, replace=False)
+    
+    #Initialize dataloaders
+    train_loader = DataLoader(dataset[mask], batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+
+    # Initialize optimizer
+    optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
+
+    y_pred_tests = np.zeros((n_splits, len(dataset)))
+
+    #don't resample with kfold, just initialize with different weights
+    for i in range(n_splits):
+        # Start training
+        pbar = tqdm()
+        for epoch in range(1, 1 + train_config['num_epochs']):
+            loss = train_gnn(model_config, model, device, train_loader, optimizer, pbar)
+
+            tqdm.write(f'Epoch {epoch:02d}, loss {loss:.4f}')
+
+        #evaluate the model
+        #for now this is fine but may want to build a function with batching to be more efficient
+        model.eval()
+        y_pred_tests[i] = model(dataset.x)
+
+    y_pred_test = np.mean(y_pred_tests, axis = 0)
+
+    print(ndcg(dataset.y[:, 0], y_pred_test))
+
+def train_gnn(model_config: dict, model: nn.Module, device: torch.device,
+          data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:
+    """Trains a GNN model for one epoch.
+
+    Args
+    - model: nn.Module, GNN model, already placed on device
+    - device: torch.device
+    - data_loader: pyg.loader.DataLoader
+    - optimizer: torch.optim.Optimizer
+    - loss_fn: nn.Module
+
+    Returns: loss
+    - loss: float, avg loss across epoch
+    """
+    model.train()
+    total_loss = 0
+
+    n = len(data_loader)
+    pbar.reset(n)
+    pbar.set_description('Training')
+
+    # enumerate through both dataloaders
+    # the first dataloader contains the graph object and the second contains the weakly supervised labels
+    for step, batch in enumerate(data_loader):
+        batch = batch.to(device)
+        batch_size = batch.batch.max().item()
+
+        #get the fitness labels and zs predictors
+        y = batch.y
+        #y = np.array(y, dtype=np.float32)
+        y = torch.tensor(y, dtype=torch.float32)
+        #may be a more efficient way to do this
+        y = y[:, 0].to(device)
+
+        x = batch.x.to(device)
+        edge_index = batch.edge_index.to(device)
+
+        y_pred = model(data=batch)
+
+        loss = model.loss(y_pred, y)
+        total_loss += loss.item() * batch_size
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        pbar.update()
+
+    avg_loss = total_loss / n
+
+    return total_loss
+
+    

@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch_geometric as pyg
+import torch_geometric.nn as pyg_nn
 from torch_geometric.utils import (
     add_self_loops,
     negative_sampling,
@@ -102,6 +103,45 @@ class GraphEncoder(nn.Module):
             return z
         else:
             return x
+
+class SupervisedGNN(GraphEncoder):
+    def __init__(self, model_config: Mapping[str, Any]):
+        """
+        Supervised GNN.
+        """
+        super().__init__(model_config)
+
+        #additional fully connected layer needed
+        self.fc = nn.Linear(self.hidden_dim, 1)
+
+    def forward(self, data: pyg.data.Data) -> torch.Tensor:
+        """
+        Args
+        - data: pyg.data.Batch, a batch of graphs
+
+        Returns:
+        """
+        x, edge_index, edge_attr, batch = (
+            data.x, data.edge_index, data.edge_attr.to(torch.float32), data.batch)
+
+        if self.edge_dim is None:
+            edge_attr = None
+
+        for l, conv in enumerate(self.convs):
+            x = conv(x, edge_index, edge_attr)
+            # no activation in the final layer
+            if l != self.num_layers - 1:  
+                x = self.bns[l](x)
+                x = F.elu(x)
+            
+        x = pyg_nn.global_mean_pool(x, batch=batch)
+        x = self.fc(x)
+        return x
+    
+    @staticmethod
+    def loss(y_pred, y):
+        return nn.MSELoss(y_pred, y)
+
 
 #written by pytorch below (with modifications)
 EPS = 1e-15
