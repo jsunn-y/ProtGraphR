@@ -22,7 +22,6 @@ def get_model_class(model_name):
     else:
         raise NotImplementedError
 
-
 class GraphEncoder(nn.Module):
     def __init__(self, model_config: Mapping[str, Any]):
         """
@@ -71,9 +70,6 @@ class GraphEncoder(nn.Module):
                 in_channels=self.hidden_dim,
                 out_channels=self.hidden_dim,
                 edge_dim=self.edge_dim)
-
-        # fully-connected final layer
-        #self.fc = nn.Linear(self.hidden_dim, 1)
 
     def forward(self, data: pyg.data.Data) -> torch.Tensor:
         """
@@ -128,6 +124,7 @@ class SupervisedGNN(GraphEncoder):
             edge_attr = None
 
         for l, conv in enumerate(self.convs):
+
             x = conv(x, edge_index, edge_attr)
             # no activation in the final layer
             if l != self.num_layers - 1:  
@@ -136,11 +133,13 @@ class SupervisedGNN(GraphEncoder):
             
         x = pyg_nn.global_mean_pool(x, batch=batch)
         x = self.fc(x)
+
         return x
     
     @staticmethod
     def loss(y_pred, y):
-        return nn.MSELoss(y_pred, y)
+        loss_func = nn.MSELoss()
+        return loss_func(y_pred, y)
 
 
 #written by pytorch below (with modifications)
@@ -360,5 +359,6 @@ class VGAE(GAE):
 
 model_dict = {
     'GAE' : GAE,
-    'VGAE' : VGAE
+    'VGAE' : VGAE,
+    'GNN' : SupervisedGNN,
 }

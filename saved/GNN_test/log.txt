@@ -1,0 +1,389 @@
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+cuda:0
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+cuda:0
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+0
+0
+0
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+tensor([[ 0.2591],
+        [ 0.1853],
+        [ 0.1895],
+        [ 0.2066],
+        [ 0.1974],
+        [ 0.1009],
+        [ 0.0577],
+        [ 0.0539],
+        [ 0.0896],
+        [ 0.1316],
+        [ 0.3340],
+        [ 0.2296],
+        [ 0.1139],
+        [ 0.1782],
+        [ 0.0642],
+        [ 0.0587],
+        [ 0.0943],
+        [ 0.1664],
+        [ 0.2166],
+        [ 0.1221],
+        [ 0.1028],
+        [ 0.0591],
+        [ 0.2726],
+        [ 0.1770],
+        [ 0.1861],
+        [ 0.0601],
+        [ 0.1026],
+        [ 0.2330],
+        [ 0.2123],
+        [ 0.1470],
+        [ 0.0567],
+        [ 0.0976],
+        [ 0.2576],
+        [ 0.2050],
+        [ 0.1429],
+        [ 0.1106],
+        [ 0.1015],
+        [ 0.1452],
+        [ 0.2042],
+        [ 0.1693],
+        [ 0.0640],
+        [ 0.0690],
+        [ 0.2298],
+        [ 0.0997],
+        [ 0.0729],
+        [ 0.1605],
+        [ 0.1104],
+        [ 0.0889],
+        [ 0.1224],
+        [ 0.1424],
+        [ 0.0779],
+        [ 0.0573],
+        [ 0.1331],
+        [ 0.0895],
+        [ 0.0627],
+        [ 0.1182],
+        [ 0.1149],
+        [ 0.1387],
+        [ 0.1738],
+        [ 0.1375],
+        [ 0.1637],
+        [ 0.1184],
+        [ 0.1542],
+        [ 0.1632],
+        [ 0.1738],
+        [ 0.1435],
+        [ 0.2529],
+        [ 0.1202],
+        [ 0.0251],
+        [ 0.1784],
+        [ 0.0915],
+        [ 0.1383],
+        [ 0.1593],
+        [ 0.0985],
+        [ 0.0901],
+        [ 0.1240],
+        [ 0.1760],
+        [ 0.1435],
+        [ 0.1160],
+        [ 0.3313],
+        [ 0.2010],
+        [ 0.0314],
+        [ 0.2405],
+        [ 0.0860],
+        [ 0.1425],
+        [ 0.1407],
+        [ 0.1344],
+        [ 0.0708],
+        [ 0.1512],
+        [ 0.0348],
+        [ 0.0279],
+        [-0.0940],
+        [ 0.1435],
+        [ 0.1018],
+        [ 0.2546],
+        [ 0.2560],
+        [ 0.0463],
+        [ 0.0412],
+        [ 0.1639],
+        [ 0.1930],
+        [ 0.2341],
+        [ 0.1083],
+        [ 0.2371],
+        [ 0.1327],
+        [ 0.0556],
+        [ 0.1621],
+        [-0.0400],
+        [ 0.1077],
+        [ 0.1352],
+        [-0.0564],
+        [ 0.0900],
+        [ 0.1539],
+        [ 0.2190],
+        [ 0.2489],
+        [ 0.1866],
+        [ 0.1136],
+        [ 0.1242],
+        [ 0.1662],
+        [ 0.1849],
+        [ 0.1671],
+        [ 0.0660],
+        [ 0.0660],
+        [ 0.0241],
+        [ 0.1363],
+        [ 0.2104],
+        [ 0.1400],
+        [ 0.0868],
+        [ 0.0491]], grad_fn=<AddmmBackward0>)
+tensor([0.0000e+00, 1.6242e-02, 1.8863e-01, 2.4767e-03, 0.0000e+00, 4.8596e-03,
+        0.0000e+00, 1.3960e+00, 7.8760e-04, 0.0000e+00, 9.9667e-04, 0.0000e+00,
+        1.9227e-02, 3.8513e-03, 2.0122e-01, 2.2840e-02, 6.6370e-03, 0.0000e+00,
+        1.1565e-03, 5.8316e-03, 3.8655e-03, 3.7460e-03, 0.0000e+00, 8.2061e-03,
+        0.0000e+00, 2.0896e-03, 3.6832e-01, 1.2808e-03, 5.5935e-03, 3.3630e-03,
+        4.3120e+00, 9.7887e-03, 0.0000e+00, 4.0012e-03, 3.0386e-03, 9.6269e-03,
+        3.9436e-03, 4.2541e-03, 9.8179e-03, 1.8212e-03, 1.2928e-02, 1.3704e-02,
+        0.0000e+00, 2.5245e-02, 3.6544e-03, 3.6207e-03, 4.4412e-03, 1.7602e-02,
+        1.4425e-02, 3.0796e-03, 7.6977e-01, 8.3946e-04, 0.0000e+00, 1.5227e-02,
+        5.5935e-03, 2.1800e-03, 8.6505e-03, 2.5457e-03, 6.0238e-03, 0.0000e+00,
+        0.0000e+00, 2.5424e-03, 2.2206e-03, 2.7558e-03, 5.5557e-03, 0.0000e+00,
+        2.4804e-03, 0.0000e+00, 7.5091e-03, 4.7372e-03, 1.9933e-02, 0.0000e+00,
+        3.0319e-03, 0.0000e+00, 3.5126e-02, 0.0000e+00, 7.3678e-03, 0.0000e+00,
+        4.6194e-03, 2.4526e-03, 0.0000e+00, 8.6735e-03, 1.5775e-03, 1.8519e-02,
+        1.1373e-03, 3.6740e-03, 0.0000e+00, 1.7458e-03, 3.9954e-03, 7.0278e-03,
+        2.5626e-02, 3.6883e-03, 7.0731e-03, 3.0319e-02, 0.0000e+00, 0.0000e+00,
+        2.7408e-03, 0.0000e+00, 0.0000e+00, 3.4717e-02, 1.6314e-03, 7.7754e-03,
+        1.7798e-03, 7.5352e-02, 4.4948e-02, 0.0000e+00, 2.7131e-01, 5.9583e-03,
+        0.0000e+00, 7.4077e-03, 0.0000e+00, 7.4631e-02, 4.4932e-03, 0.0000e+00,
+        2.2180e-01, 3.6423e-03, 5.2893e-02, 7.5436e-03, 5.1714e-03, 8.1897e-03,
+        1.2689e-03, 1.7371e-02, 0.0000e+00, 1.9001e-03, 2.6354e-02, 0.0000e+00,
+        3.7492e-03, 6.5258e-03])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+torch.Size([128, 1])
+torch.Size([128])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+torch.Size([128, 1])
+torch.Size([128])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+torch.Size([128, 1])
+torch.Size([128])
+torch.Size([128, 1])
+torch.Size([128])
+torch.Size([128, 1])
+torch.Size([128])
+Epoch 01, loss 67.4268
+torch.Size([128, 1])
+torch.Size([128])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.4268
+Epoch 02, loss 40.5881
+Epoch 03, loss 36.7790
+Epoch 04, loss 37.4658
+Epoch 05, loss 35.9870
+Epoch 06, loss 35.0534
+Epoch 07, loss 34.9255
+Epoch 08, loss 34.9105
+Epoch 09, loss 35.0523
+Epoch 10, loss 34.7770
+Epoch 11, loss 34.8411
+Epoch 12, loss 34.7142
+Epoch 13, loss 34.8900
+Epoch 14, loss 34.7126
+Epoch 15, loss 34.8058
+Epoch 16, loss 34.7764
+Epoch 17, loss 34.7974
+Epoch 18, loss 34.8966
+Epoch 19, loss 34.6390
+Epoch 20, loss 34.9781
+Epoch 21, loss 34.8586
+Epoch 22, loss 35.0425
+Epoch 23, loss 34.8175
+Epoch 24, loss 35.0363
+Epoch 25, loss 34.6364
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.4268
+Epoch 02, loss 40.5881
+Epoch 03, loss 36.7790
+Epoch 04, loss 37.4658
+Epoch 05, loss 35.9870
+Epoch 06, loss 35.0534
+Epoch 07, loss 34.9255
+Epoch 08, loss 34.9105
+Epoch 09, loss 35.0523
+Epoch 10, loss 34.7770
+Epoch 11, loss 34.8411
+Epoch 12, loss 34.7142
+Epoch 13, loss 34.8900
+Epoch 14, loss 34.7126
+Epoch 15, loss 34.8058
+Epoch 16, loss 34.7764
+Epoch 17, loss 34.7974
+Epoch 18, loss 34.8966
+Epoch 19, loss 34.6390
+Epoch 20, loss 34.9781
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.4268
+Epoch 02, loss 40.5881
+Epoch 03, loss 36.7790
+Epoch 04, loss 37.4658
+Epoch 05, loss 35.9870
+Epoch 06, loss 35.0534
+Epoch 07, loss 34.9255
+Epoch 08, loss 34.9105
+Epoch 09, loss 35.0523
+Epoch 10, loss 34.7770
+Epoch 11, loss 34.8411
+Epoch 12, loss 34.7142
+Epoch 13, loss 34.8900
+Epoch 14, loss 34.7126
+Epoch 15, loss 34.8058
+Epoch 16, loss 34.7764
+Epoch 17, loss 34.7974
+Epoch 18, loss 34.8966
+Epoch 19, loss 34.6390
+Epoch 20, loss 34.9781
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.4268
+Epoch 02, loss 40.5881
+Epoch 03, loss 36.7790
+Epoch 04, loss 37.4658
+Epoch 05, loss 35.9870
+Epoch 06, loss 35.0534
+Epoch 07, loss 34.9255
+Epoch 08, loss 34.9105
+Epoch 09, loss 35.0523
+Epoch 10, loss 34.7770
+Epoch 11, loss 34.8411
+Epoch 12, loss 34.7142
+Epoch 13, loss 34.8900
+Epoch 14, loss 34.7126
+Epoch 15, loss 34.8058
+Epoch 16, loss 34.7764
+Epoch 17, loss 34.7974
+Epoch 18, loss 34.8966
+Epoch 19, loss 34.6390
+Epoch 20, loss 34.9781
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cpu
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.4268
+Epoch 02, loss 40.5881

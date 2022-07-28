@@ -13,7 +13,7 @@ from sklearn.metrics import ndcg_score
 from sklearn.model_selection import KFold
 import torch
 import torch.nn as nn
-from torch.utils.data import TensorDataset
+from torch.utils.data import TensorDataset, Subset
 from torch_geometric.loader import DataLoader
 from tqdm.auto import tqdm
 
@@ -54,7 +54,7 @@ def train_ae(model_config: dict, model: nn.Module, device: torch.device,
     # enumerate through both dataloaders
     # the first dataloader contains the graph object and the second contains the weakly supervised labels
     for step, (batch, y_pred) in enumerate(zip(data_loader1, data_loader2)):
-        batch = batch.to(device)
+        batch = batch.to(device, non_blocking=True)
         batch_size = batch.batch.max().item()
 
         #get the fitness labels and zs predictors
@@ -63,6 +63,7 @@ def train_ae(model_config: dict, model: nn.Module, device: torch.device,
         y = torch.tensor(y, dtype=torch.float32)
 
         #may be a more efficient way to do this
+        #set other things to non-blocking = True?
         if model_config['weak_supervision'] == 1:
             y = torch.cat((y[:, 1:], y_pred[0].reshape(-1, 1)), 1).to(device)
         else:
@@ -297,10 +298,13 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
     dataset, model_config = load_dataset(data_config, model_config)
 
     model = SupervisedGNN(model_config=model_config)
+
+    #for subsampling, use Subset
     mask = np.random.choice(range(len(dataset)), size=384, replace=False)
-    
+    train_dataset = Subset(dataset, mask)
+
     #Initialize dataloaders
-    train_loader = DataLoader(dataset[mask], batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
+    train_loader = DataLoader(train_dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=True)
 
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
@@ -311,6 +315,9 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
     for i in range(n_splits):
         # Start training
         pbar = tqdm()
+        pbar.reset(len(train_loader)*train_config['num_epochs'])
+        pbar.set_description('Training')
+
         for epoch in range(1, 1 + train_config['num_epochs']):
             loss = train_gnn(model_config, model, device, train_loader, optimizer, pbar)
 
@@ -319,7 +326,7 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
         #evaluate the model
         #for now this is fine but may want to build a function with batching to be more efficient
         model.eval()
-        y_pred_tests[i] = model(dataset.x)
+        y_pred_tests[i] = model(dataset.to(device))
 
     y_pred_test = np.mean(y_pred_tests, axis = 0)
 
@@ -341,21 +348,19 @@ def train_gnn(model_config: dict, model: nn.Module, device: torch.device,
     """
     model.train()
     total_loss = 0
-
     n = len(data_loader)
-    pbar.reset(n)
-    pbar.set_description('Training')
 
     # enumerate through both dataloaders
     # the first dataloader contains the graph object and the second contains the weakly supervised labels
     for step, batch in enumerate(data_loader):
-        batch = batch.to(device)
+        batch = batch.to(device, non_blocking=True)
         batch_size = batch.batch.max().item()
 
         #get the fitness labels and zs predictors
         y = batch.y
-        #y = np.array(y, dtype=np.float32)
+        y = np.array(y, dtype=np.float32)
         y = torch.tensor(y, dtype=torch.float32)
+
         #may be a more efficient way to do this
         y = y[:, 0].to(device)
 
@@ -363,7 +368,6 @@ def train_gnn(model_config: dict, model: nn.Module, device: torch.device,
         edge_index = batch.edge_index.to(device)
 
         y_pred = model(data=batch)
-
         loss = model.loss(y_pred, y)
         total_loss += loss.item() * batch_size
 

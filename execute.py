@@ -7,7 +7,7 @@ import sys
 
 import torch
 
-from src.train_eval import start_vae_training, extract_features
+from src.train_eval import start_gnn_training, start_ae_training, extract_features
 
 class Logger:
     def __init__(self):
@@ -61,11 +61,11 @@ print('Config file:\t {}'.format(config_file))
 print('Save directory:\t {}'.format(save_dir))
 
 # Get device ID
-if torch.cuda.is_available() and args.device >= 0:
-    assert args.device < torch.cuda.device_count()
-    device = 'cuda:{:d}'.format(args.device)
-else:
-    device = 'cpu'
+# if torch.cuda.is_available() and args.device >= 0:
+#     assert args.device < torch.cuda.device_count()
+#     device = 'cuda:{:d}'.format(args.device)
+# else:
+device = 'cpu'
 print('Device:\t {}'.format(device))
 
 # Load JSON config file
@@ -79,7 +79,7 @@ with open(os.path.join(save_dir, args.config_file), 'w') as f:
 print('########## Experiment {}: ##########'.format(exp_name))
 
 # Start training
-if config['model_config'] == 'GNN':
+if config['model_config']['name'] == 'GNN':
     start_gnn_training(
         save_path=save_dir,
         data_config=config['data_config'],
