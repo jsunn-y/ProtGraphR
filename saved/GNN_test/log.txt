@@ -387,3 +387,468 @@ Device:	 cpu
 Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
 Epoch 01, loss 67.4268
 Epoch 02, loss 40.5881
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3988
+Epoch 02, loss 40.5701
+Epoch 03, loss 36.7768
+Epoch 04, loss 37.4609
+Epoch 05, loss 35.9864
+Epoch 06, loss 35.0496
+Epoch 07, loss 34.9279
+Epoch 08, loss 34.9059
+Epoch 09, loss 35.0551
+Epoch 10, loss 34.7756
+Epoch 11, loss 34.8436
+Epoch 12, loss 34.7136
+Epoch 13, loss 34.8916
+Epoch 14, loss 34.7120
+Epoch 15, loss 34.8021
+Epoch 16, loss 34.7775
+Epoch 17, loss 34.7982
+Epoch 18, loss 34.8967
+Epoch 19, loss 34.6386
+Epoch 20, loss 34.9790
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3843
+Epoch 02, loss 40.5672
+Epoch 03, loss 36.7771
+Epoch 04, loss 37.4610
+Epoch 05, loss 35.9859
+Epoch 06, loss 35.0501
+Epoch 07, loss 34.9274
+Epoch 08, loss 34.9069
+Epoch 09, loss 35.0546
+Epoch 10, loss 34.7757
+Epoch 11, loss 34.8435
+Epoch 12, loss 34.7137
+Epoch 13, loss 34.8918
+Epoch 14, loss 34.7119
+Epoch 15, loss 34.8017
+Epoch 16, loss 34.7773
+Epoch 17, loss 34.7984
+Epoch 18, loss 34.8968
+Epoch 19, loss 34.6386
+Epoch 20, loss 34.9785
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3891
+Epoch 02, loss 40.5636
+Epoch 03, loss 36.7759
+Epoch 04, loss 37.4617
+Epoch 05, loss 35.9860
+Epoch 06, loss 35.0484
+Epoch 07, loss 34.9290
+Epoch 08, loss 34.9051
+Epoch 09, loss 35.0556
+Epoch 10, loss 34.7757
+Epoch 11, loss 34.8437
+Epoch 12, loss 34.7136
+Epoch 13, loss 34.8920
+Epoch 14, loss 34.7119
+Epoch 15, loss 34.8018
+Epoch 16, loss 34.7768
+Epoch 17, loss 34.7980
+Epoch 18, loss 34.8962
+Epoch 19, loss 34.6386
+Epoch 20, loss 34.9781
+Epoch 01, loss 35.1992
+Epoch 02, loss 35.0241
+Epoch 03, loss 34.6815
+Epoch 04, loss 34.8483
+Epoch 05, loss 34.6171
+Epoch 06, loss 34.7549
+Epoch 07, loss 34.7863
+Epoch 08, loss 34.7198
+Epoch 09, loss 34.8080
+Epoch 10, loss 34.7120
+Epoch 11, loss 34.7072
+Epoch 12, loss 34.7491
+Epoch 13, loss 34.6800
+Epoch 14, loss 34.8618
+Epoch 15, loss 34.8093
+Epoch 16, loss 34.7667
+Epoch 17, loss 34.7649
+Epoch 18, loss 34.6963
+Epoch 19, loss 34.6654
+Epoch 20, loss 34.7639
+Epoch 01, loss 34.6516
+Epoch 02, loss 34.8779
+Epoch 03, loss 34.7325
+Epoch 04, loss 34.8962
+Epoch 05, loss 34.7423
+Epoch 06, loss 34.9000
+Epoch 07, loss 34.7021
+Epoch 08, loss 34.8050
+Epoch 09, loss 34.6486
+Epoch 10, loss 34.6614
+Epoch 11, loss 34.7300
+Epoch 12, loss 34.6436
+Epoch 13, loss 34.6659
+Epoch 14, loss 34.8077
+Epoch 15, loss 35.0670
+Epoch 16, loss 34.8043
+Epoch 17, loss 34.6433
+Epoch 18, loss 34.7623
+Epoch 19, loss 34.6925
+Epoch 20, loss 34.7922
+Epoch 01, loss 34.6991
+Epoch 02, loss 34.6962
+Epoch 03, loss 34.7244
+Epoch 04, loss 34.7573
+Epoch 05, loss 34.7873
+Epoch 06, loss 34.6216
+Epoch 07, loss 34.8173
+Epoch 08, loss 34.6860
+Epoch 09, loss 34.7786
+Epoch 10, loss 34.8155
+Epoch 11, loss 34.7145
+Epoch 12, loss 34.7122
+Epoch 13, loss 34.6534
+Epoch 14, loss 34.8031
+Epoch 15, loss 34.7653
+Epoch 16, loss 34.7168
+Epoch 17, loss 34.6531
+Epoch 18, loss 34.7319
+Epoch 19, loss 34.7292
+Epoch 20, loss 34.6157
+Epoch 01, loss 34.7672
+Epoch 02, loss 34.8163
+Epoch 03, loss 34.8293
+Epoch 04, loss 34.7123
+Epoch 05, loss 34.6819
+Epoch 06, loss 34.8761
+Epoch 07, loss 34.7350
+Epoch 08, loss 34.8724
+Epoch 09, loss 34.6940
+Epoch 10, loss 34.7628
+Epoch 11, loss 34.6749
+Epoch 12, loss 34.7311
+Epoch 13, loss 34.7178
+Epoch 14, loss 34.6995
+Epoch 15, loss 34.6667
+Epoch 16, loss 34.6700
+Epoch 17, loss 34.8300
+Epoch 18, loss 34.9134
+Epoch 19, loss 34.7464
+Epoch 20, loss 34.7315
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3987
+Epoch 02, loss 40.5707
+Epoch 03, loss 36.7769
+Epoch 04, loss 37.4617
+Epoch 05, loss 35.9866
+Epoch 06, loss 35.0498
+Epoch 07, loss 34.9277
+Epoch 08, loss 34.9062
+Epoch 09, loss 35.0550
+Epoch 10, loss 34.7758
+Epoch 11, loss 34.8435
+Epoch 12, loss 34.7137
+Epoch 13, loss 34.8916
+Epoch 14, loss 34.7121
+Epoch 15, loss 34.8019
+Epoch 16, loss 34.7772
+Epoch 17, loss 34.7982
+Epoch 18, loss 34.8971
+Epoch 19, loss 34.6386
+Epoch 20, loss 34.9786
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3858
+Epoch 02, loss 40.5672
+Epoch 03, loss 36.7771
+Epoch 04, loss 37.4616
+Epoch 05, loss 35.9863
+Epoch 06, loss 35.0499
+Epoch 07, loss 34.9276
+Epoch 08, loss 34.9066
+Epoch 09, loss 35.0549
+Epoch 10, loss 34.7758
+Epoch 11, loss 34.8435
+Epoch 12, loss 34.7137
+Epoch 13, loss 34.8917
+Epoch 14, loss 34.7119
+Epoch 15, loss 34.8017
+Epoch 16, loss 34.7775
+Epoch 17, loss 34.7985
+Epoch 18, loss 34.8969
+Epoch 19, loss 34.6385
+Epoch 20, loss 34.9786
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3961
+Epoch 02, loss 40.5660
+Epoch 03, loss 36.7760
+Epoch 04, loss 37.4612
+Epoch 05, loss 35.9862
+Epoch 06, loss 35.0488
+Epoch 07, loss 34.9285
+Epoch 08, loss 34.9054
+Epoch 09, loss 35.0557
+Epoch 10, loss 34.7754
+Epoch 11, loss 34.8444
+Epoch 12, loss 34.7135
+Epoch 13, loss 34.8922
+Epoch 14, loss 34.7121
+Epoch 15, loss 34.8015
+Epoch 16, loss 34.7773
+Epoch 17, loss 34.7982
+Epoch 18, loss 34.8964
+Epoch 19, loss 34.6387
+Epoch 20, loss 34.9791
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3975
+Epoch 02, loss 40.5710
+Epoch 03, loss 36.7767
+Epoch 04, loss 37.4613
+Epoch 05, loss 35.9861
+Epoch 06, loss 35.0500
+Epoch 07, loss 34.9276
+Epoch 08, loss 34.9061
+Epoch 09, loss 35.0553
+Epoch 10, loss 34.7757
+Epoch 11, loss 34.8434
+Epoch 12, loss 34.7137
+Epoch 13, loss 34.8916
+Epoch 14, loss 34.7120
+Epoch 15, loss 34.8020
+Epoch 16, loss 34.7770
+Epoch 17, loss 34.7981
+Epoch 18, loss 34.8966
+Epoch 19, loss 34.6386
+Epoch 20, loss 34.9789
+(149361, 3)
+(1,)
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3945
+Epoch 02, loss 40.5701
+Epoch 03, loss 36.7766
+Epoch 04, loss 37.4613
+Epoch 05, loss 35.9862
+Epoch 06, loss 35.0495
+Epoch 07, loss 34.9279
+Epoch 08, loss 34.9062
+Epoch 09, loss 35.0555
+Epoch 10, loss 34.7759
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3947
+Epoch 02, loss 40.5676
+Epoch 03, loss 36.7764
+Epoch 04, loss 37.4612
+Epoch 05, loss 35.9860
+Epoch 06, loss 35.0488
+Epoch 07, loss 34.9290
+Epoch 08, loss 34.9057
+Epoch 09, loss 35.0557
+Epoch 10, loss 34.7756
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3946
+Epoch 02, loss 40.5701
+Epoch 03, loss 36.7769
+Epoch 04, loss 37.4613
+Epoch 05, loss 35.9865
+Epoch 06, loss 35.0499
+Epoch 07, loss 34.9274
+Epoch 08, loss 34.9063
+Epoch 09, loss 35.0549
+Epoch 10, loss 34.7756
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3905
+Epoch 02, loss 40.5637
+Epoch 03, loss 36.7750
+Epoch 04, loss 37.4615
+Epoch 05, loss 35.9855
+Epoch 06, loss 35.0482
+Epoch 07, loss 34.9290
+Epoch 08, loss 34.9051
+Epoch 09, loss 35.0557
+Epoch 10, loss 34.7757
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3974
+Epoch 02, loss 40.5708
+Epoch 03, loss 36.7769
+Epoch 04, loss 37.4616
+Epoch 05, loss 35.9866
+Epoch 06, loss 35.0500
+Epoch 07, loss 34.9275
+Epoch 08, loss 34.9066
+Epoch 09, loss 35.0550
+Epoch 10, loss 34.7758
+(149361, 2)
+(149361, 1)
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3935
+Epoch 02, loss 40.5668
+Epoch 03, loss 36.7770
+Epoch 04, loss 37.4617
+Epoch 05, loss 35.9866
+Epoch 06, loss 35.0488
+Epoch 07, loss 34.9286
+Epoch 08, loss 34.9057
+Epoch 09, loss 35.0553
+Epoch 10, loss 34.7756
+(149361, 3)
+(149361, 1)
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3952
+Epoch 02, loss 40.5693
+Epoch 03, loss 36.7767
+Epoch 04, loss 37.4614
+Epoch 05, loss 35.9857
+Epoch 06, loss 35.0492
+Epoch 07, loss 34.9280
+Epoch 08, loss 34.9063
+Epoch 09, loss 35.0554
+Epoch 10, loss 34.7758
+(149361, 3)
+(149361, 1)
+(149361, 3)
+(3,)
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3944
+Epoch 02, loss 40.5667
+Epoch 03, loss 36.7763
+Epoch 04, loss 37.4626
+Epoch 05, loss 35.9864
+Epoch 06, loss 35.0489
+Epoch 07, loss 34.9292
+Epoch 08, loss 34.9053
+Epoch 09, loss 35.0557
+Epoch 10, loss 34.7756
+(149361, 3)
+(149361, 1)
+0.6170122423871793
+Epoch 01, loss 34.8443
+Epoch 02, loss 34.7702
+Epoch 03, loss 34.7357
+Epoch 04, loss 34.8164
+Epoch 05, loss 34.7890
+Epoch 06, loss 35.1666
+Config file:	 /home/jyang4/repos/ProtGraphR/configs/GNN_test.json
+Save directory:	 /home/jyang4/repos/ProtGraphR/saved/GNN_test
+Device:	 cuda:0
+########## Experiment GNN_test: ##########
+Data(x=[56, 768], edge_index=[2, 520], pos=[56, 3], label='V39A:D40M:G41H:V54G', edge_attr=[520, 9], y=[3])
+Epoch 01, loss 67.3889
+Epoch 02, loss 40.5653
+Epoch 03, loss 36.7757
+Epoch 04, loss 37.4618
+Epoch 05, loss 35.9855
+Epoch 06, loss 35.0484
+Epoch 07, loss 34.9290
+Epoch 08, loss 34.9054
+Epoch 09, loss 35.0557
+Epoch 10, loss 34.7755
+(149361, 5)
+(149361, 1)
+Epoch 01, loss 34.8442
+Epoch 02, loss 34.7703
+Epoch 03, loss 34.7355
+Epoch 04, loss 34.8164
+Epoch 05, loss 34.7894
+Epoch 06, loss 35.1664
+Epoch 07, loss 34.6697
+Epoch 08, loss 34.9796
+Epoch 09, loss 34.8346
+Epoch 10, loss 34.9303
+(149361, 5)
+(149361, 1)
+Epoch 01, loss 34.6345
+Epoch 02, loss 34.8429
+Epoch 03, loss 34.8998
+Epoch 04, loss 34.7590
+Epoch 05, loss 34.7606
+Epoch 06, loss 34.7142
+Epoch 07, loss 34.7372
+Epoch 08, loss 34.6796
+Epoch 09, loss 34.7003
+Epoch 10, loss 34.7560
+(149361, 5)
+(149361, 1)
+Epoch 01, loss 34.6921
+Epoch 02, loss 34.6967
+Epoch 03, loss 34.7559
+Epoch 04, loss 34.6359
+Epoch 05, loss 34.7404
+Epoch 06, loss 34.7807
+Epoch 07, loss 34.7789
+Epoch 08, loss 34.7672
+Epoch 09, loss 34.7333
+Epoch 10, loss 34.7370
+(149361, 5)
+(149361, 1)
+Epoch 01, loss 34.6923
+Epoch 02, loss 34.8074
+Epoch 03, loss 34.7163
+Epoch 04, loss 35.0604
+Epoch 05, loss 34.8056
+Epoch 06, loss 35.0930
+Epoch 07, loss 34.7309
+Epoch 08, loss 34.9140
+Epoch 09, loss 34.6276
+Epoch 10, loss 34.6923
+(149361, 5)
+(149361, 1)
+0.6282057059527546

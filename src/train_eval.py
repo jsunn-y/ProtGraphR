@@ -297,7 +297,7 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
     # Initialize dataset
     dataset, model_config = load_dataset(data_config, model_config)
 
-    model = SupervisedGNN(model_config=model_config)
+    model = SupervisedGNN(model_config=model_config).to(device)
 
     #for subsampling, use Subset
     mask = np.random.choice(range(len(dataset)), size=384, replace=False)
@@ -309,9 +309,12 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
     # Initialize optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr = train_config['learning_rate'])
 
-    y_pred_tests = np.zeros((n_splits, len(dataset)))
-
     #don't resample with kfold, just initialize with different weights
+
+    #for evaluation
+    data_loader = DataLoader(dataset, batch_size=train_config['batch_size'], num_workers=train_config['num_workers'], shuffle=False)
+    y_preds_all = np.zeros((len(dataset), n_splits))
+
     for i in range(n_splits):
         # Start training
         pbar = tqdm()
@@ -326,11 +329,32 @@ def start_gnn_training(save_path: str, data_config: Mapping[str, Any],
         #evaluate the model
         #for now this is fine but may want to build a function with batching to be more efficient
         model.eval()
-        y_pred_tests[i] = model(dataset.to(device))
+        ys = np.array([])
+        y_preds = np.array([])
 
-    y_pred_test = np.mean(y_pred_tests, axis = 0)
+        pbar = tqdm()
+        pbar.reset(total=len(data_loader))
+        pbar.set_description('Evaluating')
 
-    print(ndcg(dataset.y[:, 0], y_pred_test))
+        for step, batch in enumerate(data_loader):
+            batch = batch.to(device)
+
+            with torch.no_grad():
+                y_pred = model(data=batch)
+                y_pred = y_pred.cpu()
+                y = batch.y
+
+            if y_preds.shape[0] == 0:
+                y_preds = y_pred
+                ys = y
+            else:
+                y_preds = np.concatenate([y_preds, y_pred], axis=0)
+                ys = np.concatenate([ys, y], axis=0)
+            pbar.update()
+        y_preds_all[:, i:i+1] = y_preds
+            
+    y_preds = np.mean(y_preds_all, axis = 1)
+    print(ndcg(ys[:,0], y_preds))
 
 def train_gnn(model_config: dict, model: nn.Module, device: torch.device,
           data_loader: DataLoader, optimizer: torch.optim.Optimizer, pbar: tqdm) -> float:

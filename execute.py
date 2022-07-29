@@ -61,11 +61,11 @@ print('Config file:\t {}'.format(config_file))
 print('Save directory:\t {}'.format(save_dir))
 
 # Get device ID
-# if torch.cuda.is_available() and args.device >= 0:
-#     assert args.device < torch.cuda.device_count()
-#     device = 'cuda:{:d}'.format(args.device)
-# else:
-device = 'cpu'
+if torch.cuda.is_available() and args.device >= 0:
+    assert args.device < torch.cuda.device_count()
+    device = 'cuda:{:d}'.format(args.device)
+else:
+    device = 'cpu'
 print('Device:\t {}'.format(device))
 
 # Load JSON config file
